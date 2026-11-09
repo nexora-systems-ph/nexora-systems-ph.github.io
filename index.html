@@ -186,6 +186,7 @@ section{padding-block:72px}
 .nchip{font-size:11px;font-weight:600;color:#3730A3;border:1.5px solid #3730A3;border-radius:999px;padding:3px 9px}
 
 /* round 3 */
+.hpf{position:absolute!important;left:-10000px!important;width:1px;height:1px;opacity:0;pointer-events:none}
 .qstatus{margin:0;padding:10px 12px;border-radius:10px;font-size:15px;font-weight:600}
 .qstatus.ok{background:rgba(92,201,143,.14);color:#7FE0A8;border:1px solid rgba(92,201,143,.4)}
 .qstatus.bad{background:rgba(240,123,122,.12);color:#F7A5A4;border:1px solid rgba(240,123,122,.35)}
@@ -726,7 +727,7 @@ footer .in{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;pa
           <div class="dh"><img src="mark.webp" alt="" style="width:46px;height:auto"><div><b>Nexora Systems</b><small>Company page · all product updates</small></div></div>
           <div class="dlinks">
             <a class="dl" href="https://www.facebook.com/share/18UZzvoCTF/?mibextid=wwXIfr" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5" fill="#1877F2"/><path d="M15.5 8H14c-.8 0-1 .4-1 1v1.5h2.4l-.3 2.5H13V20h-2.6v-7H8.5v-2.5h1.9V8.6C10.4 6.7 11.5 5.5 13.6 5.5c.8 0 1.5.1 1.9.1z" fill="#fff"/></svg><span>Nexora Systems</span><small>Facebook</small></a>
-            <div class="dl" style="cursor:text"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg><span style="user-select:all">nexorasystems725@gmail.com</span><small>Email</small></div>
+            <div class="dl" style="cursor:text"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg><span style="user-select:all"><span class="emx">nexorasystems725 [at] gmail [dot] com</span></span><small>Email</small></div>
           </div>
         </div>
         <div class="dcard">
@@ -753,11 +754,12 @@ footer .in{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;pa
         <h2>Tell us what you run</h2>
         <p>Ask for a quotation, prices, a demo or your own custom system. Fill this in and tap Send request. It goes straight to our email, and we reply with pricing and a setup date. Have a quick question first? Tap <b style="color:var(--chrome-ink)">Ask Nex</b> at the bottom right.</p>
         <div class="reach">
-          <div><small>Email</small><span style="user-select:all;color:var(--chrome-ink);font-weight:600">nexorasystems725@gmail.com</span></div>
+          <div><small>Email</small><span style="user-select:all;color:var(--chrome-ink);font-weight:600"><span class="emx">nexorasystems725 [at] gmail [dot] com</span></span></div>
           <div><small>Facebook</small><a href="https://www.facebook.com/share/18UZzvoCTF/?mibextid=wwXIfr" target="_blank" rel="noopener">Nexora Systems</a></div>
         </div>
       </div>
       <form id="q" novalidate>
+        <input class="hpf" type="text" name="website" id="qhp" tabindex="-1" autocomplete="off" aria-hidden="true">
         <label for="qn">Your name<input id="qn" name="name" autocomplete="name" placeholder="Juan Dela Cruz"></label>
         <label for="qb">Business<input id="qb" name="biz" placeholder="e.g. Hotel, café, store name"></label>
         <label for="qe">Your email or mobile (for our reply)<input id="qe" name="reply" autocomplete="email" placeholder="you@email.com"></label>
@@ -806,10 +808,28 @@ footer .in{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;pa
 
 <script>
 const NEX_SVG = "<svg viewBox=\"40 20 220 220\" aria-hidden=\"true\" ><rect x=\"0\" y=\"0\" width=\"300\" height=\"300\" fill=\"#E3E6FF\"></rect><path d=\"M14 300 Q18 214 104 202 L196 202 Q282 214 286 300 Z\" fill=\"#3730A3\"></path><path d=\"M108 204 Q150 226 192 204 L176 300 L124 300 Z\" fill=\"#12162B\"></path><path d=\"M104 202 Q122 214 130 236 L112 244 Q100 222 96 206 Z\" fill=\"#4F46E5\"></path><path d=\"M196 202 Q178 214 170 236 L188 244 Q200 222 204 206 Z\" fill=\"#4F46E5\"></path><path d=\"M112 210 Q130 196 126 170 L174 170 Q170 196 188 210 Z\" fill=\"#E2AC85\"></path><circle cx=\"90\" cy=\"134\" r=\"11\" fill=\"#EDB990\"></circle><circle cx=\"210\" cy=\"134\" r=\"11\" fill=\"#EDB990\"></circle><path d=\"M92 108 Q92 56 150 56 Q208 56 208 108 L208 158 Q206 188 180 200 L120 200 Q94 188 92 158 Z\" fill=\"#F2C29C\"></path><path d=\"M94 150 Q96 186 120 198 L180 198 Q204 186 206 150 Q200 176 180 180 Q150 172 120 180 Q100 176 94 150 Z\" fill=\"#6B4A3A\" opacity=\"0.28\"></path><path d=\"M88 112 Q84 50 150 44 Q216 46 212 112 Q208 92 200 84 Q170 66 128 74 L122 86 Q104 88 94 102 Z\" fill=\"#1E1B2E\"></path><path d=\"M88 112 L94 102 L94 128 Q90 122 88 112 Z\" fill=\"#3A3448\"></path><path d=\"M212 112 L206 96 L206 128 Q210 122 212 112 Z\" fill=\"#3A3448\"></path><path d=\"M84 128 Q84 32 150 32 Q216 32 216 128\" fill=\"none\" stroke=\"#14B8A6\" stroke-width=\"8\" stroke-linecap=\"round\"></path><rect x=\"76\" y=\"118\" width=\"18\" height=\"34\" rx=\"8\" fill=\"#0F766E\"></rect><rect x=\"206\" y=\"118\" width=\"18\" height=\"34\" rx=\"8\" fill=\"#0F766E\"></rect><path d=\"M86 152 Q92 184 122 184\" fill=\"none\" stroke=\"#0F766E\" stroke-width=\"5\" stroke-linecap=\"round\"></path><circle cx=\"125\" cy=\"184\" r=\"6\" fill=\"#14B8A6\"></circle><path d=\"M110 112 L138 110\" stroke=\"#1E1B2E\" stroke-width=\"9\" stroke-linecap=\"round\"></path><path d=\"M162 110 L190 112\" stroke=\"#1E1B2E\" stroke-width=\"9\" stroke-linecap=\"round\"></path><ellipse cx=\"126\" cy=\"132\" rx=\"8\" ry=\"8.5\" fill=\"#1E1B2E\"></ellipse><ellipse cx=\"174\" cy=\"132\" rx=\"8\" ry=\"8.5\" fill=\"#1E1B2E\"></ellipse><circle cx=\"128.5\" cy=\"129\" r=\"3\" fill=\"#FFFFFF\"></circle><circle cx=\"176.5\" cy=\"129\" r=\"3\" fill=\"#FFFFFF\"></circle><path d=\"M146 140 L142 156 L152 156\" fill=\"none\" stroke=\"#C98B66\" stroke-width=\"3.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path><path d=\"M132 170 Q152 182 172 166\" fill=\"none\" stroke=\"#7A3B2E\" stroke-width=\"5\" stroke-linecap=\"round\"></path></svg>";
-const NX_TO = "nexorasystems725@gmail.com";
+const NX_TO = "nexorasystems725\u0040gmail.com";
 const W3F_KEY = "";
-const FS_ENDPOINT = "https://formsubmit.co/ajax/" + "nexorasystems725@gmail.com";
+const FS_ENDPOINT = "https://formsubmit.co/ajax/" + "nexorasystems725\u0040gmail.com";
+const PAGE_T0 = Date.now();
+const SPAM_WORDS = /\b(viagra|cialis|casino|porn|escort|backlinks?|seo service|crypto ?invest|bitcoin invest|forex signal|loan offer|guest post|cheap traffic)\b/i;
+function spamCheck(d){
+  const hp = [...document.querySelectorAll('.hpf')].some(i => i.value.trim() !== '');
+  if (hp) return 'bot';
+  if (Date.now() - PAGE_T0 < 4000) return 'Please wait a few seconds, then tap Send again.';
+  const all = [d.subject, d.body, d.name, d.reply, d.business].join(' ');
+  if ((all.match(/https?:\/\/|www\./gi) || []).length > 2) return 'Please remove the links from your message and try again.';
+  if (SPAM_WORDS.test(all)) return 'Your message looks like spam. Please rephrase it, or email us directly.';
+  let log = [];
+  try { log = JSON.parse(localStorage.getItem('nx-sent') || '[]').filter(t => Date.now() - t < 600000); } catch (e) {}
+  if (log.length >= 3) return 'You\'ve sent 3 requests in the last 10 minutes. Please wait a little before sending another.';
+  return null;
+}
+function noteSent(){ try { const l = JSON.parse(localStorage.getItem('nx-sent') || '[]').filter(t => Date.now() - t < 600000); l.push(Date.now()); localStorage.setItem('nx-sent', JSON.stringify(l)); } catch (e) {} }
 function sendMail(d){
+  const why = spamCheck(d);
+  if (why === 'bot') return Promise.resolve();
+  if (why) { const e = new Error(why); e.userMsg = why; return Promise.reject(e); }
   const btns=document.querySelectorAll('#qSend,.nxbtn');btns.forEach(b=>{b.disabled=true;b.dataset.t=b.textContent;b.textContent='Sending…'});
   const isMail=/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(d.reply||'');
   let req;
@@ -818,11 +838,11 @@ function sendMail(d){
     if(isMail){p.email=d.reply;p.replyto=d.reply}
     req=fetch('https://api.web3forms.com/submit',{method:'POST',headers:{'Content-Type':'application/json',Accept:'application/json'},body:JSON.stringify(p)}).then(r=>r.json()).then(j=>{if(!j.success)throw new Error(j.message||'failed')});
   }else{
-    const p={_subject:'Nexora website: '+d.subject,_template:'table',_captcha:'false',Name:d.name||'',Contact:d.reply||'',Business:d.business||'-',Request:d.request||'-','Interested in':d.interested||'-',Message:d.body,_honey:''};
+    const p={_subject:'Nexora website: '+d.subject,_template:'table',_captcha:'false',Name:d.name||'',Contact:d.reply||'',Business:d.business||'-',Request:d.request||'-','Interested in':d.interested||'-',Message:d.body,_honey:'',_blacklist:'viagra,casino,porn,escort,backlinks,seo services,crypto investment,forex signals,loan offer'};
     if(isMail){p.email=d.reply;p._replyto=d.reply}
     req=fetch(FS_ENDPOINT,{method:'POST',headers:{'Content-Type':'application/json',Accept:'application/json'},body:JSON.stringify(p)}).then(r=>r.json()).then(j=>{if(String(j.success)!=='true')throw new Error(j.message||'failed')});
   }
-  return req.finally(()=>btns.forEach(b=>{b.disabled=false;if(b.dataset.t)b.textContent=b.dataset.t}));
+  return req.then(noteSent).finally(()=>btns.forEach(b=>{b.disabled=false;if(b.dataset.t)b.textContent=b.dataset.t}));
 }
 function mailButtons(subject, body, compact){
   const wrap = document.createElement("div"); wrap.className = compact ? "nxsend" : "sendrow";
@@ -875,7 +895,8 @@ function mailButtons(subject, body, compact){
     sendMail({subject:subject,body:body,name:v('qn'),reply:v('qe'),business:v('qb'),request:kind,interested:picks.join(', ')}).then(function(){
       status.className='qstatus ok';status.textContent='Request sent. Thank you, '+v('qn')+'! We\'ll reply to '+v('qe')+' soon.';status.hidden=false;out.hidden=true;
       form.querySelectorAll('input:not([type=checkbox]),textarea').forEach(function(x){x.value=''});form.querySelectorAll('.pick input').forEach(function(x){x.checked=false});syncOther();
-    }).catch(function(){
+    }).catch(function(err){
+      if(err&&err.userMsg){status.className='qstatus bad';status.textContent=err.userMsg;status.hidden=false;out.hidden=true;return}
       status.className='qstatus bad';status.textContent='We couldn\'t send it from here. Use one of these instead:';status.hidden=false;
       row.appendChild(mailButtons(subject,body,false));out.hidden=false;
     });
@@ -883,13 +904,13 @@ function mailButtons(subject, body, compact){
 })();
 const KB = [
   { topic:"About Nexora Systems", keys:["nexora","who are you","company","about"],
-    answer:"Nexora Systems builds practical software for Filipino businesses and households. Tagline: Smart systems. Practical solutions. Current products: FinTrak Pro (personal finance), NEXO POS (point of sale for stores), FEMS (facility engineering for hotels and resorts) and FIFO NEX (kitchen prep labels and food safety). Planned: Warehouse Management, HR & Payroll and Project Management systems. Nexora also builds custom systems on request. Facebook: https://www.facebook.com/share/18UZzvoCTF/ · Email: nexorasystems725@gmail.com. Products without their own page post updates on the Nexora Systems Facebook page. Most products are still being prepared for launch; FinTrak Pro is the one people can already sign up for." },
+    answer:"Nexora Systems builds practical software for Filipino businesses and households. Tagline: Smart systems. Practical solutions. Current products: FinTrak Pro (personal finance), NEXO POS (point of sale for stores), FEMS (facility engineering for hotels and resorts) and FIFO NEX (kitchen prep labels and food safety). Planned: Warehouse Management, HR & Payroll and Project Management systems. Nexora also builds custom systems on request. Facebook: https://www.facebook.com/share/18UZzvoCTF/ · Email: nexorasystems725\u0040gmail.com. Products without their own page post updates on the Nexora Systems Facebook page. Most products are still being prepared for launch; FinTrak Pro is the one people can already sign up for." },
   { topic:"Account & login", keys:["login","log in","sign in","password","locked","account","forgot","reset"],
     answer:"Which product are you signing in to? In FinTrak Pro: open fintrakpro.github.io, tap Forgot password, enter your email and tap Send reset link, then choose a new password from the email (check spam too). New FinTrak Pro accounts must be approved by the administrator first. For NEXO POS staff accounts, ask your store owner, who manages staff in Settings. In FEMS, sign in with the username and password your engineering head created for you; ask them to reset it if you forgot it." },
   { topic:"Technical issue", keys:["error","bug","loading","slow","crash","not working","broken","blank","issue","problem","technical"],
     answer:"Let's troubleshoot it together. Try these in order:\n\n1. Refresh the page.\n2. Check your internet connection.\n3. Open it in a private window, or clear your browser cache.\n4. Try another browser or device.\n\nStill stuck? File a ticket with what you were doing, what you expected, and a screenshot, and the team will look into it." },
   { topic:"Contact support", keys:["human","person","agent","staff","contact","support","talk","call","email","facebook"],
-    answer:"The fastest way to reach the Nexora team is to message Nexora Systems on Facebook https://www.facebook.com/share/18UZzvoCTF/ or email nexorasystems725@gmail.com. I can also prepare an email to the team for you right now." },
+    answer:"The fastest way to reach the Nexora team is to message Nexora Systems on Facebook https://www.facebook.com/share/18UZzvoCTF/ or email nexorasystems725\u0040gmail.com. I can also prepare an email to the team for you right now." },
 ];
 const CONCERN_WORDS = ["concern","complain","complaint","report","ticket","escalate","human","person","agent","refund","charge"];
 
@@ -951,7 +972,7 @@ const PRODUCTS = [
 - Who sets it up? The local Nexora team installs it, encodes products, trains the cashier and provides support.
 - How do I get it? Message Nexora for a FREE demo.
 - Pricing: [NEXO POS PACKAGES AND PRICES].`,
-    support:"Message Nexora Systems on Facebook https://www.facebook.com/share/18UZzvoCTF/ or email nexorasystems725@gmail.com for a free demo or support." },
+    support:"Message Nexora Systems on Facebook https://www.facebook.com/share/18UZzvoCTF/ or email nexorasystems725\u0040gmail.com for a free demo or support." },
   { name:"FEMS", keys:["fems","facility engineering","genset","desal","trip ticket","engineering"], blurb:"Facility Engineering Management System for hotels and resorts",
     what:`FEMS (Facility Engineering Management System) by Nexora Systems puts every tank, genset, vehicle and boat on one screen. It is for owners, general managers and chief engineers of hotels and island resorts in the Philippines who still track water, fuel, power and equipment in paper logbooks and Excel. The engineering team logs once a day on any phone; FEMS builds the dashboards and the month-end report. Status: being prepared for launch; properties can message Nexora to book a demo.`,
     features:`- Main Dashboard: Needs-attention alerts (critical, warning, info), key numbers (water, diesel and gasoline stock, power produced, occupancy), facility status, recent maintenance, data checks.
@@ -971,7 +992,7 @@ const PRODUCTS = [
 - Who can edit? Owners and editors change settings; contributors log data; viewers can only look.
 - How do I get FEMS? Message Nexora to book a demo on your property.
 - Pricing: [FEMS PACKAGES AND PRICES].`,
-    support:"Message Nexora Systems on Facebook https://www.facebook.com/share/18UZzvoCTF/ or email nexorasystems725@gmail.com to book a demo." },
+    support:"Message Nexora Systems on Facebook https://www.facebook.com/share/18UZzvoCTF/ or email nexorasystems725\u0040gmail.com to book a demo." },
   { name:"FIFO NEX", keys:["fifo","fifo nex","label","prep label","use by","use-by","allergen","shelf life"], blurb:"Kitchen prep labels and food safety",
     what:`FIFO NEX by Nexora Systems prints clear prep labels for commercial kitchens (restaurants, hotel kitchens, commissaries) and keeps every shelf first-in, first-out. The cook picks the item, storage and their name; FIFO NEX calculates the use-by date and prints the label. Status: being prepared for launch; kitchens can message Nexora for a demo.`,
     features:`- Create label: pick the item, storage type (chilled, frozen, ambient, hot hold), storage location and shelf, who prepped it and number of copies. Use-by is calculated from the item's shelf life for that storage type.
@@ -991,12 +1012,12 @@ const PRODUCTS = [
 - Does it work on a tablet? Yes, any browser on a kitchen tablet, phone or computer.
 - How do I get it? Message Nexora for a demo.
 - Pricing: [FIFO NEX PACKAGES AND PRICES].`,
-    support:"Message Nexora Systems on Facebook https://www.facebook.com/share/18UZzvoCTF/ or email nexorasystems725@gmail.com for a demo or support." },
+    support:"Message Nexora Systems on Facebook https://www.facebook.com/share/18UZzvoCTF/ or email nexorasystems725\u0040gmail.com for a demo or support." },
 ];
 
 
 /* ---------- Nex: in-page support chat ---------- */
-const NX_EMAIL = "nexorasystems725@gmail.com";
+const NX_EMAIL = "nexorasystems725\u0040gmail.com";
 let currentProduct = null;
 function productBlock(p){ return "### " + p.name + "\nWhat it is: " + p.what + "\nFeatures: " + p.features + "\nHow-to: " + p.howto + "\nFAQs: " + p.faqs + "\nSupport: " + p.support; }
 function buildRules(){
@@ -1113,7 +1134,7 @@ function nxTicket(){
     '<label for="'+id+'r">Your email or mobile<input id="'+id+'r" autocomplete="email"></label>' +
     '<label for="'+id+'p">About<select id="'+id+'p">' + PRODUCTS.map(p => '<option' + (p.name === currentProduct ? ' selected' : '') + '>' + p.name + '</option>').join("") + '<option>Custom system</option><option>Other / not sure</option></select></label>' +
     '<label for="'+id+'d">What do you need?<textarea id="'+id+'d" placeholder="Your question, concern or what you want built"></textarea></label>' +
-    '<p class="nxerr" hidden></p><button class="nxbtn" type="submit">Send to the team</button>';
+    '<input class="hpf" type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true"><p class="nxerr" hidden></p><button class="nxbtn" type="submit">Send to the team</button>';
   card.addEventListener("submit", ev => {
     ev.preventDefault();
     const n = card.querySelector("#"+id+"n").value.trim(), p = card.querySelector("#"+id+"p").value, d = card.querySelector("#"+id+"d").value.trim(), er = card.querySelector(".nxerr");
@@ -1126,7 +1147,8 @@ function nxTicket(){
     if (!rc){ er.textContent = "Please add an email or mobile number so the team can reply."; er.hidden = false; return; }
     sendMail({ subject:subj, body:body.replace("Name: " + n, "Name: " + n + "\nReply to: " + rc), name:n, reply:rc, request:"Message from Nex chat", interested:p })
       .then(() => { card.remove(); nxRow("nex", "Sent! Your message (reference " + ref + ") is with the Nexora team. They'll reply to " + rc + ". Anything else I can help with?"); })
-      .catch(() => {
+      .catch(err => {
+        if (err && err.userMsg){ er.textContent = err.userMsg; er.hidden = false; return; }
         card.remove();
         const b = nxRow("nex", "I couldn't send it from here. Tap a button to send it to " + NX_EMAIL + " from your own email:");
         const acts = document.createElement("div"); acts.className = "nxsend"; acts.appendChild(mailButtons(subj, body, true)); b.appendChild(acts); nxScroll();
@@ -1149,5 +1171,6 @@ document.querySelectorAll("[data-nex]").forEach(el => el.addEventListener("click
 
 </script>
 
+<script>document.querySelectorAll(".emx").forEach(function(e){e.textContent="nexorasystems725"+String.fromCharCode(64)+"gmail.com"});</script>
 </body>
 </html>
