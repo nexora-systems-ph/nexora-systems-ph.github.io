@@ -1,0 +1,1153 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Nexora Systems | Smart systems. Practical solutions.</title>
+<meta name="description" content="Nexora Systems builds practical business software in the Philippines: FEMS facility engineering, NEXO POS, FIFO NEX kitchen labels, FinTrak Pro, and custom systems.">
+<link rel="canonical" href="https://nexora-systems-ph.github.io/">
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<meta name="theme-color" content="#07122A">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Nexora Systems">
+<meta property="og:title" content="Nexora Systems">
+<meta property="og:description" content="Nexora Systems builds practical business software in the Philippines: FEMS facility engineering, NEXO POS, FIFO NEX kitchen labels, FinTrak Pro, and custom systems.">
+<meta property="og:url" content="https://nexora-systems-ph.github.io/">
+<meta property="og:image" content="https://nexora-systems-ph.github.io/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:80px}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif}img{max-width:100%}[hidden]{display:none!important}</style>
+</head>
+<body>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600&family=Barlow+Semi+Condensed:wght@500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+<style>
+/* Layout: deep-navy brand band in the Nexora logo blues holding the hero + live product console; then a filterable catalogue where each product gets a wide row with a drawn screen preview; closing with how buying works and contact. */
+:root{
+  --chrome:#07122A; --chrome-2:#0D1E44; --chrome-line:#1D3268; --chrome-ink:#EAF0FF; --chrome-muted:#A6B5DA; --hl:#3AA0FF;
+  --bg:#F3F6FC; --surface:#FFFFFF; --sunk:#E9EFFA; --ink:#0B1633; --muted:#4A5878; --line:#D6DFF0;
+  --accent:#1557E0; --accent-ink:#FFFFFF; --accent-soft:#DCE7FF;
+  --fems:#0B6FB8; --nexo:#1F6FE5; --fifo:#3730A3; --fin:#1D4ED8; --nex:#4338CA; --gold:#FFD166;
+  --good:#1A7A4C; --warn:#A35D00; --bad:#B4302A;
+  --f-display:"Barlow Semi Condensed","Arial Narrow",system-ui,sans-serif;
+  --f-body:"Barlow",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --f-mono:"IBM Plex Mono",ui-monospace,Menlo,Consolas,monospace;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --chrome:#050C1E; --chrome-2:#0B1838; --chrome-line:#1A2B57;
+  --bg:#0A1124; --surface:#111B34; --sunk:#16223F; --ink:#E6ECFA; --muted:#A3B0CF; --line:#24345C;
+  --accent:#5AA8FF; --accent-ink:#061024; --accent-soft:#16294F;
+  --fems:#4DB3F0; --nexo:#5B9BFF; --fifo:#A5A1FF; --fin:#6B9BFF; --nex:#9C95FF;
+  --good:#5CC98F; --warn:#E3A84A; --bad:#F07B7A; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --chrome:#050C1E; --chrome-2:#0B1838; --chrome-line:#1A2B57;
+  --bg:#0A1124; --surface:#111B34; --sunk:#16223F; --ink:#E6ECFA; --muted:#A3B0CF; --line:#24345C;
+  --accent:#5AA8FF; --accent-ink:#061024; --accent-soft:#16294F;
+  --fems:#4DB3F0; --nexo:#5B9BFF; --fifo:#A5A1FF; --fin:#6B9BFF; --nex:#9C95FF;
+  --good:#5CC98F; --warn:#E3A84A; --bad:#F07B7A; color-scheme:dark}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important;animation:none!important}}
+body{background:var(--bg);color:var(--ink);font-family:var(--f-body);font-size:16.5px;line-height:1.55}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--chrome)}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--hl);outline-offset:3px;border-radius:4px}
+h1,h2,h3{font-family:var(--f-display);margin:0;text-wrap:balance;line-height:1.02}
+p{margin:0}
+.mono{font-family:var(--f-mono);font-variant-numeric:tabular-nums}
+.in{max-width:1220px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.eyebrow{font-family:var(--f-display);font-weight:700;font-size:14px;letter-spacing:.16em;text-transform:uppercase}
+
+/* nav */
+.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:var(--chrome);color:var(--chrome-ink);border-bottom:1px solid var(--chrome-line)}
+.top .in{display:flex;align-items:center;gap:20px;padding-block:12px}
+.logo{display:flex;align-items:center;gap:10px;text-decoration:none;margin-right:auto}
+.logo .lmark{height:46px;width:auto;flex:none}
+.logo .lword{height:30px;width:auto;align-self:flex-start}
+@media (max-width:420px){.logo .lword{height:26px}}
+.links{display:flex;gap:4px}
+.links a{text-decoration:none;font-family:var(--f-display);font-weight:600;font-size:16px;letter-spacing:.04em;padding:8px 12px;border-radius:8px;color:var(--chrome-muted)}
+.links a:hover{color:var(--chrome-ink);background:rgba(255,255,255,.06)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:44px;padding:10px 18px;border-radius:10px;font-family:var(--f-display);font-weight:700;font-size:17px;letter-spacing:.04em;text-decoration:none;border:1.5px solid transparent;cursor:pointer;white-space:nowrap}
+.btn.solid{background:linear-gradient(135deg,#1E6BFF,#00A3FF);color:#fff}
+.btn.solid:hover{filter:brightness(1.1)}
+.btn.ghost{border-color:var(--chrome-line);color:var(--chrome-ink);background:transparent}
+.btn.ghost:hover{border-color:var(--hl)}
+@media (max-width:900px){.links{display:none}}
+@media (max-width:540px){.top .btn.solid{display:none}}
+
+/* hero */
+.hero{background:radial-gradient(900px 500px at 85% 20%,rgba(30,107,255,.35),transparent 60%),linear-gradient(160deg,var(--chrome),var(--chrome-2));color:var(--chrome-ink);overflow:hidden;position:relative}
+.hero .bigmark{position:absolute;right:-60px;bottom:-80px;width:420px;opacity:.08;pointer-events:none}
+.hero .in{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);gap:48px;align-items:center;padding-block:64px 72px}
+.hero .eyebrow{color:var(--hl)}
+.hero h1{font-size:clamp(44px,6.4vw,84px);font-weight:800;letter-spacing:-.01em;text-transform:uppercase;margin:14px 0 20px}
+.hero h1 em{font-style:normal;color:var(--hl)}
+.hero p.lede{font-size:19px;color:var(--chrome-muted);max-width:52ch}
+.hero .ctas{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}
+.facts{display:flex;gap:28px;flex-wrap:wrap;margin-top:36px;padding-top:22px;border-top:1px solid var(--chrome-line)}
+.facts div b{display:block;font-family:var(--f-display);font-weight:700;font-size:30px;line-height:1}
+.facts div span{font-size:13.5px;color:var(--chrome-muted)}
+@media (max-width:900px){.hero .in{grid-template-columns:minmax(0,1fr);padding-block:44px 52px}}
+
+/* console */
+.console{background:var(--chrome-2);border:1px solid var(--chrome-line);border-radius:16px;padding:14px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;box-shadow:0 30px 60px rgba(0,0,0,.25)}
+.console .bar{grid-column:1/-1;display:flex;align-items:center;gap:8px;font-family:var(--f-mono);font-size:12px;color:var(--chrome-muted);padding:2px 4px}
+.console .bar i{width:9px;height:9px;border-radius:50%;background:var(--chrome-line)}
+.console .bar i:first-child{background:var(--hl)}
+.console .bar span{margin-left:auto}
+.tile{background:var(--chrome);border:1px solid var(--chrome-line);border-radius:12px;padding:14px;display:flex;flex-direction:column;gap:8px;text-decoration:none;min-width:0;transition:border-color .15s,transform .15s}
+.tile:hover{border-color:var(--hl);transform:translateY(-2px)}
+.tile .k{display:flex;justify-content:space-between;align-items:center;gap:8px}
+.tile .k b{font-family:var(--f-display);font-weight:800;font-size:20px;letter-spacing:.05em}
+.tile .k small{font-family:var(--f-mono);font-size:11px;color:var(--chrome-muted)}
+.tile .v{font-family:var(--f-display);font-weight:700;font-size:28px;line-height:1;font-variant-numeric:tabular-nums}
+.tile .s{font-size:13px;color:var(--chrome-muted);line-height:1.35}
+.tile .dot{width:8px;height:8px;border-radius:50%;flex:none}
+.spark{height:28px;width:100%;display:block}
+
+/* catalogue */
+section{padding-block:72px}
+.shead{display:flex;justify-content:space-between;align-items:flex-end;gap:20px;flex-wrap:wrap;margin-bottom:28px}
+.shead .eyebrow{color:var(--accent);margin-bottom:8px}
+.shead h2{font-size:clamp(34px,4.4vw,52px);font-weight:800;text-transform:uppercase}
+.shead p{color:var(--muted);max-width:52ch;margin-top:10px}
+.chips{display:flex;gap:6px;flex-wrap:wrap}
+.chip{min-height:40px;padding:8px 14px;border-radius:999px;border:1px solid var(--line);background:var(--surface);color:var(--muted);font-family:var(--f-display);font-weight:600;font-size:15.5px;letter-spacing:.03em;cursor:pointer}
+.chip[aria-pressed="true"]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.plist{display:flex;flex-direction:column;gap:20px}
+.prod{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);background:var(--surface);border:1px solid var(--line);border-radius:18px;overflow:hidden}
+.prod:nth-child(even) .shot{order:-1}
+.pinfo{padding:32px;display:flex;flex-direction:column;gap:16px;min-width:0}
+.ptag{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.ptag .cat{font-family:var(--f-display);font-weight:700;font-size:13.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--pc)}
+.ptag .for{font-size:13.5px;color:var(--muted);padding:2px 10px;border:1px solid var(--line);border-radius:999px}
+.prod h3{font-size:clamp(34px,4vw,46px);font-weight:800;letter-spacing:.01em}
+.prod h3 span{color:var(--pc)}
+.prod .tagline{font-size:18.5px;font-weight:500;max-width:46ch}
+.feats{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px 20px}
+.feats li{display:flex;gap:10px;font-size:15px;line-height:1.4;color:var(--muted);min-width:0}
+.feats li b{color:var(--ink);font-weight:600}
+.feats svg{width:18px;height:18px;flex:none;margin-top:2px;stroke:var(--pc);fill:none;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
+.pact{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-top:auto;padding-top:8px}
+.pact .go{background:var(--pc);color:#fff}
+.pact .go:hover{filter:brightness(1.1)}
+.pact .ask{border-color:var(--line);color:var(--ink)}
+.pact .ask:hover{border-color:var(--pc)}
+.pact .price{font-size:14px;color:var(--muted);margin-left:auto}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .pact .go{color:#061414}}
+:root[data-theme="dark"] .pact .go{color:#061414}
+@media (max-width:960px){.prod{grid-template-columns:minmax(0,1fr)}.prod:nth-child(even) .shot{order:0}}
+@media (max-width:560px){.feats{grid-template-columns:minmax(0,1fr)}.pinfo{padding:22px}.pact .price{margin-left:0;width:100%}}
+
+/* screen previews: drawn, always on a fixed light/dark device look */
+.shot{background:var(--sunk);padding:28px;display:flex;align-items:center;justify-content:center;min-width:0;border-left:1px solid var(--line)}
+.prod:nth-child(even) .shot{border-left:0;border-right:1px solid var(--line)}
+@media (max-width:960px){.shot,.prod:nth-child(even) .shot{border:0;border-top:1px solid var(--line)}}
+.screen{width:100%;max-width:520px;background:#F3F5F9;color:#0F1B30;border-radius:12px;overflow:hidden;box-shadow:0 18px 40px rgba(8,20,50,.2);font-size:12px;font-family:var(--f-body)}
+.screen .sh{display:flex;align-items:center;gap:8px;padding:10px 12px;background:#0B1A3A;color:#EEF3FF}
+.screen .sh b{font-family:var(--f-display);font-weight:800;letter-spacing:.06em;font-size:15px}
+.screen .sh span{margin-left:auto;font-family:var(--f-mono);font-size:10.5px;color:#A6B5DA}
+.screen .sb{padding:12px;display:grid;gap:8px}
+.k4{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:6px}
+.k3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:6px}
+.kc{background:#fff;border:1px solid #DDE3EA;border-radius:8px;padding:7px 8px;min-width:0}
+.kc small{display:block;font-family:var(--f-display);font-weight:600;font-size:9.5px;letter-spacing:.1em;text-transform:uppercase;color:#5B6677;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.kc b{font-family:var(--f-display);font-size:18px;font-variant-numeric:tabular-nums}
+.pane{background:#fff;border:1px solid #DDE3EA;border-radius:8px;padding:8px}
+.pane h4{margin:0 0 6px;font-family:var(--f-display);font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:#5B6677}
+.row{display:flex;justify-content:space-between;gap:8px;padding:4px 0;border-bottom:1px solid #EEF1F5}
+.row:last-child{border-bottom:0}
+.pl{font-size:9.5px;font-weight:700;letter-spacing:.04em;padding:1px 7px;border-radius:999px}
+.pl.g{background:#DCF1E5;color:#1A7A4C}.pl.w{background:#FBEAD0;color:#A35D00}.pl.b{background:#F7DEDB;color:#B4302A}
+.bars{display:flex;align-items:flex-end;gap:3px;height:64px}
+.bars i{flex:1;background:#2F6FE0;border-radius:3px 3px 0 0}
+.two{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);gap:8px}
+@media (max-width:420px){.k4{grid-template-columns:repeat(2,minmax(0,1fr))}.shot{padding:16px}}
+
+/* FIFO label */
+.lblstage{background:repeating-linear-gradient(135deg,#E3E6FF 0 8px,#EEF1F8 8px 16px);padding:16px;display:flex;justify-content:center}
+.lbl{background:#fff;color:#111;width:100%;max-width:300px;border-radius:5px;box-shadow:0 8px 20px rgba(0,0,0,.18);overflow:hidden;font-family:var(--f-display)}
+.lbl .band{display:flex;justify-content:space-between;padding:5px 10px;font-weight:800;letter-spacing:.08em;font-size:12px;color:#fff;background:#3730A3}
+.lbl .lb{padding:8px 10px;display:grid;gap:5px}
+.lbl .nm{font-weight:800;font-size:26px;line-height:.95;text-transform:uppercase}
+.lbl .ub{display:flex;justify-content:space-between;align-items:baseline;border-block:2px solid #222;padding:4px 0}
+.lbl .ub b{font-size:18px;font-variant-numeric:tabular-nums}
+.lbl .tg{display:flex;gap:4px;font-size:10px;font-weight:800;letter-spacing:.05em}
+.lbl .tg span{border:1.5px solid #222;padding:1px 5px;border-radius:3px}
+.lbl .tg .r{background:#D0021B;border-color:#D0021B;color:#fff}
+
+.nexhead{width:30px;height:30px;border-radius:50%;overflow:hidden;flex:none;display:block;margin-left:0!important}
+.nexhead svg{width:100%;height:100%;display:block}
+.bub{background:#fff;border:1px solid #DDE1EE;border-radius:14px 14px 14px 4px;padding:8px 11px;font-size:12.5px;max-width:88%;line-height:1.4}
+.bub.me{align-self:end;justify-self:end;background:#3730A3;color:#fff;border-color:#3730A3;border-radius:14px 14px 4px 14px}
+.nchip{font-size:11px;font-weight:600;color:#3730A3;border:1.5px solid #3730A3;border-radius:999px;padding:3px 9px}
+
+/* round 3 */
+.qstatus{margin:0;padding:10px 12px;border-radius:10px;font-size:15px;font-weight:600}
+.qstatus.ok{background:rgba(92,201,143,.14);color:#7FE0A8;border:1px solid rgba(92,201,143,.4)}
+.qstatus.bad{background:rgba(240,123,122,.12);color:#F7A5A4;border:1px solid rgba(240,123,122,.35)}
+[hidden]{display:none!important}
+.nxcomp,.nxcard{box-shadow:none}
+.nxcomp{border:0!important;border-top:1px solid var(--line)!important;border-radius:0!important;padding:10px!important}
+.logo .lstack{display:flex;flex-direction:column;gap:4px;min-width:0}
+.logo .slogan{font-family:var(--f-display);font-weight:600;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--hl);white-space:nowrap}
+@media (max-width:420px){.logo .slogan{font-size:9px;letter-spacing:.1em}}
+.plogo{width:56px;height:56px;border-radius:14px;display:grid;place-items:center;padding:9px;flex:none}
+.plogo svg,.plogo img{width:100%;height:100%;display:block;object-fit:contain}
+.phead2{display:flex;align-items:center;gap:14px}
+.tile .k .tl{display:flex;align-items:center;gap:8px;min-width:0}
+.tile .plogo{width:28px;height:28px;border-radius:8px;padding:4px}
+.mods{grid-column:1/-1;border-top:1px solid var(--line);padding:26px 32px 30px;display:flex;flex-direction:column;gap:16px;background:var(--surface)}
+.mods h4{margin:0;font-family:var(--f-display);font-weight:700;font-size:14px;letter-spacing:.14em;text-transform:uppercase;color:var(--pc)}
+.mgrid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+.mod{border:1px solid var(--line);border-radius:12px;padding:14px 16px;background:var(--bg);min-width:0}
+.mod b{display:block;font-family:var(--f-display);font-weight:700;font-size:18px;margin-bottom:6px}
+.mod ul{margin:0;padding-left:18px;color:var(--muted);font-size:14.5px;line-height:1.45;display:grid;gap:3px}
+.mod .meta{display:flex;flex-wrap:wrap;gap:6px;margin-top:2px}
+.tagc{font-family:var(--f-mono);font-size:12px;padding:3px 8px;border-radius:6px;background:var(--accent-soft);color:var(--ink)}
+@media (max-width:960px){.mgrid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:600px){.mgrid{grid-template-columns:minmax(0,1fr)}.mods{padding:20px}}
+.plinks{display:flex;gap:14px;flex-wrap:wrap;font-size:14px}
+.plinks a{color:var(--accent);font-weight:600;text-decoration:none}
+.plinks a:hover{text-decoration:underline}
+.daycol{display:flex;flex-wrap:wrap;gap:6px}
+.daycol span{display:inline-flex;align-items:center;gap:5px;font-size:12.5px;color:var(--muted)}
+.daycol i{width:11px;height:11px;border-radius:3px;display:inline-block}
+/* future + custom */
+.future{background:var(--bg)}
+.fgrid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.fcard{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:22px;display:flex;flex-direction:column;gap:10px;min-width:0}
+.fcard .ft{display:flex;align-items:center;justify-content:space-between;gap:10px}
+.fcard .ico{width:44px;height:44px;border-radius:12px;background:var(--accent-soft);color:var(--accent);display:grid;place-items:center;flex:none}
+.fcard .ico svg{width:24px;height:24px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.fcard h3{font-size:24px;font-weight:800}
+.fcard p{color:var(--muted);font-size:15px}
+.fcard ul{margin:0;padding-left:18px;color:var(--muted);font-size:14.5px;display:grid;gap:3px}
+.stat{font-family:var(--f-display);font-weight:700;font-size:12px;letter-spacing:.12em;text-transform:uppercase;padding:3px 10px;border-radius:999px;white-space:nowrap}
+.stat.plan{background:var(--accent-soft);color:var(--accent)}
+.stat.rec{border:1px solid var(--line);color:var(--muted)}
+.fcard .btn{margin-top:auto;align-self:flex-start;border-color:var(--line);color:var(--ink);font-size:16px}
+.fcard .btn:hover{border-color:var(--accent)}
+@media (max-width:960px){.fgrid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:600px){.fgrid{grid-template-columns:minmax(0,1fr)}}
+.custom{margin-top:28px;border-radius:18px;padding:30px 32px;background:radial-gradient(600px 300px at 90% 0%,rgba(30,107,255,.35),transparent 60%),linear-gradient(150deg,#07122A,#0D1E44);color:#EAF0FF;display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:28px;align-items:center}
+.custom .eyebrow{color:#7FB2FF;margin-bottom:8px}
+.custom h3{font-size:clamp(30px,3.6vw,42px);font-weight:800;text-transform:uppercase}
+.custom p{color:#A6B5DA;margin-top:10px;max-width:52ch}
+.custom ol{margin:0;padding:0;list-style:none;display:grid;gap:10px;counter-reset:c}
+.custom li{display:grid;grid-template-columns:30px 1fr;gap:10px;align-items:start;font-size:15.5px;color:#D7E1FA}
+.custom li::before{counter-increment:c;content:counter(c);width:28px;height:28px;border-radius:50%;border:1.5px solid #3AA0FF;color:#7FB2FF;display:grid;place-items:center;font-family:var(--f-mono);font-size:13px}
+.custom .btn{margin-top:18px}
+@media (max-width:860px){.custom{grid-template-columns:minmax(0,1fr);padding:24px 20px}}
+/* directory */
+.dir{background:var(--surface);border-top:1px solid var(--line)}
+.dgrid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.dcard{border:1px solid var(--line);border-radius:16px;padding:20px;display:flex;flex-direction:column;gap:12px;background:var(--bg);min-width:0}
+.dcard .dh{display:flex;align-items:center;gap:12px}
+.dcard .dh b{font-family:var(--f-display);font-weight:800;font-size:22px}
+.dcard .dh small{display:block;color:var(--muted);font-size:13px}
+.dlinks{display:grid;gap:8px}
+.dl{display:flex;align-items:center;gap:10px;min-height:44px;padding:8px 12px;border-radius:10px;border:1px solid var(--line);background:var(--surface);text-decoration:none;color:var(--ink);font-weight:600;font-size:15px;min-width:0}
+.dl:hover{border-color:var(--accent)}
+.dl svg{width:20px;height:20px;flex:none}
+.dl span{min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.dl small{margin-left:auto;color:var(--muted);font-weight:500;font-size:12.5px;white-space:nowrap}
+.dnote{font-size:14px;color:var(--muted)}
+.dprods{display:flex;flex-wrap:wrap;gap:8px}
+.dprods span{display:inline-flex;align-items:center;gap:8px;font-family:var(--f-display);font-weight:700;font-size:15px;padding:5px 10px 5px 5px;border:1px solid var(--line);border-radius:999px;background:var(--surface)}
+.dprods .plogo{width:26px;height:26px;border-radius:7px;padding:3px}
+@media (max-width:960px){.dgrid{grid-template-columns:minmax(0,1fr)}}
+/* contact additions */
+.reach a{color:var(--chrome-ink);font-weight:600}
+.otherbox{display:grid;gap:6px}
+.sendrow{display:flex;flex-wrap:wrap;gap:8px}
+.sendrow .btn{font-size:15.5px;min-height:44px;padding:9px 14px}
+.btn.mail{background:linear-gradient(135deg,#1E6BFF,#00A3FF);color:#fff}
+.btn.line{border-color:var(--chrome-line);color:var(--chrome-ink);background:transparent}
+.btn.line:hover{border-color:var(--hl)}
+.fnote{font-size:13px;color:var(--chrome-muted);margin:0}
+select{appearance:auto}
+/* Nex chat */
+.nxfab{position:fixed;right:calc(18px + env(safe-area-inset-right,0px));bottom:calc(18px + env(safe-area-inset-bottom,0px));z-index:40;display:flex;align-items:center;gap:10px;padding:6px 16px 6px 6px;border-radius:999px;border:0;background:#3730A3;color:#fff;font-family:var(--f-display);font-weight:700;font-size:16px;letter-spacing:.03em;box-shadow:0 12px 30px rgba(8,20,50,.35);min-height:52px;cursor:pointer}
+.nxfab:hover{filter:brightness(1.12)}
+.nxfab .nexhead{width:40px;height:40px;border:2px solid rgba(255,255,255,.4)}
+.nxpanel{position:fixed;right:calc(18px + env(safe-area-inset-right,0px));bottom:calc(84px + env(safe-area-inset-bottom,0px));z-index:41;width:390px;max-width:calc(100vw - 32px);height:min(620px,calc(100% - 120px));background:var(--surface);color:var(--ink);border:1px solid var(--line);border-radius:20px;box-shadow:0 24px 60px rgba(8,20,50,.3);display:flex;flex-direction:column;overflow:hidden;transform-origin:bottom right;transition:transform .18s ease,opacity .18s ease}
+.nxpanel.closed{transform:scale(.94);opacity:0;pointer-events:none;visibility:hidden}
+.nxhd{display:flex;align-items:center;gap:12px;padding:12px 10px 12px 14px;background:#3730A3;color:#fff}
+.nxhd .nexhead{width:42px;height:42px;border:2px solid rgba(255,255,255,.35)}
+.nxhd .who{flex:1;min-width:0;display:flex;flex-direction:column}
+.nxhd .who b{font-family:var(--f-display);font-size:18px;font-weight:800;letter-spacing:.02em}
+.nxhd .who span{font-size:12.5px;color:#D7DAFF;display:flex;align-items:center;gap:6px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.nxhd .who span::before{content:"";width:8px;height:8px;border-radius:50%;background:#4ADE80;flex:none}
+.nxib{width:44px;height:44px;border-radius:12px;border:0;background:transparent;color:#fff;display:grid;place-items:center;cursor:pointer}
+.nxib:hover{background:rgba(255,255,255,.14)}
+.nxib svg{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.nxlog{flex:1;overflow-y:auto;padding:14px;display:flex;flex-direction:column;gap:10px;background:var(--bg)}
+.nxrow{display:flex;gap:8px;align-items:flex-end;max-width:100%}
+.nxrow.me{justify-content:flex-end}
+.nxmini{width:28px;height:28px;border-radius:50%;overflow:hidden;flex:none;display:block}
+.nxmini svg{width:100%;height:100%;display:block}
+.nxbub{max-width:84%;min-width:0;padding:9px 13px;border-radius:16px 16px 16px 5px;background:var(--surface);border:1px solid var(--line);white-space:pre-wrap;overflow-wrap:anywhere;font-size:15px;line-height:1.45}
+.nxrow.me .nxbub{background:#3730A3;color:#fff;border-color:transparent;border-radius:16px 16px 5px 16px}
+.nxtyping{display:inline-flex;gap:4px;padding:4px 0}
+.nxtyping i{width:7px;height:7px;border-radius:50%;background:var(--muted);opacity:.4;animation:nxb 1.2s infinite}
+.nxtyping i:nth-child(2){animation-delay:.2s}.nxtyping i:nth-child(3){animation-delay:.4s}
+@keyframes nxb{0%,80%,100%{opacity:.25}40%{opacity:1}}
+.nxchips{display:flex;flex-wrap:wrap;gap:7px;padding-left:36px}
+.nxchip{min-height:36px;padding:6px 12px;border-radius:999px;border:1.5px solid #4F46E5;background:var(--surface);color:var(--nex);font:600 14px/1.2 var(--f-body);cursor:pointer}
+.nxchip:hover{background:var(--accent-soft)}
+.nxchip.alt{border-color:var(--accent);color:var(--accent)}
+.nxcard{margin-left:36px;background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:14px;display:grid;gap:10px}
+.nxcard b{font-family:var(--f-display);font-size:17px}
+.nxcard label{display:grid;gap:4px;font:600 12.5px/1.3 var(--f-body);letter-spacing:0;text-transform:none;color:var(--muted)}
+.nxcard input,.nxcard select,.nxcard textarea{font:inherit;font-size:15px;color:var(--ink);background:var(--bg);border:1px solid var(--line);border-radius:10px;padding:8px 10px;width:100%;color-scheme:inherit;text-transform:none}
+.nxcard textarea{min-height:70px;resize:vertical}
+.nxerr{margin:0;font-size:13px;color:var(--bad)}
+.nxbtn{min-height:42px;border:0;border-radius:11px;background:#3730A3;color:#fff;font:700 15px var(--f-body);cursor:pointer}
+.nxsend{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}
+.nxsend .btn{min-height:38px;font-size:14px;padding:7px 12px;border-color:var(--line);color:var(--ink)}
+.nxsend .btn.mail{color:#fff;border-color:transparent}
+.nxsend p{margin:0;width:100%;font-size:12.5px;color:var(--muted)}
+.nxcomp{display:flex;gap:8px;padding:10px;border-top:1px solid var(--line);background:var(--surface)}
+.nxcomp textarea{flex:1;min-width:0;resize:none;min-height:44px;max-height:110px;padding:11px 12px;border-radius:14px;border:1px solid var(--line);background:var(--bg);color:var(--ink);font:inherit;font-size:15px;line-height:1.35}
+.nxgo{width:44px;height:44px;border-radius:14px;border:0;background:#3730A3;color:#fff;display:grid;place-items:center;cursor:pointer;flex:none}
+.nxgo:disabled{opacity:.5}
+.nxgo svg{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.nxfoot{font-size:11.5px;color:var(--muted);text-align:center;padding:0 12px 9px;background:var(--surface)}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+@media (max-width:520px){.nxpanel{right:0;left:0;bottom:0;width:auto;max-width:none;height:calc(100% - 56px);border-radius:20px 20px 0 0;padding-bottom:env(safe-area-inset-bottom,0px)}body.nxon .nxfab{display:none}}
+@media (prefers-reduced-motion:reduce){.nxpanel{transition:none}.nxtyping i{animation:none}}
+/* how it works */
+.how{background:var(--surface);border-block:1px solid var(--line)}
+.steps{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:20px;counter-reset:s}
+.step{display:flex;flex-direction:column;gap:8px;padding-top:16px;border-top:2px solid var(--ink)}
+.step b{font-family:var(--f-display);font-weight:700;font-size:22px}
+.step p{color:var(--muted);font-size:15.5px}
+.step .n{font-family:var(--f-mono);font-size:12px;color:var(--accent)}
+@media (max-width:900px){.steps{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:520px){.steps{grid-template-columns:minmax(0,1fr)}}
+
+/* contact */
+.contact{background:var(--chrome);color:var(--chrome-ink)}
+.contact .in{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:40px;align-items:start}
+.contact h2{font-size:clamp(34px,4.6vw,56px);font-weight:800;text-transform:uppercase}
+.contact .eyebrow{color:var(--hl);margin-bottom:10px}
+.contact p{color:var(--chrome-muted);margin-top:14px;max-width:46ch}
+form{background:var(--chrome-2);border:1px solid var(--chrome-line);border-radius:16px;padding:22px;display:grid;gap:14px}
+label{font-family:var(--f-display);font-weight:600;font-size:13.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--chrome-muted);display:grid;gap:6px}
+input,select,textarea{font:inherit;font-size:16px;color:var(--chrome-ink);background:var(--chrome);border:1px solid var(--chrome-line);border-radius:10px;padding:11px 12px;width:100%;color-scheme:dark;text-transform:none;letter-spacing:0}
+textarea{min-height:90px;resize:vertical}
+.pick{display:flex;flex-wrap:wrap;gap:6px}
+.pick label{flex-direction:row;display:inline-flex;align-items:center;gap:8px;text-transform:none;letter-spacing:.02em;font-size:15px;color:var(--chrome-ink);border:1px solid var(--chrome-line);border-radius:999px;padding:8px 12px;cursor:pointer}
+.pick input{width:auto;accent-color:var(--hl)}
+.pick label:has(input:checked){border-color:var(--hl);background:rgba(58,160,255,.16)}
+.out{display:grid;gap:10px;background:var(--chrome);border:1px solid var(--hl);border-radius:12px;padding:14px}
+.out pre{margin:0;white-space:pre-wrap;font-family:var(--f-mono);font-size:13px;color:var(--chrome-ink)}
+.out p{margin:0;font-size:14px}
+.reach{display:grid;gap:8px;margin-top:26px}
+.reach div{display:flex;gap:12px;align-items:baseline;flex-wrap:wrap;font-size:15.5px}
+.reach small{font-family:var(--f-display);font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--chrome-muted);min-width:84px}
+@media (max-width:860px){.contact .in{grid-template-columns:minmax(0,1fr)}}
+footer{background:var(--chrome);color:var(--chrome-muted);border-top:1px solid var(--chrome-line);font-size:14px}
+footer .in{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;padding-block:22px 90px}
+</style>
+
+<header class="top">
+  <div class="in">
+    <a class="logo" href="#top" aria-label="Nexora Systems home"><img class="lmark" src="mark.webp" alt=""><span class="lstack"><img class="lword" src="wordmark.webp" alt="Nexora Systems"><span class="slogan">Smart systems. Practical solutions.</span></span></a>
+    <nav class="links" aria-label="Sections">
+      <a href="#products">Products</a>
+      <a href="#future">Coming soon</a>
+      <a href="#find">Find us</a>
+      <a href="#contact">Get a quote</a>
+    </nav>
+    <a class="btn solid" href="#contact">Book a demo</a>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero" style="padding-block:0"><img class="bigmark" src="mark.webp" alt="">
+    <div class="in">
+      <div>
+        <div class="eyebrow">Business software · Made in the Philippines</div>
+        <h1>Software built <em>on the floor</em>, not in a boardroom.</h1>
+        <p class="lede">Nexora makes ready-to-run systems for the people who keep hotels, kitchens, stores and households running. Each one started as a real problem on a real shift. Pick the one you need, try the live demo, and we set it up under your name.</p>
+        <div class="ctas">
+          <a class="btn solid" href="#products">See all products</a>
+          <button class="btn ghost" type="button" data-nex>Ask Nex</button>
+        </div>
+        <div class="facts">
+          <div><b class="mono">4</b><span>products ready to deploy</span></div>
+          <div><b>24/7</b><span>help from Nex, our AI assistant</span></div>
+          <div><b>₱</b><span>peso-first, GCash &amp; Maya aware</span></div>
+          <div><b>Web</b><span>runs on phone, tablet, PC</span></div>
+        </div>
+      </div>
+
+      <div class="console" aria-label="Product overview">
+        <div class="bar"><i></i><i></i><i></i><span>nexora / products</span></div>
+        <a class="tile" href="#fems">
+          <div class="k"><span class="tl"><span class="plogo" style="background:#0F2A2C"><svg viewBox="0 0 62 58" aria-hidden="true" width="40" height="38"><path d="M5 27 31 5l26 22" fill="none" stroke="#2f9bff" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/><path d="M12 25v26h38V25" fill="none" stroke="#f2f7f7" stroke-width="4" stroke-linejoin="round"/><path d="M21 43a10 10 0 0 1 20 0" fill="none" stroke="#f2f7f7" stroke-width="3.2" stroke-linecap="round"/><path d="M31 43l6-6" stroke="#2f9bff" stroke-width="3.2" stroke-linecap="round"/></svg></span><b>FEMS</b></span><span class="dot" style="background:#4DB3F0"></span></div>
+          <div class="v">96.4<span style="font-size:15px">%</span></div>
+          <div class="s">Equipment uptime across the property this week</div>
+          <svg class="spark" viewBox="0 0 120 28" preserveAspectRatio="none" aria-hidden="true"><polyline points="0,20 15,18 30,21 45,14 60,15 75,10 90,12 105,7 120,8" fill="none" stroke="#4DB3F0" stroke-width="2"/></svg>
+        </a>
+        <a class="tile" href="#nexo">
+          <div class="k"><span class="tl"><span class="plogo" style="background:transparent;padding:0"><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA3MiA4MCI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJnMWQiIHgxPSIwIiB5MT0iMCIgeDI9IjEiIHkyPSIxIj48c3RvcCBvZmZzZXQ9IjAiIHN0b3AtY29sb3I9IiMxZjZmZTUiLz48c3RvcCBvZmZzZXQ9IjEiIHN0b3AtY29sb3I9IiMyZmJmYWUiLz48L2xpbmVhckdyYWRpZW50PjxsaW5lYXJHcmFkaWVudCBpZD0idDFkIiB4MT0iMCIgeTE9IjAiIHgyPSIxIiB5Mj0iMSI+PHN0b3Agb2Zmc2V0PSIwIiBzdG9wLWNvbG9yPSIjM2I4Y2ZmIi8+PHN0b3Agb2Zmc2V0PSIxIiBzdG9wLWNvbG9yPSIjM2ZkM2JmIi8+PC9saW5lYXJHcmFkaWVudD48L2RlZnM+PHJlY3QgeD0iNCIgeT0iNCIgd2lkdGg9IjY0IiBoZWlnaHQ9IjcyIiByeD0iMTQiIGZpbGw9InVybCgjZzFkKSIvPjxnPjxyZWN0IHg9IjgiIHk9IjEwIiB3aWR0aD0iMTQiIGhlaWdodD0iMTYiIGZpbGw9IiMyZmJmYWUiLz48Y2lyY2xlIGN4PSIxNSIgY3k9IjI2IiByPSI3IiBmaWxsPSIjMmZiZmFlIi8+PHJlY3QgeD0iMjIiIHk9IjEwIiB3aWR0aD0iMTQiIGhlaWdodD0iMTYiIGZpbGw9IiNmZmZmZmYiLz48Y2lyY2xlIGN4PSIyOSIgY3k9IjI2IiByPSI3IiBmaWxsPSIjZmZmZmZmIi8+PHJlY3QgeD0iMzYiIHk9IjEwIiB3aWR0aD0iMTQiIGhlaWdodD0iMTYiIGZpbGw9IiMyZmJmYWUiLz48Y2lyY2xlIGN4PSI0MyIgY3k9IjI2IiByPSI3IiBmaWxsPSIjMmZiZmFlIi8+PHJlY3QgeD0iNTAiIHk9IjEwIiB3aWR0aD0iMTQiIGhlaWdodD0iMTYiIGZpbGw9IiNmZmZmZmYiLz48Y2lyY2xlIGN4PSI1NyIgY3k9IjI2IiByPSI3IiBmaWxsPSIjZmZmZmZmIi8+PC9nPjxyZWN0IHg9IjE0IiB5PSIzOCIgd2lkdGg9IjQ0IiBoZWlnaHQ9IjMwIiByeD0iMyIgZmlsbD0iIzBmMmEyYyIgb3BhY2l0eT0iLjM1Ii8+PHJlY3QgeD0iMjkiIHk9IjQ0IiB3aWR0aD0iMTQiIGhlaWdodD0iMjQiIHJ4PSIyIiBmaWxsPSIjZmZkMTY2Ii8+PGNpcmNsZSBjeD0iNDAiIGN5PSI1NyIgcj0iMS42IiBmaWxsPSIjOGE1YTAwIi8+PC9zdmc+" alt=""></span><b>NEXO POS</b></span><span class="dot" style="background:#5B9BFF"></span></div>
+          <div class="v mono" style="font-size:24px">₱18,450</div>
+          <div class="s">Sales today · 62 receipts · 3 items low on stock</div>
+          <svg class="spark" viewBox="0 0 120 28" preserveAspectRatio="none" aria-hidden="true"><g fill="#5B9BFF"><rect x="2" y="16" width="10" height="12"/><rect x="17" y="10" width="10" height="18"/><rect x="32" y="13" width="10" height="15"/><rect x="47" y="6" width="10" height="22"/><rect x="62" y="9" width="10" height="19"/><rect x="77" y="4" width="10" height="24"/><rect x="92" y="11" width="10" height="17"/><rect x="107" y="7" width="10" height="21"/></g></svg>
+        </a>
+        <a class="tile" href="#fifo">
+          <div class="k"><span class="tl"><span class="plogo" style="background:#FFFFFF;border:1px solid #DADFEC"><svg viewBox="0 0 96 104" aria-hidden="true"><path d="M12 16 H74 L88 27 L74 38 H12 A4 4 0 0 1 8 34 V20 A4 4 0 0 1 12 16 Z" fill="#3730A3"/><rect x="8" y="46" width="66" height="22" rx="4" fill="#12162B"/><rect x="8" y="76" width="66" height="22" rx="4" fill="#0F766E"/></svg></span><b>FIFO NEX</b></span><span class="dot" style="background:#A5A1FF"></span></div>
+          <div class="v">USE BY 08 NOV</div>
+          <div class="s">Prep labels printed with allergen tags and shelf log</div>
+        </a>
+        <a class="tile" href="#fintrak">
+          <div class="k"><span class="tl"><span class="plogo" style="background:#37474F"><svg viewBox="0 0 80 80" aria-hidden="true"><circle cx="40" cy="40" r="34" fill="#263238" stroke="#cfd8dc" stroke-width="5"/><path d="M40 6v68M6 40h68" stroke="#cfd8dc" stroke-width="4"/><g fill="#cfd8dc"><rect x="16" y="26" width="10" height="10" rx="2"/><rect x="16" y="46" width="10" height="10" rx="2"/><rect x="54" y="26" width="12" height="6"/><rect x="54" y="36" width="12" height="6"/><rect x="54" y="46" width="12" height="6"/></g></svg></span><b>FINTRAK PRO</b></span><span class="dot" style="background:#6B9BFF"></span></div>
+          <div class="v">32<span style="font-size:15px">% saved</span></div>
+          <div class="s">Savings rate this month · next SOA due in 4 days</div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section id="products">
+    <div class="in">
+      <div class="shead">
+        <div>
+          <div class="eyebrow">The catalogue</div>
+          <h2>Pick your system</h2>
+          <p>Every product below has a working demo you can open right now. Filter by the kind of business you run.</p>
+        </div>
+        <div class="chips" role="group" aria-label="Filter by business">
+          <button class="chip" type="button" data-f="all" aria-pressed="true">All</button>
+          <button class="chip" type="button" data-f="hotel" aria-pressed="false">Hotels &amp; facilities</button>
+          <button class="chip" type="button" data-f="fnb" aria-pressed="false">Food &amp; beverage</button>
+          <button class="chip" type="button" data-f="retail" aria-pressed="false">Retail</button>
+          <button class="chip" type="button" data-f="personal" aria-pressed="false">Personal finance</button>
+        </div>
+      </div>
+
+      <div class="plist">
+        <!-- FEMS -->
+        <article class="prod" id="fems" data-t="hotel" style="--pc:var(--fems)">
+          <div class="pinfo">
+            <div class="ptag"><span class="cat">Facility engineering</span><span class="for">For hotels, resorts, buildings</span></div>
+            <div class="phead2"><span class="plogo" style="background:#0F2A2C"><svg viewBox="0 0 62 58" aria-hidden="true" width="40" height="38"><path d="M5 27 31 5l26 22" fill="none" stroke="#2f9bff" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/><path d="M12 25v26h38V25" fill="none" stroke="#f2f7f7" stroke-width="4" stroke-linejoin="round"/><path d="M21 43a10 10 0 0 1 20 0" fill="none" stroke="#f2f7f7" stroke-width="3.2" stroke-linecap="round"/><path d="M31 43l6-6" stroke="#2f9bff" stroke-width="3.2" stroke-linecap="round"/></svg></span><h3>FEMS <span>Company Edition</span></h3></div>
+            <p class="tagline">One place for your engineering team to track equipment, utilities and work, so the GM gets a clear daily picture.</p>
+            <ul class="feats">
+              <li><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg><span><b>Fleet status</b> for chillers, boilers, gensets and pumps at a glance</span></li>
+              <li><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg><span><b>Utility readings</b> for power, water and fuel with daily KPIs</span></li>
+              <li><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg><span><b>Work orders</b> and preventive maintenance schedules</span></li>
+              <li><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg><span><b>Project monitoring</b> and backups for the whole team</span></li>
+            </ul>
+            <div class="pact">
+              <a class="btn go" href="https://claude.ai/artifact/9nPwNd62sjHPwFJXKprpav" target="_blank" rel="noopener">Open live demo</a>
+              <a class="btn ask" href="#contact" data-pick="FEMS">Request pricing</a>
+              <span class="price">Launching soon · free demo on your property</span>
+            </div>
+          </div>
+          <div class="shot">
+            <div class="screen" aria-hidden="true">
+              <div class="sh"><b>FEMS</b><span>ENGINEERING · TODAY</span></div>
+              <div class="sb">
+                <div class="k4">
+                  <div class="kc"><small>Uptime</small><b>96.4%</b></div>
+                  <div class="kc"><small>Power</small><b>4,812</b></div>
+                  <div class="kc"><small>Water m³</small><b>312</b></div>
+                  <div class="kc"><small>Open WOs</small><b>7</b></div>
+                </div>
+                <div class="two">
+                  <div class="pane"><h4>Power kWh · 7 days</h4><div class="bars"><i style="height:62%"></i><i style="height:70%"></i><i style="height:58%"></i><i style="height:81%"></i><i style="height:74%"></i><i style="height:92%"></i><i style="height:77%"></i></div></div>
+                  <div class="pane"><h4>Fleet</h4>
+                    <div class="row"><span>Chiller 1</span><span class="pl g">RUNNING</span></div>
+                    <div class="row"><span>Boiler 2</span><span class="pl w">SERVICE</span></div>
+                    <div class="row"><span>Genset A</span><span class="pl g">STANDBY</span></div>
+                    <div class="row"><span>Pump 4</span><span class="pl b">FAULT</span></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="mods">
+            <h4>What's inside FEMS</h4>
+            <div class="mgrid">
+              <div class="mod"><b>Main Dashboard</b><ul><li>Needs-attention alerts: critical, warning, info</li><li>Water, diesel and gasoline stock with days of reserve</li><li>Power produced, occupancy and recent maintenance</li></ul></div>
+              <div class="mod"><b>Hotel Resources Monitoring</b><ul><li>Gravity, product and raw water tanks</li><li>Desalination production and fresh water hauling</li><li>Power by feeder (kWh), consumption per guest and per room night</li></ul></div>
+              <div class="mod"><b>Major Equipment</b><ul><li>Gensets: status, run hours, diesel use, L/kWh</li><li>Desal plant and sewage treatment plant</li><li>Job orders, preventive maintenance, 14-day status history</li></ul></div>
+              <div class="mod"><b>Vehicles &amp; Vessels</b><ul><li>Vans, trucks, golf carts and boats</li><li>Trip tickets and gate passes</li><li>Fuel released per vehicle and per trip</li></ul></div>
+              <div class="mod"><b>Daily Log &amp; Logsheets</b><ul><li>One daily log for water, fuel, power, occupancy</li><li>Hourly desal and genset logsheets, synchro panel</li><li>Shift walkthrough checklist from any phone</li></ul></div>
+              <div class="mod"><b>Reports &amp; Team</b><ul><li>Monthly Report to Chief, Excel downloads</li><li>Shared-device sign-in: owner, engineering head, supervisor, operators, drivers, management</li><li>Your company name and logo; one code per property</li></ul></div>
+            </div>
+          </div>
+        </article>
+
+        <!-- NEXO POS -->
+        <article class="prod" id="nexo" data-t="retail fnb" style="--pc:var(--nexo)">
+          <div class="pinfo">
+            <div class="ptag"><span class="cat">Point of sale</span><span class="for">For sari-sari, cafés, shops</span></div>
+            <div class="phead2"><span class="plogo" style="background:transparent;padding:0"><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA3MiA4MCI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJnMWQiIHgxPSIwIiB5MT0iMCIgeDI9IjEiIHkyPSIxIj48c3RvcCBvZmZzZXQ9IjAiIHN0b3AtY29sb3I9IiMxZjZmZTUiLz48c3RvcCBvZmZzZXQ9IjEiIHN0b3AtY29sb3I9IiMyZmJmYWUiLz48L2xpbmVhckdyYWRpZW50PjxsaW5lYXJHcmFkaWVudCBpZD0idDFkIiB4MT0iMCIgeTE9IjAiIHgyPSIxIiB5Mj0iMSI+PHN0b3Agb2Zmc2V0PSIwIiBzdG9wLWNvbG9yPSIjM2I4Y2ZmIi8+PHN0b3Agb2Zmc2V0PSIxIiBzdG9wLWNvbG9yPSIjM2ZkM2JmIi8+PC9saW5lYXJHcmFkaWVudD48L2RlZnM+PHJlY3QgeD0iNCIgeT0iNCIgd2lkdGg9IjY0IiBoZWlnaHQ9IjcyIiByeD0iMTQiIGZpbGw9InVybCgjZzFkKSIvPjxnPjxyZWN0IHg9IjgiIHk9IjEwIiB3aWR0aD0iMTQiIGhlaWdodD0iMTYiIGZpbGw9IiMyZmJmYWUiLz48Y2lyY2xlIGN4PSIxNSIgY3k9IjI2IiByPSI3IiBmaWxsPSIjMmZiZmFlIi8+PHJlY3QgeD0iMjIiIHk9IjEwIiB3aWR0aD0iMTQiIGhlaWdodD0iMTYiIGZpbGw9IiNmZmZmZmYiLz48Y2lyY2xlIGN4PSIyOSIgY3k9IjI2IiByPSI3IiBmaWxsPSIjZmZmZmZmIi8+PHJlY3QgeD0iMzYiIHk9IjEwIiB3aWR0aD0iMTQiIGhlaWdodD0iMTYiIGZpbGw9IiMyZmJmYWUiLz48Y2lyY2xlIGN4PSI0MyIgY3k9IjI2IiByPSI3IiBmaWxsPSIjMmZiZmFlIi8+PHJlY3QgeD0iNTAiIHk9IjEwIiB3aWR0aD0iMTQiIGhlaWdodD0iMTYiIGZpbGw9IiNmZmZmZmYiLz48Y2lyY2xlIGN4PSI1NyIgY3k9IjI2IiByPSI3IiBmaWxsPSIjZmZmZmZmIi8+PC9nPjxyZWN0IHg9IjE0IiB5PSIzOCIgd2lkdGg9IjQ0IiBoZWlnaHQ9IjMwIiByeD0iMyIgZmlsbD0iIzBmMmEyYyIgb3BhY2l0eT0iLjM1Ii8+PHJlY3QgeD0iMjkiIHk9IjQ0IiB3aWR0aD0iMTQiIGhlaWdodD0iMjQiIHJ4PSIyIiBmaWxsPSIjZmZkMTY2Ii8+PGNpcmNsZSBjeD0iNDAiIGN5PSI1NyIgcj0iMS42IiBmaWxsPSIjOGE1YTAwIi8+PC9zdmc+" alt=""></span><h3>NEXO <span>POS</span></h3></div>
+            <p class="tagline">Ring up sales, watch your stock and close the day with a clean report. Built for small Filipino stores.</p>
+            <ul class="feats">
+              <li><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg><span><b>Fast register</b> with barcode scan, discounts and change computed</span></li>
+              <li><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg><span><b>Inventory</b> with low-stock alerts, suppliers and restock plans</span></li>
+              <li><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg><span><b>Staff PIN login</b> with owner, manager and cashier roles</span></li>
+              <li><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg><span><b>Sales records</b>, daily closing and shareable receipts</span></li>
+            </ul>
+            <div class="pact">
+              <a class="btn go" href="https://claude.ai/artifact/YQ9xXLEoDsLiNVzstBSWXa" target="_blank" rel="noopener">Open live demo</a>
+              <a class="btn ask" href="#contact" data-pick="NEXO POS">Request pricing</a>
+              <span class="price">Launching soon · free demo</span>
+            </div>
+          </div>
+          <div class="shot">
+            <div class="screen" aria-hidden="true">
+              <div class="sh" style="background:linear-gradient(90deg,#0B1A3A,#14306A)"><b>NEXO POS</b><span>MY STORE · REGISTER</span></div>
+              <div class="sb two">
+                <div class="k3" style="align-content:start">
+                  <div class="kc"><small>Kape 3-in-1</small><b>₱12</b></div>
+                  <div class="kc"><small>Pandesal ×10</small><b>₱40</b></div>
+                  <div class="kc"><small>Bottled water</small><b>₱20</b></div>
+                  <div class="kc"><small>Instant noodles</small><b>₱18</b></div>
+                  <div class="kc"><small>Canned tuna</small><b>₱35</b></div>
+                  <div class="kc"><small>Load ₱50</small><b>₱52</b></div>
+                </div>
+                <div class="pane">
+                  <h4>Current sale</h4>
+                  <div class="row"><span>Kape 3-in-1 ×4</span><span class="mono">48.00</span></div>
+                  <div class="row"><span>Pandesal ×10</span><span class="mono">40.00</span></div>
+                  <div class="row"><span>Canned tuna ×2</span><span class="mono">70.00</span></div>
+                  <div class="row" style="font-family:var(--f-display);font-weight:700;font-size:15px"><span>TOTAL</span><span class="mono">₱158.00</span></div>
+                  <div class="row" style="background:#DCF1E5;color:#1A7A4C;border-radius:6px;padding:4px 6px;border:0"><span>Change</span><span class="mono">₱42.00</span></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- FIFO NEX -->
+        <article class="prod" id="fifo" data-t="fnb hotel" style="--pc:var(--fifo)">
+          <div class="pinfo">
+            <div class="ptag"><span class="cat">Kitchen food safety</span><span class="for">For restaurants, hotel kitchens, commissaries</span></div>
+            <div class="phead2"><span class="plogo" style="background:#FFFFFF;border:1px solid #DADFEC"><svg viewBox="0 0 96 104" aria-hidden="true"><path d="M12 16 H74 L88 27 L74 38 H12 A4 4 0 0 1 8 34 V20 A4 4 0 0 1 12 16 Z" fill="#3730A3"/><rect x="8" y="46" width="66" height="22" rx="4" fill="#12162B"/><rect x="8" y="76" width="66" height="22" rx="4" fill="#0F766E"/></svg></span><h3>FIFO <span>NEX</span></h3></div>
+            <p class="tagline">Print clear prep labels in seconds and keep every shelf first-in, first-out. Use-by dates are calculated for you.</p>
+            <ul class="feats">
+              <li><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg><span><b>One-tap labels</b> with prep time, use-by and storage location</span></li>
+              <li><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg><span><b>Allergen tags</b> printed in red so nobody misses them</span></li>
+              <li><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg><span><b>Shelf log</b> shows what expires today and what already has</span></li>
+              <li><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg><span><b>Your menu items</b> and shelf lives, with staff sign-off on each label</span></li>
+            </ul>
+            <div class="pact">
+              <a class="btn go" href="https://claude.ai/artifact/Ah6FejANuePt4Ro8VQxw2k" target="_blank" rel="noopener">Open live demo</a>
+              <a class="btn ask" href="#contact" data-pick="FIFO NEX">Request pricing</a>
+              <span class="price">Per kitchen · works with label printers</span>
+            </div>
+          </div>
+          <div class="shot">
+            <div class="screen" aria-hidden="true" style="background:#F4F6FB">
+              <div class="sh" style="background:#12162B"><b>FIFO NEX</b><span>PREP · KITCHEN 1</span></div>
+              <div class="lblstage">
+                <div class="lbl">
+                  <div class="band"><span>PREPPED</span><span>CHILLER 2</span></div>
+                  <div class="lb">
+                    <div class="nm">Chicken Adobo Base</div>
+                    <div class="row" style="border:0;padding:0"><span style="font-weight:800;letter-spacing:.06em;font-size:10px">PREP</span><span class="mono">06 NOV 2026 · 07:40</span></div>
+                    <div class="ub"><span style="font-weight:800;letter-spacing:.08em;font-size:11px">USE BY</span><b>08 NOV · 07:40</b></div>
+                    <div class="tg"><span class="r">SOY</span><span>0–4 °C</span><span>BY: J.R.</span></div>
+                  </div>
+                </div>
+              </div>
+              <div class="sb" style="grid-template-columns:repeat(3,minmax(0,1fr))">
+                <div class="kc"><small>On shelf</small><b>24</b></div>
+                <div class="kc"><small>Use today</small><b style="color:#A35D00">5</b></div>
+                <div class="kc"><small>Expired</small><b style="color:#B42318">1</b></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="mods">
+            <h4>What's inside FIFO NEX</h4>
+            <div class="mgrid">
+              <div class="mod"><b>Create label</b><ul><li>Pick the item, storage, location and shelf</li><li>Use-by calculated from each item's shelf life</li><li>Chilled, frozen, ambient or hot hold</li></ul><div class="meta"><span class="tagc">50 × 25 mm</span><span class="tagc">58 × 40 mm</span><span class="tagc">76 × 50 mm</span></div></div>
+              <div class="mod"><b>Use-by day colours</b><ul><li>A colour band for each day, so the oldest goes first</li></ul><div class="daycol"><span><i style="background:#1F5FD6"></i>Mon</span><span><i style="background:#E8B500"></i>Tue</span><span><i style="background:#D0342C"></i>Wed</span><span><i style="background:#7A4A1E"></i>Thu</span><span><i style="background:#2E8B3A"></i>Fri</span><span><i style="background:#E8761A"></i>Sat</span><span><i style="background:#111111;outline:1px solid var(--line)"></i>Sun</span></div></div>
+              <div class="mod"><b>14 allergen tags</b><ul><li>Printed in red: gluten, crustaceans, egg, fish, peanut, soy, milk, nuts, celery, mustard, sesame, sulphites, lupin, molluscs</li></ul></div>
+              <div class="mod"><b>On the shelf now</b><ul><li>Live counts: OK, use today, expired</li><li>Mark items used or discarded</li><li>Filter by storage location</li></ul></div>
+              <div class="mod"><b>Label records</b><ul><li>Every label with batch code and barcode</li><li>Who prepped it and when</li><li>Reprint any label in one tap</li></ul></div>
+              <div class="mod"><b>Products &amp; staff</b><ul><li>Your own menu items, categories and shelf lives</li><li>Staff picker with roles and who is on shift</li><li>Printer status and label roll counter</li></ul></div>
+            </div>
+          </div>
+        </article>
+
+        <!-- FinTrak Pro -->
+        <article class="prod" id="fintrak" data-t="personal" style="--pc:var(--fin)">
+          <div class="pinfo">
+            <div class="ptag"><span class="cat">Personal finance</span><span class="for">For employees, families, freelancers</span></div>
+            <div class="phead2"><span class="plogo" style="background:#37474F"><svg viewBox="0 0 80 80" aria-hidden="true"><circle cx="40" cy="40" r="34" fill="#263238" stroke="#cfd8dc" stroke-width="5"/><path d="M40 6v68M6 40h68" stroke="#cfd8dc" stroke-width="4"/><g fill="#cfd8dc"><rect x="16" y="26" width="10" height="10" rx="2"/><rect x="16" y="46" width="10" height="10" rx="2"/><rect x="54" y="26" width="12" height="6"/><rect x="54" y="36" width="12" height="6"/><rect x="54" y="46" width="12" height="6"/></g></svg></span><h3>FinTrak <span>Pro</span></h3></div>
+            <p class="tagline">Your partner in smarter financial management. Runs in any browser, nothing to install. See every peso across your banks, e-wallets and loans in one dashboard.</p>
+            <ul class="feats">
+              <li><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg><span><b>Income, expenses, transfers</b> logged in a few taps</span></li>
+              <li><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg><span><b>Funds by account</b>: cash, GCash, Maya, banks and savings goals</span></li>
+              <li><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg><span><b>Credit and loan tracker</b> with upcoming SOA due dates</span></li>
+              <li><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg><span><b>Monthly report</b> with savings rate and a health rating</span></li>
+            </ul>
+            <div class="pact">
+              <a class="btn go" href="https://claude.ai/artifact/XDJXzTWQtaSA1RvzBmGz24" target="_blank" rel="noopener">Open live demo</a>
+              <a class="btn ask" href="#contact" data-pick="FinTrak Pro">Ask about plans</a>
+              <span class="plinks"><a href="https://fintrakpro.github.io/" target="_blank" rel="noopener">fintrakpro.github.io</a><a href="https://web.facebook.com/profile.php?id=61595721625651" target="_blank" rel="noopener">Facebook page</a></span>
+              <span class="price"><b style="color:var(--ink)">Available now</b> · free trial, then ₱199/month or ₱1,990/year</span>
+            </div>
+          </div>
+          <div class="shot">
+            <div class="screen" aria-hidden="true" style="background:#F4F6FB">
+              <div class="sh" style="background:#17203A"><b>FINTRAK PRO</b><span>NOBYEMBRE 2026</span></div>
+              <div class="sb">
+                <div class="k4">
+                  <div class="kc"><small>Income</small><b>₱42.5k</b></div>
+                  <div class="kc"><small>Expenses</small><b>₱28.9k</b></div>
+                  <div class="kc"><small>Savings rate</small><b style="color:#15803D">32%</b></div>
+                  <div class="kc"><small>Credit owed</small><b>₱61.2k</b></div>
+                </div>
+                <div class="two">
+                  <div class="pane"><h4>Funds by account</h4>
+                    <div class="row"><span>GCash wallet</span><span class="mono">₱6,240</span></div>
+                    <div class="row"><span>Maya savings</span><span class="mono">₱18,500</span></div>
+                    <div class="row"><span>Emergency fund</span><span class="mono">₱25,000</span></div>
+                    <div class="row"><span>Cash</span><span class="mono">₱1,870</span></div>
+                  </div>
+                  <div class="pane"><h4>SOA due</h4>
+                    <div class="row"><span>Credit card</span><span class="pl w">10 NOV</span></div>
+                    <div class="row"><span>Pag-IBIG loan</span><span class="pl g">PAID</span></div>
+                    <div class="row"><span>BillEase</span><span class="pl b">OVERDUE</span></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </article>
+      </div>
+      <p id="empty" hidden style="color:var(--muted);padding:24px 0">No product in this category yet. Tell us what you need below.</p>
+    </div>
+  </section>
+
+
+  <section class="future" id="future">
+    <div class="in">
+      <div class="shead">
+        <div>
+          <div class="eyebrow">Coming soon</div>
+          <h2>What we're building next</h2>
+          <p>These systems are on our roadmap. Tap I'm interested and we'll tell you first when they're ready, or help shape them for your business.</p>
+        </div>
+      </div>
+      <div class="fgrid">
+        <article class="fcard">
+          <div class="ft"><span class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 21V9l9-5 9 5v12"/><path d="M7 21v-8h10v8M7 17h10"/></svg></span><span class="stat plan">Planned</span></div>
+          <h3>Warehouse Management System</h3>
+          <p>Know exactly where every box is, from receiving to dispatch.</p>
+          <ul><li>Receiving and put-away to bin locations</li><li>Barcode stock transfers, picking and dispatch</li><li>Cycle counts and stock movement history</li></ul>
+          <a class="btn" href="#contact" data-want="Warehouse Management System">I'm interested</a>
+        </article>
+        <article class="fcard">
+          <div class="ft"><span class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="8" r="3.2"/><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6"/><path d="M16 4.5a3 3 0 0 1 0 6M18 14c2 .8 3 2.6 3 6"/></svg></span><span class="stat plan">Planned</span></div>
+          <h3>HR & Payroll System</h3>
+          <p>Employee records, attendance and payroll in one place.</p>
+          <ul><li>201 files, attendance / DTR and leave</li><li>Payroll with SSS, PhilHealth, Pag-IBIG and tax</li><li>Payslips your team can open on their phone</li></ul>
+          <a class="btn" href="#contact" data-want="HR & Payroll System">I'm interested</a>
+        </article>
+        <article class="fcard">
+          <div class="ft"><span class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M7 9h6M7 13h10M7 17h4"/></svg></span><span class="stat plan">Planned</span></div>
+          <h3>Project Management System</h3>
+          <p>Keep every job on time and on budget.</p>
+          <ul><li>Projects, tasks, owners and due dates</li><li>Timeline, progress photos and site reports</li><li>Budget vs actual per project</li></ul>
+          <a class="btn" href="#contact" data-want="Project Management System">I'm interested</a>
+        </article>
+        <article class="fcard">
+          <div class="ft"><span class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7l8-4 8 4-8 4z"/><path d="M4 7v10l8 4 8-4V7"/><path d="M12 11v10"/></svg></span><span class="stat rec">Suggested</span></div>
+          <h3>Asset Management</h3>
+          <p>Tag and track every asset your company owns.</p>
+          <ul><li>QR tags on furniture, tools and IT equipment</li><li>Who has it, where it is, its condition</li><li>Warranties, depreciation and audits</li></ul>
+          <a class="btn" href="#contact" data-want="Asset Management">I'm interested</a>
+        </article>
+        <article class="fcard">
+          <div class="ft"><span class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h12v18l-3-2-3 2-3-2-3 2z"/><path d="M9 8h6M9 12h6"/></svg></span><span class="stat rec">Suggested</span></div>
+          <h3>Purchasing & Suppliers</h3>
+          <p>From purchase request to delivery, with approvals.</p>
+          <ul><li>Purchase requests and approvals</li><li>Canvass sheets to compare supplier quotes</li><li>POs, deliveries and supplier history</li></ul>
+          <a class="btn" href="#contact" data-want="Purchasing & Suppliers">I'm interested</a>
+        </article>
+        <article class="fcard">
+          <div class="ft"><span class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/><path d="M9 15l2 2 4-4"/></svg></span><span class="stat rec">Suggested</span></div>
+          <h3>Booking & Reservations</h3>
+          <p>For resorts, clinics, salons and rentals.</p>
+          <ul><li>Online booking calendar</li><li>Deposits by GCash or Maya</li><li>Reminders and no-show tracking</li></ul>
+          <a class="btn" href="#contact" data-want="Booking & Reservations">I'm interested</a>
+        </article>
+      </div>
+      <div class="custom" id="custom">
+        <div>
+          <div class="eyebrow">Made for you</div>
+          <h3>Need a system we don't have yet?</h3>
+          <p>Tell us how your business runs and we'll build a system around it: your forms, your reports, your approvals. Same people who built FEMS, NEXO POS, FIFO NEX and FinTrak Pro.</p>
+          <a class="btn solid" href="#contact" data-want="Custom system">Request your own system</a>
+        </div>
+        <ol>
+          <li>Tell us what you track today (notebook, Excel, Viber group)</li>
+          <li>We map it into screens and send you a proposal and quotation</li>
+          <li>You try a working demo before anything is final</li>
+          <li>We set it up, train your team and support you</li>
+        </ol>
+      </div>
+    </div>
+  </section>
+
+  <section class="how" id="how">
+    <div class="in">
+      <div class="shead"><div><div class="eyebrow">How buying works</div><h2>From demo to your own system</h2></div></div>
+      <div class="steps">
+        <div class="step"><span class="n">STEP 1</span><b>Try the demo</b><p>Open any product above. Demos use sample data and anything you change stays in your own browser, so click around freely.</p></div>
+        <div class="step"><span class="n">STEP 2</span><b>Send a request</b><p>Tell us your business, the product and how many branches or users.</p></div>
+        <div class="step"><span class="n">STEP 3</span><b>We set it up</b><p>Your name, logo, staff, items and accounts are loaded in before handover.</p></div>
+        <div class="step"><span class="n">STEP 4</span><b>Go live</b><p>Short training for your team, then support while you settle in.</p></div>
+      </div>
+    </div>
+  </section>
+
+
+  <section class="dir" id="find">
+    <div class="in">
+      <div class="shead"><div><div class="eyebrow">Find us online</div><h2>Pages &amp; links</h2><p>Official pages for Nexora Systems and our products. Products without their own page post news and updates on the Nexora Systems Facebook page.</p></div></div>
+      <div class="dgrid">
+        <div class="dcard">
+          <div class="dh"><img src="mark.webp" alt="" style="width:46px;height:auto"><div><b>Nexora Systems</b><small>Company page · all product updates</small></div></div>
+          <div class="dlinks">
+            <a class="dl" href="https://www.facebook.com/share/18UZzvoCTF/?mibextid=wwXIfr" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5" fill="#1877F2"/><path d="M15.5 8H14c-.8 0-1 .4-1 1v1.5h2.4l-.3 2.5H13V20h-2.6v-7H8.5v-2.5h1.9V8.6C10.4 6.7 11.5 5.5 13.6 5.5c.8 0 1.5.1 1.9.1z" fill="#fff"/></svg><span>Nexora Systems</span><small>Facebook</small></a>
+            <div class="dl" style="cursor:text"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg><span style="user-select:all">nexorasystems725@gmail.com</span><small>Email</small></div>
+          </div>
+        </div>
+        <div class="dcard">
+          <div class="dh"><span class="plogo" style="background:#37474F"><svg viewBox="0 0 80 80" aria-hidden="true"><circle cx="40" cy="40" r="34" fill="#263238" stroke="#cfd8dc" stroke-width="5"/><path d="M40 6v68M6 40h68" stroke="#cfd8dc" stroke-width="4"/><g fill="#cfd8dc"><rect x="16" y="26" width="10" height="10" rx="2"/><rect x="16" y="46" width="10" height="10" rx="2"/><rect x="54" y="26" width="12" height="6"/><rect x="54" y="36" width="12" height="6"/><rect x="54" y="46" width="12" height="6"/></g></svg></span><div><b>FinTrak Pro</b><small>Personal finance · available now</small></div></div>
+          <div class="dlinks">
+            <a class="dl" href="https://web.facebook.com/profile.php?id=61595721625651" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5" fill="#1877F2"/><path d="M15.5 8H14c-.8 0-1 .4-1 1v1.5h2.4l-.3 2.5H13V20h-2.6v-7H8.5v-2.5h1.9V8.6C10.4 6.7 11.5 5.5 13.6 5.5c.8 0 1.5.1 1.9.1z" fill="#fff"/></svg><span>FinTrak Pro</span><small>Facebook</small></a>
+            <a class="dl" href="https://fintrakpro.github.io/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.6 3.8 5.6 3.8 9s-1.3 6.4-3.8 9c-2.5-2.6-3.8-5.6-3.8-9S9.5 5.6 12 3z"/></svg><span>fintrakpro.github.io</span><small>Website</small></a>
+          </div>
+        </div>
+        <div class="dcard">
+          <div class="dh"><div><b>Other products</b><small>Own pages coming soon</small></div></div>
+          <div class="dprods"><span><span class="plogo" style="background:#0F2A2C"><svg viewBox="0 0 62 58" aria-hidden="true" width="40" height="38"><path d="M5 27 31 5l26 22" fill="none" stroke="#2f9bff" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/><path d="M12 25v26h38V25" fill="none" stroke="#f2f7f7" stroke-width="4" stroke-linejoin="round"/><path d="M21 43a10 10 0 0 1 20 0" fill="none" stroke="#f2f7f7" stroke-width="3.2" stroke-linecap="round"/><path d="M31 43l6-6" stroke="#2f9bff" stroke-width="3.2" stroke-linecap="round"/></svg></span>FEMS</span><span><span class="plogo" style="background:transparent;padding:0"><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA3MiA4MCI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJnMWQiIHgxPSIwIiB5MT0iMCIgeDI9IjEiIHkyPSIxIj48c3RvcCBvZmZzZXQ9IjAiIHN0b3AtY29sb3I9IiMxZjZmZTUiLz48c3RvcCBvZmZzZXQ9IjEiIHN0b3AtY29sb3I9IiMyZmJmYWUiLz48L2xpbmVhckdyYWRpZW50PjxsaW5lYXJHcmFkaWVudCBpZD0idDFkIiB4MT0iMCIgeTE9IjAiIHgyPSIxIiB5Mj0iMSI+PHN0b3Agb2Zmc2V0PSIwIiBzdG9wLWNvbG9yPSIjM2I4Y2ZmIi8+PHN0b3Agb2Zmc2V0PSIxIiBzdG9wLWNvbG9yPSIjM2ZkM2JmIi8+PC9saW5lYXJHcmFkaWVudD48L2RlZnM+PHJlY3QgeD0iNCIgeT0iNCIgd2lkdGg9IjY0IiBoZWlnaHQ9IjcyIiByeD0iMTQiIGZpbGw9InVybCgjZzFkKSIvPjxnPjxyZWN0IHg9IjgiIHk9IjEwIiB3aWR0aD0iMTQiIGhlaWdodD0iMTYiIGZpbGw9IiMyZmJmYWUiLz48Y2lyY2xlIGN4PSIxNSIgY3k9IjI2IiByPSI3IiBmaWxsPSIjMmZiZmFlIi8+PHJlY3QgeD0iMjIiIHk9IjEwIiB3aWR0aD0iMTQiIGhlaWdodD0iMTYiIGZpbGw9IiNmZmZmZmYiLz48Y2lyY2xlIGN4PSIyOSIgY3k9IjI2IiByPSI3IiBmaWxsPSIjZmZmZmZmIi8+PHJlY3QgeD0iMzYiIHk9IjEwIiB3aWR0aD0iMTQiIGhlaWdodD0iMTYiIGZpbGw9IiMyZmJmYWUiLz48Y2lyY2xlIGN4PSI0MyIgY3k9IjI2IiByPSI3IiBmaWxsPSIjMmZiZmFlIi8+PHJlY3QgeD0iNTAiIHk9IjEwIiB3aWR0aD0iMTQiIGhlaWdodD0iMTYiIGZpbGw9IiNmZmZmZmYiLz48Y2lyY2xlIGN4PSI1NyIgY3k9IjI2IiByPSI3IiBmaWxsPSIjZmZmZmZmIi8+PC9nPjxyZWN0IHg9IjE0IiB5PSIzOCIgd2lkdGg9IjQ0IiBoZWlnaHQ9IjMwIiByeD0iMyIgZmlsbD0iIzBmMmEyYyIgb3BhY2l0eT0iLjM1Ii8+PHJlY3QgeD0iMjkiIHk9IjQ0IiB3aWR0aD0iMTQiIGhlaWdodD0iMjQiIHJ4PSIyIiBmaWxsPSIjZmZkMTY2Ii8+PGNpcmNsZSBjeD0iNDAiIGN5PSI1NyIgcj0iMS42IiBmaWxsPSIjOGE1YTAwIi8+PC9zdmc+" alt=""></span>NEXO POS</span><span><span class="plogo" style="background:#FFFFFF;border:1px solid #DADFEC"><svg viewBox="0 0 96 104" aria-hidden="true"><path d="M12 16 H74 L88 27 L74 38 H12 A4 4 0 0 1 8 34 V20 A4 4 0 0 1 12 16 Z" fill="#3730A3"/><rect x="8" y="46" width="66" height="22" rx="4" fill="#12162B"/><rect x="8" y="76" width="66" height="22" rx="4" fill="#0F766E"/></svg></span>FIFO NEX</span></div>
+          <p class="dnote">News, demos and launch dates for these are posted on the Nexora Systems Facebook page.</p>
+          <div class="dlinks"><a class="dl" href="https://www.facebook.com/share/18UZzvoCTF/?mibextid=wwXIfr" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5" fill="#1877F2"/><path d="M15.5 8H14c-.8 0-1 .4-1 1v1.5h2.4l-.3 2.5H13V20h-2.6v-7H8.5v-2.5h1.9V8.6C10.4 6.7 11.5 5.5 13.6 5.5c.8 0 1.5.1 1.9.1z" fill="#fff"/></svg><span>Follow on Facebook</span><small>Updates</small></a></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact" id="contact">
+    <div class="in">
+      <div>
+        <div class="eyebrow">Get a quote</div>
+        <h2>Tell us what you run</h2>
+        <p>Ask for a quotation, prices, a demo or your own custom system. Fill this in and tap Send request. It goes straight to our email, and we reply with pricing and a setup date. Have a quick question first? Tap <b style="color:var(--chrome-ink)">Ask Nex</b> at the bottom right.</p>
+        <div class="reach">
+          <div><small>Email</small><span style="user-select:all;color:var(--chrome-ink);font-weight:600">nexorasystems725@gmail.com</span></div>
+          <div><small>Facebook</small><a href="https://www.facebook.com/share/18UZzvoCTF/?mibextid=wwXIfr" target="_blank" rel="noopener">Nexora Systems</a></div>
+        </div>
+      </div>
+      <form id="q" novalidate>
+        <label for="qn">Your name<input id="qn" name="name" autocomplete="name" placeholder="Juan Dela Cruz"></label>
+        <label for="qb">Business<input id="qb" name="biz" placeholder="e.g. Hotel, café, store name"></label>
+        <label for="qe">Your email or mobile (for our reply)<input id="qe" name="reply" autocomplete="email" placeholder="you@email.com"></label>
+        <label for="qt">I'm asking for<select id="qt"><option>Quotation</option><option>Prices / packages</option><option>A demo</option><option>A custom system</option><option>Something else</option></select></label>
+        <fieldset style="border:0;padding:0;margin:0;display:grid;gap:8px">
+          <legend style="font-family:var(--f-display);font-weight:600;font-size:13.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--chrome-muted);padding:0;margin-bottom:8px">Interested in</legend>
+          <div class="pick">
+            <label for="p1"><input type="checkbox" id="p1" value="FEMS">FEMS</label>
+            <label for="p2"><input type="checkbox" id="p2" value="NEXO POS">NEXO POS</label>
+            <label for="p3"><input type="checkbox" id="p3" value="FIFO NEX">FIFO NEX</label>
+            <label for="p4"><input type="checkbox" id="p4" value="FinTrak Pro">FinTrak Pro</label>
+            <label for="p5"><input type="checkbox" id="p5" value="Custom system">Custom system</label>
+            <label for="p6"><input type="checkbox" id="p6" value="Other">Other</label>
+          </div>
+          <div class="otherbox" id="otherBox" hidden>
+            <label for="qo">Tell us what you need<input id="qo" placeholder="e.g. Warehouse system, HR & payroll, booking"></label>
+          </div>
+        </fieldset>
+        <label for="qm">Notes<textarea id="qm" name="msg" placeholder="Number of branches, users, when you want to start"></textarea></label>
+        <button class="btn solid" type="submit" id="qSend">Send request</button>
+        <p class="qstatus" id="qStatus" role="status" hidden></p>
+        <div class="out" id="out" hidden>
+          <pre id="outText"></pre>
+          <div id="sendRow"></div>
+        </div>
+      </form>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="in" style="align-items:center"><img src="wordmark.webp" alt="Nexora Systems" style="height:30px;width:auto"><span>Smart systems. Practical solutions. · © 2026 Nexora Systems</span></div>
+</footer>
+<div class="nxpanel closed" id="nxPanel" role="dialog" aria-label="Chat with Nex">
+  <div class="nxhd"><span class="nexhead"><svg viewBox="40 20 220 220" aria-hidden="true" class="nexav"><rect x="0" y="0" width="300" height="300" fill="#E3E6FF"></rect><path d="M14 300 Q18 214 104 202 L196 202 Q282 214 286 300 Z" fill="#3730A3"></path><path d="M108 204 Q150 226 192 204 L176 300 L124 300 Z" fill="#12162B"></path><path d="M104 202 Q122 214 130 236 L112 244 Q100 222 96 206 Z" fill="#4F46E5"></path><path d="M196 202 Q178 214 170 236 L188 244 Q200 222 204 206 Z" fill="#4F46E5"></path><path d="M112 210 Q130 196 126 170 L174 170 Q170 196 188 210 Z" fill="#E2AC85"></path><circle cx="90" cy="134" r="11" fill="#EDB990"></circle><circle cx="210" cy="134" r="11" fill="#EDB990"></circle><path d="M92 108 Q92 56 150 56 Q208 56 208 108 L208 158 Q206 188 180 200 L120 200 Q94 188 92 158 Z" fill="#F2C29C"></path><path d="M94 150 Q96 186 120 198 L180 198 Q204 186 206 150 Q200 176 180 180 Q150 172 120 180 Q100 176 94 150 Z" fill="#6B4A3A" opacity="0.28"></path><path d="M88 112 Q84 50 150 44 Q216 46 212 112 Q208 92 200 84 Q170 66 128 74 L122 86 Q104 88 94 102 Z" fill="#1E1B2E"></path><path d="M88 112 L94 102 L94 128 Q90 122 88 112 Z" fill="#3A3448"></path><path d="M212 112 L206 96 L206 128 Q210 122 212 112 Z" fill="#3A3448"></path><path d="M84 128 Q84 32 150 32 Q216 32 216 128" fill="none" stroke="#14B8A6" stroke-width="8" stroke-linecap="round"></path><rect x="76" y="118" width="18" height="34" rx="8" fill="#0F766E"></rect><rect x="206" y="118" width="18" height="34" rx="8" fill="#0F766E"></rect><path d="M86 152 Q92 184 122 184" fill="none" stroke="#0F766E" stroke-width="5" stroke-linecap="round"></path><circle cx="125" cy="184" r="6" fill="#14B8A6"></circle><path d="M110 112 L138 110" stroke="#1E1B2E" stroke-width="9" stroke-linecap="round"></path><path d="M162 110 L190 112" stroke="#1E1B2E" stroke-width="9" stroke-linecap="round"></path><ellipse cx="126" cy="132" rx="8" ry="8.5" fill="#1E1B2E"></ellipse><ellipse cx="174" cy="132" rx="8" ry="8.5" fill="#1E1B2E"></ellipse><circle cx="128.5" cy="129" r="3" fill="#FFFFFF"></circle><circle cx="176.5" cy="129" r="3" fill="#FFFFFF"></circle><path d="M146 140 L142 156 L152 156" fill="none" stroke="#C98B66" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"></path><path d="M132 170 Q152 182 172 166" fill="none" stroke="#7A3B2E" stroke-width="5" stroke-linecap="round"></path></svg></span><div class="who"><b>Nex</b><span id="nxStatus">Online · Nexora assistant</span></div>
+    <button class="nxib" type="button" id="nxRestart" aria-label="Start a new chat" title="New chat"><svg viewBox="0 0 24 24"><path d="M3 12a9 9 0 1 0 3-6.7"/><path d="M3 4v5h5"/></svg></button>
+    <button class="nxib" type="button" id="nxClose" aria-label="Minimize chat" title="Minimize"><svg viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg></button></div>
+  <div class="nxlog" id="nxLog" role="log" aria-live="polite"></div>
+  <form class="nxcomp" id="nxForm"><label for="nxMsg" class="sr">Message Nex</label><textarea id="nxMsg" rows="1" placeholder="Ask about products, prices or demos…"></textarea>
+    <button class="nxgo" id="nxSend" type="submit" aria-label="Send message"><svg viewBox="0 0 24 24"><path d="M5 12h14"/><path d="M13 6l6 6-6 6"/></svg></button></form>
+  <div class="nxfoot">Nex gives quick answers. For quotations, the team replies by email.</div>
+</div>
+<button class="nxfab" id="nxFab" type="button" aria-controls="nxPanel" aria-expanded="false"><span class="nexhead"><svg viewBox="40 20 220 220" aria-hidden="true" class="nexav"><rect x="0" y="0" width="300" height="300" fill="#E3E6FF"></rect><path d="M14 300 Q18 214 104 202 L196 202 Q282 214 286 300 Z" fill="#3730A3"></path><path d="M108 204 Q150 226 192 204 L176 300 L124 300 Z" fill="#12162B"></path><path d="M104 202 Q122 214 130 236 L112 244 Q100 222 96 206 Z" fill="#4F46E5"></path><path d="M196 202 Q178 214 170 236 L188 244 Q200 222 204 206 Z" fill="#4F46E5"></path><path d="M112 210 Q130 196 126 170 L174 170 Q170 196 188 210 Z" fill="#E2AC85"></path><circle cx="90" cy="134" r="11" fill="#EDB990"></circle><circle cx="210" cy="134" r="11" fill="#EDB990"></circle><path d="M92 108 Q92 56 150 56 Q208 56 208 108 L208 158 Q206 188 180 200 L120 200 Q94 188 92 158 Z" fill="#F2C29C"></path><path d="M94 150 Q96 186 120 198 L180 198 Q204 186 206 150 Q200 176 180 180 Q150 172 120 180 Q100 176 94 150 Z" fill="#6B4A3A" opacity="0.28"></path><path d="M88 112 Q84 50 150 44 Q216 46 212 112 Q208 92 200 84 Q170 66 128 74 L122 86 Q104 88 94 102 Z" fill="#1E1B2E"></path><path d="M88 112 L94 102 L94 128 Q90 122 88 112 Z" fill="#3A3448"></path><path d="M212 112 L206 96 L206 128 Q210 122 212 112 Z" fill="#3A3448"></path><path d="M84 128 Q84 32 150 32 Q216 32 216 128" fill="none" stroke="#14B8A6" stroke-width="8" stroke-linecap="round"></path><rect x="76" y="118" width="18" height="34" rx="8" fill="#0F766E"></rect><rect x="206" y="118" width="18" height="34" rx="8" fill="#0F766E"></rect><path d="M86 152 Q92 184 122 184" fill="none" stroke="#0F766E" stroke-width="5" stroke-linecap="round"></path><circle cx="125" cy="184" r="6" fill="#14B8A6"></circle><path d="M110 112 L138 110" stroke="#1E1B2E" stroke-width="9" stroke-linecap="round"></path><path d="M162 110 L190 112" stroke="#1E1B2E" stroke-width="9" stroke-linecap="round"></path><ellipse cx="126" cy="132" rx="8" ry="8.5" fill="#1E1B2E"></ellipse><ellipse cx="174" cy="132" rx="8" ry="8.5" fill="#1E1B2E"></ellipse><circle cx="128.5" cy="129" r="3" fill="#FFFFFF"></circle><circle cx="176.5" cy="129" r="3" fill="#FFFFFF"></circle><path d="M146 140 L142 156 L152 156" fill="none" stroke="#C98B66" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"></path><path d="M132 170 Q152 182 172 166" fill="none" stroke="#7A3B2E" stroke-width="5" stroke-linecap="round"></path></svg></span>Ask Nex</button>
+<footer hidden>
+</footer>
+
+<script>
+const NEX_SVG = "<svg viewBox=\"40 20 220 220\" aria-hidden=\"true\" ><rect x=\"0\" y=\"0\" width=\"300\" height=\"300\" fill=\"#E3E6FF\"></rect><path d=\"M14 300 Q18 214 104 202 L196 202 Q282 214 286 300 Z\" fill=\"#3730A3\"></path><path d=\"M108 204 Q150 226 192 204 L176 300 L124 300 Z\" fill=\"#12162B\"></path><path d=\"M104 202 Q122 214 130 236 L112 244 Q100 222 96 206 Z\" fill=\"#4F46E5\"></path><path d=\"M196 202 Q178 214 170 236 L188 244 Q200 222 204 206 Z\" fill=\"#4F46E5\"></path><path d=\"M112 210 Q130 196 126 170 L174 170 Q170 196 188 210 Z\" fill=\"#E2AC85\"></path><circle cx=\"90\" cy=\"134\" r=\"11\" fill=\"#EDB990\"></circle><circle cx=\"210\" cy=\"134\" r=\"11\" fill=\"#EDB990\"></circle><path d=\"M92 108 Q92 56 150 56 Q208 56 208 108 L208 158 Q206 188 180 200 L120 200 Q94 188 92 158 Z\" fill=\"#F2C29C\"></path><path d=\"M94 150 Q96 186 120 198 L180 198 Q204 186 206 150 Q200 176 180 180 Q150 172 120 180 Q100 176 94 150 Z\" fill=\"#6B4A3A\" opacity=\"0.28\"></path><path d=\"M88 112 Q84 50 150 44 Q216 46 212 112 Q208 92 200 84 Q170 66 128 74 L122 86 Q104 88 94 102 Z\" fill=\"#1E1B2E\"></path><path d=\"M88 112 L94 102 L94 128 Q90 122 88 112 Z\" fill=\"#3A3448\"></path><path d=\"M212 112 L206 96 L206 128 Q210 122 212 112 Z\" fill=\"#3A3448\"></path><path d=\"M84 128 Q84 32 150 32 Q216 32 216 128\" fill=\"none\" stroke=\"#14B8A6\" stroke-width=\"8\" stroke-linecap=\"round\"></path><rect x=\"76\" y=\"118\" width=\"18\" height=\"34\" rx=\"8\" fill=\"#0F766E\"></rect><rect x=\"206\" y=\"118\" width=\"18\" height=\"34\" rx=\"8\" fill=\"#0F766E\"></rect><path d=\"M86 152 Q92 184 122 184\" fill=\"none\" stroke=\"#0F766E\" stroke-width=\"5\" stroke-linecap=\"round\"></path><circle cx=\"125\" cy=\"184\" r=\"6\" fill=\"#14B8A6\"></circle><path d=\"M110 112 L138 110\" stroke=\"#1E1B2E\" stroke-width=\"9\" stroke-linecap=\"round\"></path><path d=\"M162 110 L190 112\" stroke=\"#1E1B2E\" stroke-width=\"9\" stroke-linecap=\"round\"></path><ellipse cx=\"126\" cy=\"132\" rx=\"8\" ry=\"8.5\" fill=\"#1E1B2E\"></ellipse><ellipse cx=\"174\" cy=\"132\" rx=\"8\" ry=\"8.5\" fill=\"#1E1B2E\"></ellipse><circle cx=\"128.5\" cy=\"129\" r=\"3\" fill=\"#FFFFFF\"></circle><circle cx=\"176.5\" cy=\"129\" r=\"3\" fill=\"#FFFFFF\"></circle><path d=\"M146 140 L142 156 L152 156\" fill=\"none\" stroke=\"#C98B66\" stroke-width=\"3.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path><path d=\"M132 170 Q152 182 172 166\" fill=\"none\" stroke=\"#7A3B2E\" stroke-width=\"5\" stroke-linecap=\"round\"></path></svg>";
+const NX_TO = "nexorasystems725@gmail.com";
+const W3F_KEY = "";
+const FS_ENDPOINT = "https://formsubmit.co/ajax/" + "nexorasystems725@gmail.com";
+function sendMail(d){
+  const btns=document.querySelectorAll('#qSend,.nxbtn');btns.forEach(b=>{b.disabled=true;b.dataset.t=b.textContent;b.textContent='Sending…'});
+  const isMail=/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(d.reply||'');
+  let req;
+  if(W3F_KEY){
+    const p={access_key:W3F_KEY,subject:d.subject,from_name:'Nexora website – '+(d.name||'Visitor'),message:d.body,name:d.name||'',contact:d.reply||'',business:d.business||'',request:d.request||'',interested_in:d.interested||'',botcheck:''};
+    if(isMail){p.email=d.reply;p.replyto=d.reply}
+    req=fetch('https://api.web3forms.com/submit',{method:'POST',headers:{'Content-Type':'application/json',Accept:'application/json'},body:JSON.stringify(p)}).then(r=>r.json()).then(j=>{if(!j.success)throw new Error(j.message||'failed')});
+  }else{
+    const p={_subject:'Nexora website: '+d.subject,_template:'table',_captcha:'false',Name:d.name||'',Contact:d.reply||'',Business:d.business||'-',Request:d.request||'-','Interested in':d.interested||'-',Message:d.body,_honey:''};
+    if(isMail){p.email=d.reply;p._replyto=d.reply}
+    req=fetch(FS_ENDPOINT,{method:'POST',headers:{'Content-Type':'application/json',Accept:'application/json'},body:JSON.stringify(p)}).then(r=>r.json()).then(j=>{if(String(j.success)!=='true')throw new Error(j.message||'failed')});
+  }
+  return req.finally(()=>btns.forEach(b=>{b.disabled=false;if(b.dataset.t)b.textContent=b.dataset.t}));
+}
+function mailButtons(subject, body, compact){
+  const wrap = document.createElement("div"); wrap.className = compact ? "nxsend" : "sendrow";
+  const g = document.createElement("a"); g.className = "btn mail"; g.target = "_blank"; g.rel = "noopener";
+  g.href = "https://mail.google.com/mail/?view=cm&fs=1&to=" + encodeURIComponent(NX_TO) + "&su=" + encodeURIComponent(subject) + "&body=" + encodeURIComponent(body);
+  g.textContent = "Send with Gmail";
+  const m = document.createElement("a"); m.className = "btn line"; m.href = "mailto:" + NX_TO + "?subject=" + encodeURIComponent(subject) + "&body=" + encodeURIComponent(body); m.textContent = "Other email app";
+  const c = document.createElement("button"); c.type = "button"; c.className = "btn line"; c.textContent = "Copy message";
+  const note = document.createElement("p"); note.className = compact ? "" : "fnote"; note.setAttribute("aria-live", "polite");
+  note.textContent = "Opens your own email with the message filled in. If nothing opens, copy it and send it to " + NX_TO + ".";
+  const full = "To: " + NX_TO + "\nSubject: " + subject + "\n\n" + body;
+  c.addEventListener("click", () => {
+    const done = () => { note.textContent = "Copied. Paste it into an email to " + NX_TO + "."; };
+    const sel = () => { const pre = document.getElementById("outText"); if (pre && !compact){ const r = document.createRange(); r.selectNodeContents(pre); const s = getSelection(); s.removeAllRanges(); s.addRange(r); } note.textContent = "Select the message and copy it, then email it to " + NX_TO + "."; };
+    try{ navigator.clipboard.writeText(full).then(done, sel); }catch(e){ sel(); }
+  });
+  wrap.append(g, m, c, note); return wrap;
+}
+(function(){
+  var chips=document.querySelectorAll('.chip'),prods=document.querySelectorAll('.prod'),empty=document.getElementById('empty');
+  chips.forEach(function(c){c.addEventListener('click',function(){
+    chips.forEach(function(x){x.setAttribute('aria-pressed',x===c?'true':'false')});
+    var f=c.dataset.f,n=0;
+    prods.forEach(function(p){var on=f==='all'||p.dataset.t.split(' ').indexOf(f)>-1;p.hidden=!on;if(on)n++});
+    empty.hidden=n>0;
+  })});
+  function v(id){return document.getElementById(id).value.trim()}
+  var other=document.getElementById('p6'),obox=document.getElementById('otherBox');
+  function syncOther(){obox.hidden=!other.checked}
+  other.addEventListener('change',function(){syncOther();if(other.checked)document.getElementById('qo').focus()});
+  function tick(val){document.querySelectorAll('.pick input').forEach(function(i){if(i.value===val)i.checked=true})}
+  document.querySelectorAll('[data-pick]').forEach(function(a){a.addEventListener('click',function(){tick(a.dataset.pick)})});
+  document.querySelectorAll('[data-want]').forEach(function(a){a.addEventListener('click',function(){
+    var w=a.dataset.want;
+    if(w==='Custom system'){tick('Custom system');document.getElementById('qt').value='A custom system'}
+    else{tick('Other');syncOther();var o=document.getElementById('qo');o.value=o.value&&o.value.indexOf(w)<0?o.value+', '+w:(o.value||w)}
+  })});
+  var form=document.getElementById('q'),out=document.getElementById('out'),txt=document.getElementById('outText'),row=document.getElementById('sendRow');
+  function looksEmail(x){return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(x)}
+  form.addEventListener('submit',function(e){
+    e.preventDefault();
+    var picks=[].map.call(form.querySelectorAll('.pick input:checked'),function(i){return i.value==='Other'&&v('qo')?'Other: '+v('qo'):i.value});
+    var kind=document.getElementById('qt').value;
+    var subject='Request for '+kind.toLowerCase()+(picks.length?' – '+picks.join(', '):'')+(v('qb')?' ('+v('qb')+')':'');
+    var body='Hi Nexora Systems,\n\nName: '+(v('qn')||'-')+'\nBusiness: '+(v('qb')||'-')+'\nReply to: '+(v('qe')||'-')+'\nRequest: '+kind+'\nInterested in: '+(picks.join(', ')||'-')+'\nNotes: '+(v('qm')||'-')+'\n\nThank you!';
+    var status=document.getElementById('qStatus');
+    if(!v('qn')||!v('qe')){status.className='qstatus bad';status.textContent='Please add your name and an email or mobile number so we can reply.';status.hidden=false;return}
+    txt.textContent='To: '+NX_TO+'\nSubject: '+subject+'\n\n'+body;
+    row.innerHTML='';
+    sendMail({subject:subject,body:body,name:v('qn'),reply:v('qe'),business:v('qb'),request:kind,interested:picks.join(', ')}).then(function(){
+      status.className='qstatus ok';status.textContent='Request sent. Thank you, '+v('qn')+'! We\'ll reply to '+v('qe')+' soon.';status.hidden=false;out.hidden=true;
+      form.querySelectorAll('input:not([type=checkbox]),textarea').forEach(function(x){x.value=''});form.querySelectorAll('.pick input').forEach(function(x){x.checked=false});syncOther();
+    }).catch(function(){
+      status.className='qstatus bad';status.textContent='We couldn\'t send it from here. Use one of these instead:';status.hidden=false;
+      row.appendChild(mailButtons(subject,body,false));out.hidden=false;
+    });
+  });
+})();
+const KB = [
+  { topic:"About Nexora Systems", keys:["nexora","who are you","company","about"],
+    answer:"Nexora Systems builds practical software for Filipino businesses and households. Tagline: Smart systems. Practical solutions. Current products: FinTrak Pro (personal finance), NEXO POS (point of sale for stores), FEMS (facility engineering for hotels and resorts) and FIFO NEX (kitchen prep labels and food safety). Planned: Warehouse Management, HR & Payroll and Project Management systems. Nexora also builds custom systems on request. Facebook: https://www.facebook.com/share/18UZzvoCTF/ · Email: nexorasystems725@gmail.com. Products without their own page post updates on the Nexora Systems Facebook page. Most products are still being prepared for launch; FinTrak Pro is the one people can already sign up for." },
+  { topic:"Account & login", keys:["login","log in","sign in","password","locked","account","forgot","reset"],
+    answer:"Which product are you signing in to? In FinTrak Pro: open fintrakpro.github.io, tap Forgot password, enter your email and tap Send reset link, then choose a new password from the email (check spam too). New FinTrak Pro accounts must be approved by the administrator first. For NEXO POS staff accounts, ask your store owner, who manages staff in Settings. In FEMS, sign in with the username and password your engineering head created for you; ask them to reset it if you forgot it." },
+  { topic:"Technical issue", keys:["error","bug","loading","slow","crash","not working","broken","blank","issue","problem","technical"],
+    answer:"Let's troubleshoot it together. Try these in order:\n\n1. Refresh the page.\n2. Check your internet connection.\n3. Open it in a private window, or clear your browser cache.\n4. Try another browser or device.\n\nStill stuck? File a ticket with what you were doing, what you expected, and a screenshot, and the team will look into it." },
+  { topic:"Contact support", keys:["human","person","agent","staff","contact","support","talk","call","email","facebook"],
+    answer:"The fastest way to reach the Nexora team is to message Nexora Systems on Facebook https://www.facebook.com/share/18UZzvoCTF/ or email nexorasystems725@gmail.com. I can also prepare an email to the team for you right now." },
+];
+const CONCERN_WORDS = ["concern","complain","complaint","report","ticket","escalate","human","person","agent","refund","charge"];
+
+/* ---------- Nexora products (taken from the product apps, tutorials and marketing docs; add new products here) ---------- */
+const PRODUCTS = [
+  { name:"FinTrak Pro", keys:["fintrak","fin trak","fintrack"], blurb:"Personal finance tracker for Filipinos",
+    what:`FinTrak Pro ("Your Partner in Smarter Financial Management") is a personal finance web app made for Filipinos, by Nexora Systems. It runs in any phone or computer browser at fintrakpro.github.io, with nothing to install. It shows where every peso goes: income, expenses, transfers, loans, savings goals and bill due dates. Status: live; anyone can sign up for a free trial.`,
+    features:`- Daily Log: record transactions with Date, Transaction type, Source (from), Destination (to / category), Details/notes and Amount. Types: EXPENSES, INCOME, TRANSFER, CREDIT/ LOAN, MONTHLY UPDATE, SOA.
+- Accounts: cash, bank accounts and e-wallets (e.g. GCash, Maya, PNB, BDO, MariBank, MP2). Each account belongs to a fund.
+- Funds and goals: pots of money such as Emergency Fund, Investment Fund, Savings, Liquid Fund, Wants Fund, each with a goal amount.
+- Credit cards, loans and pay-later accounts (e.g. Atome, BillEase, Tala, SPayLater, GCash/Maya Credit, Pag-IBIG and SSS loans).
+- SOA (Statement of Account) tracking: amount due, due date and minimum due per creditor; SOA tab sorted by due date.
+- Dashboard: key numbers (income, expenses, net, added credit, total outstanding credit, cash and account balances), monthly graph, Where the Money Went, Today panel, funds vs goals, funds by account, upcoming SOA due dates, yearly trends, debt per creditor, spending per category, statement of account with payments made.
+- Monthly Report tab: account summary, savings rate, comparison with last month, spending by category, balances, fund progress, credit standing, SOA, financial health rating and recommended actions. Download as PDF, print, copy, email or download as text. Optional monthly e-mail report on the 1st of each month.
+- Account tab: profile photo and details, change password, log out, download or import a backup, clear data, delete account.
+- Privacy: records are saved to the user's own account; other users, even the administrator, cannot read them.
+- Subscription: Monthly PHP 199 or Yearly PHP 1,990, paid via GCash or Maya; free trial for every new account; free access codes can be redeemed; payment history is listed.`,
+    howto:`- Create an account: go to fintrakpro.github.io, tap Create account, enter full name and email, choose a password (at least 8 characters with letters and numbers), confirm it, tap Create account, and open the confirmation email if one arrives. The administrator approves new accounts; the page checks automatically. Once approved, the free trial starts.
+- Forgot password: tap Forgot password, enter your email, tap Send reset link, then set a new password from the email.
+- Set up funds and accounts (Settings): set each fund's goal; add a fund with its name and goal; rename an account by typing a new name (past entries update automatically); add an account with its name and fund; add credit cards, loans or pay-later accounts; add your own expense categories (e.g. Pets, Load).
+- Record an expense: type Expenses, Source = account you paid from (e.g. Cash), Destination = category (e.g. Foods/Groceries), add a note and amount, tap Add.
+- Record income: type Income, Destination = the account that receives it (e.g. payroll account).
+- Move your own money (e.g. GCash cash-in from bank): type Transfer, Source = where it came from, Destination = where it went.
+- Buy on credit or borrow: type Credit/Loan, Source = the lender, Destination = what it was spent on or the account that received it.
+- Pay a credit card or loan: record an Expense with the creditor as the Destination.
+- Add a bill: type SOA, Source = creditor, enter amount due, due date and minimum due, tap Add.
+- Update loan balances monthly: type Monthly Update, Source = creditor, Amount = balance still owed.
+- Edit or delete: tap the pencil to edit or the X to delete in the Daily Logsheet. Use the month picker to see other months.
+- Subscribe or renew: Subscription tab, choose Monthly (PHP 199) or Yearly (PHP 1,990), send the exact amount by GCash or Maya to the official account shown in the app (always check the name and number on your own screen), then choose the plan and payment method, enter the reference number from the receipt and tap Submit payment. The administrator confirms it and access is extended.
+- Redeem an access code: type it in the Subscription tab and tap Redeem.
+- Install like an app: in your phone browser menu, tap Add to Home screen.`,
+    faqs:`- Is it free? Every new account starts with a free trial; after that it's PHP 199/month or PHP 1,990/year.
+- Why can't I open my dashboard after signing up? New accounts wait for administrator approval; the page checks automatically.
+- What happens if my subscription expires? Your records stay safe; renew to open them again.
+- Can the admin see my finances? No. Records are private to your account.
+- Is there a tutorial? Yes, a 9-chapter video series: intro, creating your account, funds and accounts, daily transactions, bills and due dates, dashboard, monthly report, account/subscription/privacy, tips.
+- Tips: record expenses every night, transfer savings to your funds on payday first, check due dates weekly and pay at least the minimum on time, read the report on the 1st, download a backup now and then.`,
+    support:"FinTrak Pro Facebook: https://web.facebook.com/profile.php?id=61595721625651 · Website: https://fintrakpro.github.io/ · Nexora Systems Facebook: https://www.facebook.com/share/18UZzvoCTF/. Payment confirmations are done by the administrator after you submit your reference number." },
+  { name:"NEXO POS", keys:["nexo pos","nexopos","nexo","pos","point of sale","cashier","utang","sari-sari","sari sari"], blurb:"Point of sale and inventory for Filipino stores",
+    what:`NEXO POS is a point-of-sale and inventory system for Filipino small businesses: sari-sari and retail stores, coffee shops and bakeries, pharmacies and hardware stores. It replaces the notebook and calculator with a system that tracks every sale, every item and every peso, set up and supported by a local Nexora team (installation, staff training and support). Promise: "Hindi na kailangang manghula. Alam mo na ang benta mo." Status: being prepared for launch; customers can message Nexora for a free demo.`,
+    features:`- Main Dashboard: today's and recent sales, best sellers, low-stock alerts, upcoming utang due dates.
+- Point of Sale: search by name, category or barcode; tap items into the cart; adjust quantity; discounts; payment by Cash, GCash, Maya, Card or Utang (credit); amount received and change computed; receipts you can copy as text or picture to send by Messenger or Viber.
+- Products & Inventory: add/edit products with category, unit (pc, pack, sachet, kg, m, box, cup, etc.), selling price, cost, barcode/SKU and stock warning level; Add to stock when deliveries arrive (old stock sells first at its old price); low-stock list; items-to-buy list that can fit a budget; default markup % to suggest selling prices; import products from Excel/CSV using a template.
+- Customers and utang (accounts receivable): customer records with contact and address, credit limits, due dates, payments, Mark as paid, customer balances, most frequent utangers, monthly Statement of Account per customer.
+- Cash Lend and Pa-Order / Pay Later records (e.g. Lazada pay-later orders), with fees and due dates.
+- Sales Records: every completed sale, filter by date, cashier and payment method; void/delete with confirmation.
+- Reports: daily sales report, end-of-day closing with counted cash vs expected cash in drawer, income summary (gross sales, discounts, net sales, cost of goods sold, gross profit and margin), collections by payment method; download as Excel (.xlsx).
+- Settings / Configuration: store details (name, logo, address or contact on receipts, receipt footer, currency), business type presets (sari-sari, coffee shop, bakery, hardware, etc.), staff accounts invited by email with roles (can sell or view only), data tools.`,
+    howto:`- Ring up a sale: open Point of Sale, search or scan the item, tap it to add to the cart, set quantity, choose the payment method, enter the amount received, then tap Complete sale. The change is shown and the receipt is ready to copy or share.
+- Sell on utang: at payment choose Utang, pick or type the customer's name (a new customer record is created when you save), set the due date, and complete the sale. Record their payment later and mark it paid.
+- Add a product: Products & Inventory, Add product, enter name, category, unit, selling price, cost (optional), barcode/SKU (optional) and starting stock, then save. Enter a markup % to get a suggested selling price.
+- Receive stock: Products & Inventory, Add to stock, enter how many you received and the price, then save.
+- Check what to reorder: open the low-stock list (items at or below their warning level) or the items-to-buy list.
+- Close the day: Reports, end of day, count the cash in the drawer and compare it with the expected cash; save the closing.
+- Add staff: Settings, Add staff account, invite them by email and choose what they can do.
+- Download reports: Reports, Download reports, Excel (.xlsx).`,
+    faqs:`- What devices does it run on? Computer, tablet or phone; barcode scanning is supported.
+- Is it BIR-accredited? Don't claim it is. Say Nexora can discuss BIR requirements for the customer's specific setup and offer a ticket.
+- Who sets it up? The local Nexora team installs it, encodes products, trains the cashier and provides support.
+- How do I get it? Message Nexora for a FREE demo.
+- Pricing: [NEXO POS PACKAGES AND PRICES].`,
+    support:"Message Nexora Systems on Facebook https://www.facebook.com/share/18UZzvoCTF/ or email nexorasystems725@gmail.com for a free demo or support." },
+  { name:"FEMS", keys:["fems","facility engineering","genset","desal","trip ticket","engineering"], blurb:"Facility Engineering Management System for hotels and resorts",
+    what:`FEMS (Facility Engineering Management System) by Nexora Systems puts every tank, genset, vehicle and boat on one screen. It is for owners, general managers and chief engineers of hotels and island resorts in the Philippines who still track water, fuel, power and equipment in paper logbooks and Excel. The engineering team logs once a day on any phone; FEMS builds the dashboards and the month-end report. Status: being prepared for launch; properties can message Nexora to book a demo.`,
+    features:`- Main Dashboard: Needs-attention alerts (critical, warning, info), key numbers (water, diesel and gasoline stock, power produced, occupancy), facility status, recent maintenance, data checks.
+- Hotel Resources Monitoring: water tanks (fresh water, gravity, product and raw tanks), desalination plant production, fresh water hauling, diesel and gasoline inventory and deliveries, power produced and consumption by feeder (kWh), occupancy (rooms, guests, arrivals, departures), consumption per guest and per room night. Low levels show in amber.
+- Major Equipment Dashboard: generator sets (status Operational / Semi-operational / Not operational, rating, run hours, diesel use, L/kWh), desalination plant and sewage treatment plant, maintenance and repair history (job orders), status history for the last 14 days.
+- Vehicle Monitoring Dashboard: land service vehicles and sea vessels (vans, trucks, golf carts, boats), fleet status, trip tickets, gate passes, fuel released and fuel by vehicle.
+- Daily Log / Daily Status: one place to enter the day's readings for water, fuel, occupancy, equipment and vehicle status, with remarks.
+- Reports: Monthly Report to Chief (monthly engineering report) and CSV downloads.
+- Settings: company name and logo, personal details, appearance (light/dark), page permissions. Roles: Owner, Editor, Contributor, Viewer.`,
+    howto:`- Log the day: open Daily Log, pick the date, enter tank readings, fuel stock and deliveries, genset readings, occupancy and equipment/vehicle status, add remarks, then save. Use Previous day / Next day to move between dates.
+- Check for problems: open the Main Dashboard and read Needs attention; tap an alert to jump to the section.
+- See a genset's maintenance history: Major Equipment Dashboard, choose the genset, open Maintenance History.
+- Record a trip: Vehicle Monitoring Dashboard, Add trip ticket.
+- Get the month-end report: Reports, choose the month, then download.
+- Change company name or logo: Settings, Company details (owner or editor only).`,
+    faqs:`- Does my team need special devices? No, any phone or computer browser.
+- Who can edit? Owners and editors change settings; contributors log data; viewers can only look.
+- How do I get FEMS? Message Nexora to book a demo on your property.
+- Pricing: [FEMS PACKAGES AND PRICES].`,
+    support:"Message Nexora Systems on Facebook https://www.facebook.com/share/18UZzvoCTF/ or email nexorasystems725@gmail.com to book a demo." },
+  { name:"FIFO NEX", keys:["fifo","fifo nex","label","prep label","use by","use-by","allergen","shelf life"], blurb:"Kitchen prep labels and food safety",
+    what:`FIFO NEX by Nexora Systems prints clear prep labels for commercial kitchens (restaurants, hotel kitchens, commissaries) and keeps every shelf first-in, first-out. The cook picks the item, storage and their name; FIFO NEX calculates the use-by date and prints the label. Status: being prepared for launch; kitchens can message Nexora for a demo.`,
+    features:`- Create label: pick the item, storage type (chilled, frozen, ambient, hot hold), storage location and shelf, who prepped it and number of copies. Use-by is calculated from the item's shelf life for that storage type.
+- Label sizes 50 x 25 mm, 58 x 40 mm and 76 x 50 mm, for thermal label printers. Each label has a batch code and barcode.
+- Use-by day colours: a colour band for each day of the week (Mon blue, Tue yellow, Wed red, Thu brown, Fri green, Sat orange, Sun black) so staff can spot what expires first.
+- Allergen tags printed in red for the 14 major allergens: gluten, crustaceans, egg, fish, peanut, soy, milk, nuts, celery, mustard, sesame, sulphites, lupin, molluscs.
+- On the shelf now: live shelf log with counts for OK, use today and expired; mark items used or discarded.
+- Printed label records: every label printed, with who, when and batch; reprint a label.
+- Products: your own menu items with category, allergens and shelf life per storage type.
+- Staff picker with roles and who is on shift; printer status and label roll counter.`,
+    howto:`- Print a label: Create label, pick the item, choose storage and location, tap your name, set copies, then tap Print.
+- Check what to use first: open On the shelf now; items for today are amber, expired ones red.
+- Mark an item used or discarded: On the shelf now, tap Used or Discard on the item.
+- Reprint: Printed label records, find the label, tap Reprint.
+- Add a menu item: Products, add the name, category, allergens and shelf life for each storage type.`,
+    faqs:`- What printer do I need? A thermal label printer that takes 50 x 25, 58 x 40 or 76 x 50 mm labels.
+- Does it work on a tablet? Yes, any browser on a kitchen tablet, phone or computer.
+- How do I get it? Message Nexora for a demo.
+- Pricing: [FIFO NEX PACKAGES AND PRICES].`,
+    support:"Message Nexora Systems on Facebook https://www.facebook.com/share/18UZzvoCTF/ or email nexorasystems725@gmail.com for a demo or support." },
+];
+
+
+/* ---------- Nex: in-page support chat ---------- */
+const NX_EMAIL = "nexorasystems725@gmail.com";
+let currentProduct = null;
+function productBlock(p){ return "### " + p.name + "\nWhat it is: " + p.what + "\nFeatures: " + p.features + "\nHow-to: " + p.howto + "\nFAQs: " + p.faqs + "\nSupport: " + p.support; }
+function buildRules(){
+  return `You are Nex, the Nexora System Assistant, answering visitors on the Nexora Systems website: a calm, confident, friendly support guy. Nexora Systems makes a family of products, currently ${PRODUCTS.map(p => p.name).join(", ")}, with more coming (Warehouse Management, HR & Payroll and Project Management systems are planned), and it also builds custom systems on request.
+
+What you help with:
+1. Nexora products. Each product's Status line says whether it is live; most are still being prepared for launch, so never say a product is available to buy unless its Status says so, and point people to the live demo on this page instead. For anything about Nexora or its products (features, steps, policies, prices, contacts), use ONLY the NEXORA KNOWLEDGE below. Text in [BRACKETS] is a placeholder the Nexora team hasn't filled in yet: never invent the real value; for prices, say the team will send a quotation and suggest the Get a quote form on this page or emailing ${NX_EMAIL}. If the knowledge doesn't cover it, say you don't have that detail yet and offer to prepare an email to the team.
+2. Custom systems. If someone needs a system Nexora doesn't have yet, say Nexora can build it and suggest the Get a quote form (tick "Custom system") or the email.
+3. Everything else. General tech help, business and accounting basics, retail and point-of-sale concepts, writing, everyday questions: answer helpfully from general knowledge. For legal, tax, medical or investment questions, give general information only and suggest a professional.
+
+${currentProduct ? "The visitor is asking about: " + currentProduct + "." : "The visitor hasn't picked a product. If a question clearly depends on which product, ask which one."}
+
+Voice: warm, direct, encouraging. Short sentences. Plain language. No emoji. Keep replies under 140 words unless steps are needed; use numbered steps for procedures. You cannot see or change anyone's account.
+Handover: if the visitor has a complaint, an account-specific problem, a billing dispute, a bug, wants a human, wants a quotation, or says the steps didn't work, say you'll pass it to the Nexora team and end your reply with the exact token [[TICKET]] on its own line. Don't use the token for general questions you answered.
+Reply in the same language the visitor writes in (English, Filipino/Taglish, etc.). Plain text only, no markdown headings or bold.
+
+NEXORA KNOWLEDGE
+## Products
+${PRODUCTS.map(productBlock).join("\n\n")}
+
+## General Nexora support
+${KB.map(k => "### " + k.topic + "\n" + k.answer).join("\n\n")}`;
+}
+
+const nxLog = document.getElementById("nxLog");
+const nxMsg = document.getElementById("nxMsg");
+const nxSend = document.getElementById("nxSend");
+const nxPanel = document.getElementById("nxPanel");
+const nxFab = document.getElementById("nxFab");
+const nxStatus = document.getElementById("nxStatus");
+let nxTurns = [], nxBusy = false, nxAiOff = false, nxStarted = false;
+const nxSamplePromise = (window.claude && window.claude.use) ? window.claude.use("sample").catch(() => null) : Promise.resolve(null);
+
+function nxScroll(){ nxLog.scrollTop = nxLog.scrollHeight; }
+function nxRow(who, text){
+  const row = document.createElement("div"); row.className = "nxrow" + (who === "me" ? " me" : "");
+  if (who !== "me"){ const m = document.createElement("span"); m.className = "nxmini"; m.innerHTML = NEX_SVG; row.appendChild(m); }
+  const b = document.createElement("div"); b.className = "nxbub"; b.textContent = text; row.appendChild(b);
+  nxLog.appendChild(row); nxScroll(); return b;
+}
+function nxChips(items){
+  const wrap = document.createElement("div"); wrap.className = "nxchips";
+  items.forEach(it => {
+    const c = document.createElement("button"); c.type = "button"; c.className = "nxchip" + (it.alt ? " alt" : ""); c.textContent = it.label;
+    c.addEventListener("click", () => { wrap.remove(); if (it.ticket) nxTicket(); else if (it.product) nxPick(it.product); else nxAsk(it.ask || it.label); });
+    wrap.appendChild(c);
+  });
+  nxLog.appendChild(wrap); nxScroll();
+}
+function nxClean(t){ return t.replace(/\*\*(.+?)\*\*/g,"$1").replace(/^#+\s*/gm,"").trim(); }
+function nxSetProduct(n){ currentProduct = n; nxStatus.textContent = n ? "Helping with " + n : "Online · Nexora assistant"; }
+function nxPick(name){
+  nxSetProduct(name); nxRow("me", name);
+  nxRow("nex", "Got it, " + name + ". What would you like to know?");
+  nxChips([
+    {label:"What can it do?", ask:"What can " + name + " do?"},
+    {label:"How much is it?", ask:"How much is " + name + "?"},
+    {label:"How do I get a demo?", ask:"How do I get a demo of " + name + "?"},
+    {label:"Talk to the team", ticket:true, alt:true},
+  ]);
+}
+function nxGreet(){
+  nxLog.innerHTML = ""; nxTurns = []; nxSetProduct(null);
+  nxRow("nex", "Hi, I'm Nex, the Nexora System Assistant. Ask me anything about our products, pricing, demos or a custom system you need.\n\nWhich product are you interested in?");
+  nxChips([
+    ...PRODUCTS.map(p => ({ label:p.name, product:p.name })),
+    {label:"I need a custom system", ask:"I need a custom system for my business. Can Nexora build it?"},
+    {label:"Talk to the team", ticket:true, alt:true},
+  ]);
+}
+function nxLocal(q){
+  const s = q.toLowerCase();
+  if (/custom|build|gawa|own system|sariling/.test(s)) return { text:"Yes, Nexora builds systems made for your business. Tell us what you need in the Get a quote form on this page (tick Custom system), or email " + NX_EMAIL + ". The team replies with a plan and a quotation.", ticket:true };
+  if (/price|pricing|how much|magkano|quotation|quote|presyo/.test(s)) return { text:"Pricing depends on your setup (branches, users, devices). Use the Get a quote form on this page or email " + NX_EMAIL + " and the team will send a quotation. FinTrak Pro is the exception: free trial, then PHP 199 a month or PHP 1,990 a year.", ticket:true };
+  const prod = PRODUCTS.find(p => p.keys.some(k => s.includes(k)));
+  if (prod && !/\b(not working|error|bug|login|log in|password|bill|invoice|refund)\b/.test(s)) return { text: prod.name + ": " + prod.what + "\n\nYou can try it now with Open live demo on this page.", ticket:false };
+  let best = null, score = 0;
+  KB.forEach(k => { const n = k.keys.filter(w => s.includes(w)).length; if (n > score){ score = n; best = k; } });
+  const wants = CONCERN_WORDS.some(w => s.includes(w));
+  if (best) return { text: best.answer, ticket: wants };
+  return { text:"I don't have a ready answer for that here. Want me to pass it to the Nexora team? They reply by email.", ticket:true };
+}
+async function nxAsk(text){
+  text = (text || "").trim(); if (!text || nxBusy) return;
+  nxBusy = true; nxSend.disabled = true;
+  const named = PRODUCTS.find(p => p.keys.some(k => text.toLowerCase().includes(k))); if (named) nxSetProduct(named.name);
+  nxRow("me", text); nxTurns.push({ role:"user", content:text });
+  const bubble = nxRow("nex", ""); bubble.innerHTML = '<span class="nxtyping" aria-label="Nex is typing"><i></i><i></i><i></i></span>';
+  let reply = "", ticket = false;
+  const sample = nxAiOff ? null : await nxSamplePromise;
+  if (sample){
+    try{
+      const recent = nxTurns.slice(-12); if (recent[0] && recent[0].role !== "user") recent.shift();
+      const res = await sample([{ role:"user", content:buildRules() }, ...recent], { cache:false, modelTier:"default",
+        onText: ({ text }) => { bubble.textContent = nxClean(text.replace("[[TICKET]]","")); nxScroll(); } });
+      reply = res.text; ticket = reply.includes("[[TICKET]]"); reply = nxClean(reply.replace("[[TICKET]]",""));
+    }catch(e){
+      if (e && ["not_granted","sampling_disabled","not_declared","capability_disabled","capability_removed"].includes(e.code)) nxAiOff = true;
+      const l = nxLocal(text); reply = l.text; ticket = l.ticket;
+    }
+  } else { await new Promise(r => setTimeout(r, 400)); const l = nxLocal(text); reply = l.text; ticket = l.ticket; }
+  bubble.textContent = reply; nxTurns.push({ role:"assistant", content:reply });
+  if (ticket) nxChips([{ label:"Email the team", ticket:true, alt:true }, { label:"Ask something else", ask:"I have another question." }]);
+  nxBusy = false; nxSend.disabled = false; nxScroll();
+}
+let nxTc = 0;
+function nxTicket(){
+  nxTc++; const id = "nxt" + nxTc;
+  nxRow("nex", "I'll pass this to the Nexora team. Fill this in and I'll send it for you.");
+  const card = document.createElement("form"); card.className = "nxcard"; card.noValidate = true;
+  card.innerHTML =
+    '<b>Message the Nexora team</b>' +
+    '<label for="'+id+'n">Your name<input id="'+id+'n" autocomplete="name"></label>' +
+    '<label for="'+id+'r">Your email or mobile<input id="'+id+'r" autocomplete="email"></label>' +
+    '<label for="'+id+'p">About<select id="'+id+'p">' + PRODUCTS.map(p => '<option' + (p.name === currentProduct ? ' selected' : '') + '>' + p.name + '</option>').join("") + '<option>Custom system</option><option>Other / not sure</option></select></label>' +
+    '<label for="'+id+'d">What do you need?<textarea id="'+id+'d" placeholder="Your question, concern or what you want built"></textarea></label>' +
+    '<p class="nxerr" hidden></p><button class="nxbtn" type="submit">Send to the team</button>';
+  card.addEventListener("submit", ev => {
+    ev.preventDefault();
+    const n = card.querySelector("#"+id+"n").value.trim(), p = card.querySelector("#"+id+"p").value, d = card.querySelector("#"+id+"d").value.trim(), er = card.querySelector(".nxerr");
+    if (!n || !d){ er.textContent = "Please add your name and what you need."; er.hidden = false; return; }
+    const ref = "NX-" + Math.random().toString(36).slice(2, 7).toUpperCase();
+    const chat = nxTurns.slice(-8).map(t => (t.role === "user" ? "Me: " : "Nex: ") + t.content).join("\n").slice(0, 1500);
+    const subj = "[" + ref + "] " + p + " – message from " + n;
+    const body = "Hi Nexora Systems,\n\nName: " + n + "\nAbout: " + p + "\n\n" + d + (chat ? "\n\n--- Chat with Nex ---\n" + chat : "") + "\n\nThank you!";
+    const rc = card.querySelector("#"+id+"r") ? card.querySelector("#"+id+"r").value.trim() : "";
+    if (!rc){ er.textContent = "Please add an email or mobile number so the team can reply."; er.hidden = false; return; }
+    sendMail({ subject:subj, body:body.replace("Name: " + n, "Name: " + n + "\nReply to: " + rc), name:n, reply:rc, request:"Message from Nex chat", interested:p })
+      .then(() => { card.remove(); nxRow("nex", "Sent! Your message (reference " + ref + ") is with the Nexora team. They'll reply to " + rc + ". Anything else I can help with?"); })
+      .catch(() => {
+        card.remove();
+        const b = nxRow("nex", "I couldn't send it from here. Tap a button to send it to " + NX_EMAIL + " from your own email:");
+        const acts = document.createElement("div"); acts.className = "nxsend"; acts.appendChild(mailButtons(subj, body, true)); b.appendChild(acts); nxScroll();
+      });
+  });
+  nxLog.appendChild(card); nxScroll(); card.querySelector("input").focus({ preventScroll:true });
+}
+function nxOpen(open){
+  nxPanel.classList.toggle("closed", !open); nxFab.setAttribute("aria-expanded", String(open));
+  document.body.classList.toggle("nxon", open);
+  if (open){ if (!nxStarted){ nxStarted = true; nxGreet(); } setTimeout(() => nxMsg.focus({ preventScroll:true }), 60); }
+}
+document.getElementById("nxForm").addEventListener("submit", e => { e.preventDefault(); const v = nxMsg.value; nxMsg.value = ""; nxMsg.style.height = ""; nxAsk(v); });
+nxMsg.addEventListener("keydown", e => { if (e.key === "Enter" && !e.shiftKey){ e.preventDefault(); document.getElementById("nxForm").requestSubmit(); } });
+nxMsg.addEventListener("input", () => { nxMsg.style.height = "auto"; nxMsg.style.height = Math.min(nxMsg.scrollHeight, 110) + "px"; });
+nxFab.addEventListener("click", () => nxOpen(nxPanel.classList.contains("closed")));
+document.getElementById("nxClose").addEventListener("click", () => nxOpen(false));
+document.getElementById("nxRestart").addEventListener("click", nxGreet);
+document.querySelectorAll("[data-nex]").forEach(el => el.addEventListener("click", e => { e.preventDefault(); nxOpen(true); }));
+
+</script>
+
+</body>
+</html>
