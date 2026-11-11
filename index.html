@@ -958,14 +958,14 @@ const PRODUCTS = [
 - Cash Lend and Pa-Order / Pay Later records (e.g. Lazada pay-later orders), with fees and due dates.
 - Sales Records: every completed sale, filter by date, cashier and payment method; void/delete with confirmation.
 - Reports: daily sales report, end-of-day closing with counted cash vs expected cash in drawer, income summary (gross sales, discounts, net sales, cost of goods sold, gross profit and margin), collections by payment method; download as Excel (.xlsx).
-- Settings / Configuration: store details (name, logo, address or contact on receipts, receipt footer, currency), business type presets (sari-sari, coffee shop, bakery, hardware, etc.), staff accounts invited by email with roles (can sell or view only), data tools.`,
+- Settings / Configuration: store details (name, logo, address or contact on receipts, receipt footer, currency), business type presets (sari-sari, coffee shop, bakery, hardware, etc.), staff PIN login with owner, manager and cashier roles, suppliers and restock plans, data tools.`,
     howto:`- Ring up a sale: open Point of Sale, search or scan the item, tap it to add to the cart, set quantity, choose the payment method, enter the amount received, then tap Complete sale. The change is shown and the receipt is ready to copy or share.
 - Sell on utang: at payment choose Utang, pick or type the customer's name (a new customer record is created when you save), set the due date, and complete the sale. Record their payment later and mark it paid.
 - Add a product: Products & Inventory, Add product, enter name, category, unit, selling price, cost (optional), barcode/SKU (optional) and starting stock, then save. Enter a markup % to get a suggested selling price.
 - Receive stock: Products & Inventory, Add to stock, enter how many you received and the price, then save.
 - Check what to reorder: open the low-stock list (items at or below their warning level) or the items-to-buy list.
 - Close the day: Reports, end of day, count the cash in the drawer and compare it with the expected cash; save the closing.
-- Add staff: Settings, Add staff account, invite them by email and choose what they can do.
+- Add staff: Settings, add a staff member, give them a PIN and a role (owner, manager or cashier).
 - Download reports: Reports, Download reports, Excel (.xlsx).`,
     faqs:`- What devices does it run on? Computer, tablet or phone; barcode scanning is supported.
 - Is it BIR-accredited? Don't claim it is. Say Nexora can discuss BIR requirements for the customer's specific setup and offer a ticket.
@@ -974,14 +974,15 @@ const PRODUCTS = [
 - Pricing: [NEXO POS PACKAGES AND PRICES].`,
     support:"Message Nexora Systems on Facebook https://www.facebook.com/share/18UZzvoCTF/ or email nexorasystems725\u0040gmail.com for a free demo or support." },
   { name:"FEMS", keys:["fems","facility engineering","genset","desal","trip ticket","engineering"], blurb:"Facility Engineering Management System for hotels and resorts",
-    what:`FEMS (Facility Engineering Management System) by Nexora Systems puts every tank, genset, vehicle and boat on one screen. It is for owners, general managers and chief engineers of hotels and island resorts in the Philippines who still track water, fuel, power and equipment in paper logbooks and Excel. The engineering team logs once a day on any phone; FEMS builds the dashboards and the month-end report. Status: being prepared for launch; properties can message Nexora to book a demo.`,
+    what:`FEMS Company Edition (Facility Engineering Management System) by Nexora Systems gives a hotel, resort or building engineering team one place to track equipment, utilities and work, so the GM gets a clear daily picture: chillers, boilers, gensets, pumps, tanks, vehicles and boats on one screen. It is for owners, general managers, chief engineers and engineering teams of hotels, resorts and buildings in the Philippines who still track water, fuel, power and equipment in paper logbooks and Excel. The engineering team logs once a day on any phone; FEMS builds the dashboards and the month-end report. Status: being prepared for launch; properties can message Nexora to book a demo.`,
     features:`- Main Dashboard: Needs-attention alerts (critical, warning, info), key numbers (water, diesel and gasoline stock, power produced, occupancy), facility status, recent maintenance, data checks.
 - Hotel Resources Monitoring: water tanks (fresh water, gravity, product and raw tanks), desalination plant production, fresh water hauling, diesel and gasoline inventory and deliveries, power produced and consumption by feeder (kWh), occupancy (rooms, guests, arrivals, departures), consumption per guest and per room night. Low levels show in amber.
 - Major Equipment Dashboard: generator sets (status Operational / Semi-operational / Not operational, rating, run hours, diesel use, L/kWh), desalination plant and sewage treatment plant, maintenance and repair history (job orders), status history for the last 14 days.
 - Vehicle Monitoring Dashboard: land service vehicles and sea vessels (vans, trucks, golf carts, boats), fleet status, trip tickets, gate passes, fuel released and fuel by vehicle.
 - Daily Log / Daily Status: one place to enter the day's readings for water, fuel, occupancy, equipment and vehicle status, with remarks.
-- Reports: Monthly Report to Chief (monthly engineering report) and CSV downloads.
-- Settings: company name and logo, personal details, appearance (light/dark), page permissions. Roles: Owner, Editor, Contributor, Viewer.`,
+- Work orders (job orders) and preventive maintenance schedules; project monitoring and backups for the whole team.
+- Daily Log & Logsheets: hourly desal and genset logsheets, synchro panel, shift walkthrough checklist from any phone.
+- Reports & Team: Monthly Report to Chief and Excel downloads; shared-device sign-in for owner, engineering head, supervisor, operators, drivers and management; your company name and logo; one code per property.`,
     howto:`- Log the day: open Daily Log, pick the date, enter tank readings, fuel stock and deliveries, genset readings, occupancy and equipment/vehicle status, add remarks, then save. Use Previous day / Next day to move between dates.
 - Check for problems: open the Main Dashboard and read Needs attention; tap an alert to jump to the section.
 - See a genset's maintenance history: Major Equipment Dashboard, choose the genset, open Maintenance History.
@@ -1021,7 +1022,7 @@ const NX_EMAIL = "nexorasystems725\u0040gmail.com";
 let currentProduct = null;
 function productBlock(p){ return "### " + p.name + "\nWhat it is: " + p.what + "\nFeatures: " + p.features + "\nHow-to: " + p.howto + "\nFAQs: " + p.faqs + "\nSupport: " + p.support; }
 function buildRules(){
-  return `You are Nex, the Nexora System Assistant, answering visitors on the Nexora Systems website: a calm, confident, friendly support guy. Nexora Systems makes a family of products, currently ${PRODUCTS.map(p => p.name).join(", ")}, with more coming (Warehouse Management, HR & Payroll and Project Management systems are planned), and it also builds custom systems on request.
+  return `You are Nex, the Nexora System Assistant, answering visitors on the Nexora Systems website: a calm, confident, friendly support guy. Nexora Systems makes a family of products, currently ${PRODUCTS.map(p => p.name).join(", ")}, with more coming (planned: Warehouse Management, HR & Payroll and Project Management systems; suggested: Asset Management, Purchasing & Suppliers, and Booking & Reservations), and it also builds custom systems on request.
 
 What you help with:
 1. Nexora products. Each product's Status line says whether it is live; most are still being prepared for launch, so never say a product is available to buy unless its Status says so, and point people to the Book a demo button on this page instead. For anything about Nexora or its products (features, steps, policies, prices, contacts), use ONLY the NEXORA KNOWLEDGE below. Text in [BRACKETS] is a placeholder the Nexora team hasn't filled in yet: never invent the real value; for prices, say the team will send a quotation and suggest the Get a quote form on this page or emailing ${NX_EMAIL}. If the knowledge doesn't cover it, say you don't have that detail yet and offer to prepare an email to the team.
@@ -1061,8 +1062,9 @@ function nxRow(who, text){
 function nxChips(items){
   const wrap = document.createElement("div"); wrap.className = "nxchips";
   items.forEach(it => {
+    if (it.href){ const a = document.createElement("a"); a.className = "nxchip" + (it.alt ? " alt" : ""); a.href = it.href; a.target = "_blank"; a.rel = "noopener"; a.textContent = it.label; wrap.appendChild(a); return; }
     const c = document.createElement("button"); c.type = "button"; c.className = "nxchip" + (it.alt ? " alt" : ""); c.textContent = it.label;
-    c.addEventListener("click", () => { wrap.remove(); if (it.ticket) nxTicket(); else if (it.product) nxPick(it.product); else nxAsk(it.ask || it.label); });
+    c.addEventListener("click", () => { wrap.remove(); if (it.ticket) nxTicket(); else if (it.act) nxGoForm(it.act, it.pick, it.other); else if (it.product) nxPick(it.product); else nxAsk(it.ask || it.label); });
     wrap.appendChild(c);
   });
   nxLog.appendChild(wrap); nxScroll();
@@ -1071,13 +1073,11 @@ function nxClean(t){ return t.replace(/\*\*(.+?)\*\*/g,"$1").replace(/^#+\s*/gm,
 function nxSetProduct(n){ currentProduct = n; nxStatus.textContent = n ? "Helping with " + n : "Online · Nexora assistant"; }
 function nxPick(name){
   nxSetProduct(name); nxRow("me", name);
-  nxRow("nex", "Got it, " + name + ". What would you like to know?");
-  nxChips([
-    {label:"What can it do?", ask:"What can " + name + " do?"},
-    {label:"How much is it?", ask:"How much is " + name + "?"},
-    {label:"How do I get a demo?", ask:"How do I get a demo of " + name + "?"},
-    {label:"Talk to the team", ticket:true, alt:true},
-  ]);
+  const ov = NX_QA.find(e => e.p === name && e.ov);
+  nxRow("nex", (ov ? ov.a + "\n\n" : "Got it, " + name + ". ") + "What would you like to know?");
+  nxChips(name === "FinTrak Pro"
+    ? nxChipSet(["features","price","try","team"], name)
+    : [{label:"What can it do?", ask:"What can " + name + " do?"}, {label:"Who is it for?", ask:"Who is " + name + " for?"}, {label:"How much is it?", ask:"How much is " + name + "?"}, ...nxChipSet(["demo","team"], name)]);
 }
 function nxGreet(){
   nxLog.innerHTML = ""; nxTurns = []; nxSetProduct(null);
@@ -1085,28 +1085,262 @@ function nxGreet(){
   nxChips([
     ...PRODUCTS.map(p => ({ label:p.name, product:p.name })),
     {label:"I need a custom system", ask:"I need a custom system for my business. Can Nexora build it?"},
+    {label:"How buying works", ask:"How does buying work?"},
     {label:"Talk to the team", ticket:true, alt:true},
   ]);
 }
-function nxLocal(q){
-  const s = q.toLowerCase();
-  if (/custom|build|gawa|own system|sariling/.test(s)) return { text:"Yes, Nexora builds systems made for your business. Tell us what you need in the Get a quote form on this page (tick Custom system), or email " + NX_EMAIL + ". The team replies with a plan and a quotation.", ticket:true };
-  if (/price|pricing|how much|magkano|quotation|quote|presyo/.test(s)) return { text:"Pricing depends on your setup (branches, users, devices). Use the Get a quote form on this page or email " + NX_EMAIL + " and the team will send a quotation. FinTrak Pro is the exception: free trial, then PHP 199 a month or PHP 1,990 a year.", ticket:true };
-  const prod = PRODUCTS.find(p => p.keys.some(k => s.includes(k)));
-  if (prod && !/\b(not working|error|bug|login|log in|password|bill|invoice|refund)\b/.test(s)) return { text: prod.name + ": " + prod.what + "\n\nTap Book a demo on this page and the team will show you how it works.", ticket:false };
-  let best = null, score = 0;
-  KB.forEach(k => { const n = k.keys.filter(w => s.includes(w)).length; if (n > score){ score = n; best = k; } });
-  const wants = CONCERN_WORDS.some(w => s.includes(w));
-  if (best) return { text: best.answer, ticket: wants };
-  return { text:"I don't have a ready answer for that here. Want me to pass it to the Nexora team? They reply by email.", ticket:true };
+/* ---------- Nex offline knowledge: what he answers on the public site (no AI there) ----------
+   Edit answers here. Each entry: p = product (or null for general), k = keywords, a = answer, c = follow-up buttons.
+   Button ids: products, features, price, demo, quote, custom, buy, team, try, fb, want:<planned system name> */
+const NX_FB = "https://www.facebook.com/share/18UZzvoCTF/";
+const NX_FT = "https://fintrakpro.github.io/";
+const NX_PLAN_TIP = "\n\nTap I'm interested and we'll tell you first when it's ready, or ask for it as a custom system if you need it sooner.";
+const NX_QA = [
+  /* ===== General ===== */
+  { k:["hi","hello","hey","good morning","good afternoon","good evening","kumusta","musta","yo","hola"],
+    a:"Hi! I'm Nex. Nexora Systems has four ready-to-run systems:\n\n• FEMS for hotel, resort and building engineering\n• NEXO POS for sari-sari stores, cafés and shops\n• FIFO NEX for kitchen prep labels and food safety\n• FinTrak Pro for personal finance\n\nWe also build custom systems. Which one can I tell you about?", c:["products"] },
+  { k:["who are you","what are you","are you a bot","are you ai","are you real","robot","your name"],
+    a:"I'm Nex, the Nexora System Assistant. I answer quick questions about our products, prices, demos and custom systems, any time of day. For quotations and anything about your own account, I pass you to the Nexora team, and they reply by email.", c:["products","team"] },
+  { k:["products","what do you sell","what do you offer","offer","offers","services","what systems","your systems","catalog","catalogue","solutions","software","ano ang meron","list"],
+    a:"Here's what Nexora Systems offers:\n\n1. FEMS Company Edition: one place for a hotel, resort or building's engineering team to track equipment, utilities and work. Launching soon, free demo on your property.\n2. NEXO POS: register, inventory and daily closing for small Filipino stores. Launching soon, free demo.\n3. FIFO NEX: prep labels with use-by dates and allergen tags for commercial kitchens. Priced per kitchen.\n4. FinTrak Pro: personal finance tracker. Available now with a free trial.\n5. Custom systems built around how your business runs.\n\nOn the roadmap: Warehouse Management, HR & Payroll, Project Management, Asset Management, Purchasing & Suppliers, and Booking & Reservations.", c:["products","custom"] },
+  { k:["about nexora","who is nexora","nexora systems","about the company","about you","company","philippines","filipino company","local","who made","where are you","located","location","address","office","owner","founder"],
+    a:"Nexora Systems is a Filipino software company. Our line is \"Smart systems. Practical solutions.\" We make ready-to-run systems for the people who keep hotels, kitchens, stores and households running, and each one started as a real problem on a real shift.\n\nWe set each system up under your business name, train your team and support you after go-live. Our office address isn't listed here; to reach the team, email " + NX_EMAIL + " or message Nexora Systems on Facebook.", c:["products","team"] },
+  { k:["how to buy","buy","buying","purchase","avail","order","how does it work","process","steps","get started","acquire","bilhin","kumuha","mag avail"],
+    a:"Here's how buying works:\n\n1. Book a demo. We walk you through the system using sample data.\n2. Send a request with your business, the product and how many branches or users.\n3. We set it up with your name, logo, staff, items and accounts loaded in.\n4. Go live with a short training for your team, then support while you settle in.\n\nFinTrak Pro is the exception: you sign up yourself at fintrakpro.github.io.", c:["demo","quote","team"] },
+  { k:["price","prices","pricing","how much","magkano","cost","costs","quotation","quote","rate","rates","package","packages","presyo","fee","fees","budget","expensive","cheap","mura","plans","plan"],
+    a:"Pricing depends on your setup, like the number of branches, users or properties, so the team sends a quotation for FEMS, NEXO POS, FIFO NEX and custom systems. Tap Get a quotation and they'll reply by email with prices and a setup date.\n\nFinTrak Pro has fixed prices: free trial, then ₱199 a month or ₱1,990 a year.", c:["quote","demo","team"] },
+  { k:["demo","free demo","get a demo","book a demo","try","trial","test","see it","sample","presentation","walkthrough","walk through"],
+    a:"Every product has a free demo. We walk you through it using sample data, so you see exactly how it works for your business. For FEMS, we can do the demo on your property.\n\nTap Book a demo and send the form; the team replies with a schedule. FinTrak Pro you can try right away with its free trial.", c:["demo","try","team"] },
+  { k:["custom","customize","customized","custom system","build","develop","made for","tailor","tailored","own system","sariling system","gawa","bespoke","other system","integration","integrate","system for my business"],
+    a:"Yes, Nexora builds systems around how your business runs: your forms, your reports, your approvals. It's the same team behind FEMS, NEXO POS, FIFO NEX and FinTrak Pro.\n\n1. Tell us what you track today (notebook, Excel, Viber group).\n2. We map it into screens and send a proposal and quotation.\n3. You try a working demo before anything is final.\n4. We set it up, train your team and support you.", c:["custom","team"] },
+  { k:["coming soon","roadmap","planned","upcoming","future","new products","next product","what's next"],
+    a:"These are on our roadmap and not available yet:\n\n• Warehouse Management System\n• HR & Payroll System\n• Project Management System\n• Asset Management\n• Purchasing & Suppliers\n• Booking & Reservations\n\nTap I'm interested under any of them in the Coming soon section and we'll tell you first when it's ready. Need one sooner? We can build it as a custom system.", c:["custom","team"] },
+  { k:["warehouse","wms","bin location","put-away","putaway","dispatch","receiving","picking","cycle count"],
+    a:"The Warehouse Management System is planned, not available yet. It will cover receiving and put-away to bin locations, barcode stock transfers, picking and dispatch, and cycle counts with stock movement history." + NX_PLAN_TIP, c:["want:Warehouse Management System","custom"] },
+  { k:["hr","payroll","human resource","human resources","employee records","attendance","dtr","leave","payslip","payslips","philhealth","201 file","201 files","timekeeping"],
+    a:"The HR & Payroll System is planned, not available yet. It will hold 201 files, attendance / DTR and leave, payroll with SSS, PhilHealth, Pag-IBIG and tax, and payslips your team can open on their phone." + NX_PLAN_TIP, c:["want:HR & Payroll System","custom"] },
+  { k:["project management","projects","task","tasks","site report","site reports","progress photo","budget vs actual","construction","contractor"],
+    a:"The Project Management System is planned, not available yet. It will track projects, tasks, owners and due dates, a timeline with progress photos and site reports, and budget vs actual per project." + NX_PLAN_TIP, c:["want:Project Management System","custom"] },
+  { k:["asset","asset management","assets","qr tag","qr tags","depreciation","asset tagging","it equipment","furniture"],
+    a:"Asset Management is a suggested system, not available yet. It would tag furniture, tools and IT equipment with QR codes, track who has each asset, where it is and its condition, and handle warranties, depreciation and audits." + NX_PLAN_TIP, c:["want:Asset Management","custom"] },
+  { k:["purchasing","purchase request","purchase requests","canvass","purchase order","purchase orders","procurement","supplier quotes"],
+    a:"Purchasing & Suppliers is a suggested system, not available yet. It would handle purchase requests and approvals, canvass sheets to compare supplier quotes, and POs, deliveries and supplier history." + NX_PLAN_TIP, c:["want:Purchasing & Suppliers","custom"] },
+  { k:["booking","reservation","reservations","appointment","appointments","booking calendar","no-show","salon","clinic","rental","rentals"],
+    a:"Booking & Reservations is a suggested system for resorts, clinics, salons and rentals, not available yet. It would have an online booking calendar, deposits by GCash or Maya, and reminders with no-show tracking." + NX_PLAN_TIP, c:["want:Booking & Reservations","custom"] },
+  { k:["phone","tablet","ipad","laptop","pc","computer","desktop","install","download","app","android","iphone","ios","mobile","browser","play store","app store","offline","internet","wifi","device","devices"],
+    a:"All Nexora systems run in a web browser on a phone, tablet or PC, so there's nothing to download from an app store. On a phone you can add it to your home screen so it opens like an app.\n\nIf you need it to work offline or with special hardware, mention it when you request a demo and the team will advise for your setup." },
+  { k:["gcash","maya","paymaya","bank transfer","payment","payments","pay","bayad","magbayad","installment","terms","downpayment","down payment"],
+    a:"FinTrak Pro is paid by GCash or Maya inside the app. For FEMS, NEXO POS, FIFO NEX and custom systems, payment terms come with your quotation. Tap Get a quotation to ask.", c:["quote","team"] },
+  { k:["setup","set up","installation","training","train","onboarding","how long","implementation","go live","deploy","migrate","migration","import","existing data","encode","encoding"],
+    a:"Setup is done for you. After you send a request, we load your business name, logo, staff, items and accounts before handover. If your records are in Excel, mention it so the team can plan the import. Then your team gets a short training and support while you settle in.\n\nThe setup date comes with your quotation.", c:["quote","demo","team"] },
+  { k:["support","after sales","after-sales","maintenance support","updates","update","warranty","help desk","customer service"],
+    a:"You're not left alone after go-live. The Nexora team trains your staff and supports you while you settle in. For help any time, ask me here, email " + NX_EMAIL + " or message Nexora Systems on Facebook.", c:["team","fb"] },
+  { k:["contact","email","e-mail","facebook","fb","messenger","phone number","call","number","mobile number","reach","landline","viber","contact number","hotline"],
+    a:"You can reach Nexora Systems by:\n\n• Email: " + NX_EMAIL + "\n• Facebook: Nexora Systems\n• The Get a quote form on this page\n\nThere's no phone number on the site yet. I can also send your message to the team right now.", c:["team","fb","quote"] },
+  { k:["data","secure","security","privacy","private","backup","backups","safe","cloud","server","hosting","hacked"],
+    a:"Each system is set up for your own business, with sign-in for your staff. FEMS includes backups for the whole team, and in FinTrak Pro your records are private to your account; not even the administrator can read them.\n\nFor hosting and data details for your setup, ask the team during your demo.", c:["demo","team"] },
+  { k:["bir","accredited","accreditation","official receipt","permit to use","ptu","vat","e-invoice","einvoice","tax compliant"],
+    a:"I can't confirm BIR accreditation for any setup here. If you need BIR-compliant receipts or a Permit to Use, tell the team in your request and they'll explain what's possible for your business.", c:["team","quote"] },
+  { k:["branch","branches","multiple stores","many stores","how many users","multi-branch","multibranch","franchise","outlets","multiple properties","several"],
+    a:"Yes, you can run more than one branch, property or kitchen. Pricing depends on how many branches, users or properties you have, so include those numbers in your request and the team will quote it. FEMS uses one code per property.", c:["quote","team"] },
+  { k:["tagalog","filipino language","bisaya","cebuano","language","wika","english"],
+    a:"I answer in English here, and I understand simple Taglish like \"magkano\" or \"paano\". The Nexora team can talk with you in Filipino or English by email or Facebook." },
+  { k:["thank","thanks","thank you","salamat","ty","tnx"], a:"You're welcome! Anything else I can help with?" },
+  { k:["bye","goodbye","paalam","see you"], a:"Thanks for visiting Nexora Systems! Tap Ask Nex any time you have a question.", c:["products"] },
+  { k:["human","real person","agent","talk to","speak to","sales team","sales agent","representative","tao","kausap"],
+    a:"Sure. I'll pass you to the Nexora team. Tap Talk to the team, add your details, and they'll reply by email. You can also email " + NX_EMAIL + " or message Nexora Systems on Facebook.", c:["team","fb"] },
+  { k:["complaint","complain","concern","problem","issue","error","bug","not working","refund","reklamo","sira","broken"],
+    a:"Sorry about that. Tell the team what happened and I'll send it for you; they reply by email. Include the product, what you were doing and any error you saw.", c:["team"] },
+
+  /* ===== FEMS ===== */
+  { p:"FEMS", ov:true, k:["fems","company edition"],
+    a:"FEMS Company Edition is a facility engineering system for hotels, resorts and buildings. It gives your engineering team one place to track equipment, utilities and work, so the GM gets a clear daily picture.\n\nIt's launching soon, and we can do a free demo on your property." },
+  { p:"FEMS", k:["what can","features","feature","can it","does it","modules","module","what's inside","whats inside","inside","functions","capabilities","what does","kaya","include","includes","overview","explain"],
+    a:"What's inside FEMS:\n\n1. Main Dashboard: needs-attention alerts, water, diesel and gasoline stock with days of reserve, power, occupancy and recent maintenance.\n2. Hotel Resources Monitoring: water tanks, desalination and water hauling, power by feeder, and consumption per guest and per room night.\n3. Major Equipment: gensets, chillers, boilers, pumps, desal and sewage treatment plant, with job orders, preventive maintenance and a 14-day status history.\n4. Vehicles & Vessels: vans, trucks, golf carts and boats, trip tickets, gate passes and fuel per trip.\n5. Daily Log & Logsheets: one daily log, hourly desal and genset logsheets, and a shift walkthrough checklist from any phone.\n6. Reports & Team: Monthly Report to Chief, Excel downloads, and shared-device sign-in for every role.", c:["price","demo","team"] },
+  { p:"FEMS", k:["who is it for","for whom","who uses","suitable","para kanino","hotel","hotels","resort","resorts","building","buildings","mall","hospital","property"],
+    a:"FEMS is for hotels, resorts and buildings with an engineering team: chief engineers, engineering heads, supervisors, operators, drivers and management. It fits best where equipment and utilities are still tracked in logbooks, clipboards and Excel." },
+  { p:"FEMS", k:["equipment","chiller","chillers","boiler","boilers","genset","gensets","generator","generators","pump","pumps","desal","desalination","stp","sewage","uptime","run hours","fleet status"],
+    a:"FEMS shows the status of every chiller, boiler, genset and pump at a glance, with equipment uptime across the property. For gensets it tracks status, run hours, diesel use and L/kWh. It also covers the desal plant and sewage treatment plant, with job orders, preventive maintenance and a 14-day status history for each unit." },
+  { p:"FEMS", k:["water","power","fuel","diesel","gasoline","tank","tanks","kwh","electric","electricity","utility","utilities","consumption","occupancy","reserve"],
+    a:"FEMS tracks utilities daily: water tanks (gravity, product and raw), desalination production and fresh water hauling, diesel and gasoline stock with days of reserve, and power by feeder in kWh. It also shows consumption per guest and per room night, with low levels flagged on the dashboard." },
+  { p:"FEMS", k:["work order","work orders","job order","job orders","preventive","preventive maintenance","pms","maintenance","schedule","repair","repairs"],
+    a:"FEMS has work orders (job orders) and preventive maintenance schedules, so every repair and service is on record. You can see each unit's maintenance history and a 14-day status history, and open work orders show on the dashboard." },
+  { p:"FEMS", k:["vehicle","vehicles","vessel","vessels","boat","boats","van","vans","truck","trucks","golf cart","trip","trips","trip ticket","gate pass","driver","drivers"],
+    a:"The Vehicles & Vessels section covers vans, trucks, golf carts and boats. Drivers fill in trip tickets and gate passes, and FEMS records fuel released per vehicle and per trip." },
+  { p:"FEMS", k:["daily log","log","logs","logsheet","logsheets","checklist","walkthrough","shift","hourly","synchro","readings"],
+    a:"Your team fills in one daily log for water, fuel, power and occupancy, plus hourly desal and genset logsheets and the synchro panel. There's also a shift walkthrough checklist that operators complete from any phone." },
+  { p:"FEMS", k:["report","reports","monthly report","excel","export","kpi","kpis","dashboard","gm"],
+    a:"FEMS builds the Monthly Report to Chief for you and lets you download data to Excel. The Main Dashboard gives the GM a clear daily picture: alerts, utility KPIs, equipment status and recent maintenance." },
+  { p:"FEMS", k:["user","users","role","roles","sign in","login","log in","account","accounts","password","staff","team","operator","operators","shared device","access","logo","code"],
+    a:"FEMS uses shared-device sign-in with roles for the owner, engineering head, supervisors, operators, drivers and management. It's set up with your company name and logo, with one code per property." },
+  { p:"FEMS", k:["price","prices","pricing","how much","magkano","cost","quotation","quote","rate","package","packages","presyo","plans"],
+    a:"FEMS pricing depends on your property, like the number of properties and users, so the team sends a quotation. Tap Get a quotation, or book a free demo first and get pricing after you see it on your property.", c:["quote","demo","team"] },
+  { p:"FEMS", k:["demo","free demo","get a demo","book a demo","try","trial","test","see it","sample","presentation"],
+    a:"We can do a free FEMS demo on your property using sample data. Tap Book a FEMS demo, add your name, property and contact, and the team replies with a schedule.", c:["demo","features","team"] },
+  { p:"FEMS", k:["available","availability","launch","launching","release","when","ready","live","out now","can i buy","pwede na"],
+    a:"FEMS Company Edition is launching soon. You can book a free demo on your property now, and the team can give you a quotation and a setup date.", c:["demo","quote"] },
+
+  /* ===== NEXO POS ===== */
+  { p:"NEXO POS", ov:true, k:["nexo pos","nexo","pos"],
+    a:"NEXO POS lets you ring up sales, watch your stock and close the day with a clean report. It's built for small Filipino stores like sari-sari stores, cafés and shops.\n\nIt's launching soon, with a free demo." },
+  { p:"NEXO POS", k:["what can","features","feature","can it","does it","modules","what's inside","whats inside","functions","capabilities","what does","kaya","include","includes","overview","explain"],
+    a:"What NEXO POS does:\n\n1. Fast register: barcode scan, discounts, and change computed for you.\n2. Inventory: low-stock alerts, suppliers and restock plans.\n3. Staff PIN login with owner, manager and cashier roles.\n4. Sales records, daily closing and shareable receipts.\n5. Customers and utang: balances, due dates and payments.\n6. Sales reports you can download in Excel.", c:["price","demo","team"] },
+  { p:"NEXO POS", k:["who is it for","for whom","suitable","para kanino","sari-sari","sari sari","store","stores","tindahan","cafe","café","cafes","coffee shop","bakery","shop","shops","pharmacy","hardware store","small business","negosyo"],
+    a:"NEXO POS is built for small Filipino stores: sari-sari stores, cafés, bakeries, small shops, pharmacies and hardware stores. If you still track sales in a notebook, it's for you." },
+  { p:"NEXO POS", k:["sell","selling","sale","register","checkout","cashier","barcode","scanner","scan","discount","discounts","change","sukli","cash","gcash","maya","card"],
+    a:"At the register you scan or search items, apply discounts, and NEXO POS computes the total and the change. Customers can pay by cash, GCash, Maya, card or utang. Every sale is saved to your sales records." },
+  { p:"NEXO POS", k:["receipt","receipts","resibo","printer","print","printing","thermal"],
+    a:"Every sale has a receipt you can share as text or a picture, for example by Messenger or Viber. If you want printed receipts, tell the team which printer you have, or ask them to recommend one, when you book your demo." },
+  { p:"NEXO POS", k:["stock","stocks","inventory","low stock","restock","supplier","suppliers","reorder","delivery","deliveries","products","items","paninda","imbentaryo","markup"],
+    a:"NEXO POS takes stock down with every sale and warns you when an item is low. You can add deliveries, keep supplier records and get a restock plan of what to buy next. You can also set a markup to get suggested selling prices." },
+  { p:"NEXO POS", k:["utang","credit","listahan","pautang","customer","customers","suki","balance","balances","collect","collection"],
+    a:"NEXO POS keeps customer records for utang: credit limits, due dates, payments and each customer's balance, plus a monthly statement per customer. No more listahan in a notebook." },
+  { p:"NEXO POS", k:["staff","pin","role","roles","employee","employees","owner","manager","login","log in","sign in","password","access","account"],
+    a:"Each staff member signs in with a PIN. Roles are owner, manager and cashier, so cashiers can sell while the owner keeps control of prices, stock and reports." },
+  { p:"NEXO POS", k:["closing","close","end of day","report","reports","sales report","income","profit","kita","excel","benta","summary"],
+    a:"At closing, count the cash in the drawer and NEXO POS compares it with the expected cash. Reports show gross and net sales, discounts, cost of goods, gross profit and collections by payment method, and you can download them in Excel." },
+  { p:"NEXO POS", k:["phone","tablet","laptop","pc","computer","device","devices","hardware","install","app","offline","internet"],
+    a:"NEXO POS runs in a browser on a computer, tablet or phone, and barcode scanners are supported. Tell the team what devices you already have, and whether you need it to work offline, when you book your demo." },
+  { p:"NEXO POS", k:["bir","accredited","accreditation","official receipt","permit to use","ptu","vat"],
+    a:"I can't confirm BIR accreditation for NEXO POS. If you need BIR-compliant receipts or a Permit to Use, mention it in your request and the team will explain what's possible for your store.", c:["team","quote"] },
+  { p:"NEXO POS", k:["price","prices","pricing","how much","magkano","cost","quotation","quote","rate","package","packages","presyo","plans"],
+    a:"NEXO POS pricing depends on your store setup, like the number of branches and cashiers, so the team sends a quotation. Tap Get a quotation, or book a free demo first.", c:["quote","demo","team"] },
+  { p:"NEXO POS", k:["demo","free demo","get a demo","book a demo","try","trial","test","see it","sample","presentation"],
+    a:"NEXO POS comes with a free demo. We walk you through selling, stock and closing using sample store data. Tap Book a NEXO POS demo and the team replies with a schedule.", c:["demo","features","team"] },
+  { p:"NEXO POS", k:["available","availability","launch","launching","release","when","ready","live","out now","can i buy","pwede na"],
+    a:"NEXO POS is launching soon. You can book a free demo now, and the team can give you a quotation and a setup date.", c:["demo","quote"] },
+
+  /* ===== FIFO NEX ===== */
+  { p:"FIFO NEX", ov:true, k:["fifo nex","fifo"],
+    a:"FIFO NEX prints clear prep labels in seconds and keeps every shelf first-in, first-out. Use-by dates are calculated for you. It's for restaurants, hotel kitchens and commissaries, priced per kitchen, and works with label printers." },
+  { p:"FIFO NEX", k:["what can","features","feature","can it","does it","modules","what's inside","whats inside","functions","capabilities","what does","kaya","include","includes","overview","explain"],
+    a:"What's inside FIFO NEX:\n\n1. Create label: pick the item, storage, location and shelf; use-by is calculated from its shelf life.\n2. Use-by day colours, so the oldest goes first.\n3. 14 allergen tags printed in red.\n4. On the shelf now: live counts of OK, use today and expired items.\n5. Label records with batch code, barcode, who prepped it and when, plus one-tap reprint.\n6. Your own menu items and shelf lives, a staff picker and a printer status with label roll counter.", c:["price","demo","team"] },
+  { p:"FIFO NEX", k:["who is it for","for whom","suitable","para kanino","restaurant","restaurants","kitchen","kitchens","hotel kitchen","commissary","commissaries","catering","cafe","café","food"],
+    a:"FIFO NEX is for commercial kitchens: restaurants, hotel kitchens, commissaries, cafés and catering. It's for anyone who preps food ahead and needs to know what to use first." },
+  { p:"FIFO NEX", k:["label","labels","print","printing","prep label","use by","use-by","expiry","expiration","shelf life","date","dates","storage","chilled","frozen","ambient","hot hold"],
+    a:"To print a label, pick the item, storage type (chilled, frozen, ambient or hot hold), location and shelf, then tap your name. FIFO NEX calculates the use-by from that item's shelf life and prints the prep time, use-by, storage location and allergens, with a batch code and barcode." },
+  { p:"FIFO NEX", k:["printer","printers","thermal","label size","label sizes","size","sizes","roll","rolls","zebra","brother","xprinter"],
+    a:"FIFO NEX works with thermal label printers in three label sizes: 50 × 25 mm, 58 × 40 mm and 76 × 50 mm. It shows printer status and a label roll counter. Ask the team which printer to get when you book your demo." },
+  { p:"FIFO NEX", k:["allergen","allergens","allergy","allergies","gluten","nuts","peanut","peanuts","milk","egg","eggs","soy","shellfish","crustaceans","sesame"],
+    a:"FIFO NEX prints allergen tags in red so nobody misses them. It covers the 14 major allergens: gluten, crustaceans, egg, fish, peanut, soy, milk, nuts, celery, mustard, sesame, sulphites, lupin and molluscs." },
+  { p:"FIFO NEX", k:["color","colour","colors","colours","day dots","day color","day colour","monday","band"],
+    a:"Each use-by day has its own colour band, so staff spot the oldest item first: Monday blue, Tuesday yellow, Wednesday red, Thursday brown, Friday green, Saturday orange and Sunday black." },
+  { p:"FIFO NEX", k:["shelf","on the shelf","expired","use today","discard","discarded","waste","fifo","first in first out","first-in first-out"],
+    a:"On the shelf now shows live counts of items that are OK, to use today, and expired. Staff mark items used or discarded, and you can filter by storage location." },
+  { p:"FIFO NEX", k:["record","records","reprint","batch","barcode","audit","audits","haccp","inspection","inspections","traceability","sanitary","history"],
+    a:"Every printed label is recorded with its batch code, barcode, who prepped it and when, and you can reprint any label in one tap. These records help when your kitchen is inspected or audited." },
+  { p:"FIFO NEX", k:["staff","sign-off","sign off","who prepped","shift","role","roles","cook","cooks","chef"],
+    a:"Each label carries a staff sign-off. FIFO NEX has a staff picker with roles and shows who is on shift." },
+  { p:"FIFO NEX", k:["menu","menu item","menu items","item","items","products","recipe","recipes","category","categories"],
+    a:"You load your own menu items with categories, allergens and shelf life for each storage type. During setup, the team can load them for you." },
+  { p:"FIFO NEX", k:["price","prices","pricing","how much","magkano","cost","quotation","quote","rate","package","packages","presyo","plans","per kitchen"],
+    a:"FIFO NEX is priced per kitchen. Tap Get a quotation with how many kitchens you have, and the team will send prices.", c:["quote","demo","team"] },
+  { p:"FIFO NEX", k:["demo","free demo","get a demo","book a demo","try","trial","test","see it","sample","presentation"],
+    a:"Book a FIFO NEX demo and we'll show you labels, use-by colours and the shelf log using sample menu items. Tap Book a FIFO NEX demo and the team replies with a schedule.", c:["demo","features","team"] },
+  { p:"FIFO NEX", k:["available","availability","launch","launching","release","when","ready","live","out now","can i buy","pwede na"],
+    a:"FIFO NEX is offered per kitchen and works with label printers. Book a demo to see it with your own menu, and the team will quote for your kitchens.", c:["demo","quote"] },
+
+  /* ===== FinTrak Pro ===== */
+  { p:"FinTrak Pro", ov:true, k:["fintrak","fin trak","fintrack","fintrak pro"],
+    a:"FinTrak Pro is a personal finance tracker for employees, families and freelancers. It runs in any browser with nothing to install, and shows every peso across your banks, e-wallets and loans in one dashboard.\n\nIt's available now: free trial, then ₱199 a month or ₱1,990 a year.", c:["try","features","price"] },
+  { p:"FinTrak Pro", k:["what can","features","feature","can it","does it","what's inside","whats inside","functions","capabilities","what does","kaya","include","includes","overview","explain"],
+    a:"What FinTrak Pro does:\n\n1. Log income, expenses and transfers in a few taps.\n2. Funds by account: cash, GCash, Maya, banks and savings goals.\n3. Credit and loan tracker with upcoming SOA due dates.\n4. Dashboard with graphs and where your money went.\n5. Monthly report with your savings rate and a health rating, as a PDF or email.\n6. Private records that not even the administrator can read.", c:["try","price","team"] },
+  { p:"FinTrak Pro", k:["who is it for","for whom","suitable","para kanino","employee","employees","family","families","freelancer","freelancers","personal","student","ofw"],
+    a:"FinTrak Pro is for employees, families and freelancers who want to know where their salary goes, save toward goals and pay loans and cards on time." },
+  { p:"FinTrak Pro", k:["price","prices","pricing","how much","magkano","cost","rate","package","packages","presyo","plans","plan","monthly","yearly","free"],
+    a:"FinTrak Pro starts with a free trial. After that it's ₱199 a month or ₱1,990 a year, paid by GCash or Maya in the app's Subscription tab.", c:["try","team"] },
+  { p:"FinTrak Pro", k:["demo","get a demo","try","trial","free trial","test","sign up","signup","register","create account","create an account","join","start"],
+    a:"No demo needed: try it free at fintrakpro.github.io.\n\n1. Tap Create account and enter your full name and email.\n2. Choose a password with at least 8 characters, using letters and numbers.\n3. Open the confirmation email if one arrives.\n4. Wait for approval; the page checks automatically. Once approved, your free trial starts.", c:["try","team"] },
+  { p:"FinTrak Pro", k:["gcash","maya","pay","payment","bayad","magbayad","renew","subscribe","subscription","reference","reference number"],
+    a:"To subscribe or renew:\n\n1. Open the Subscription tab and choose Monthly (₱199) or Yearly (₱1,990).\n2. Send the exact amount by GCash or Maya to the official account shown in the app. Always check the name and number on your own screen.\n3. Enter the reference number from your receipt and tap Submit payment.\n\nThe administrator confirms it and extends your access.", c:["try","team"] },
+  { p:"FinTrak Pro", k:["forgot","password","reset","log in","login","sign in","can't log in","cant login","locked"],
+    a:"To reset your FinTrak Pro password, tap Forgot password? on the sign-in screen, enter your email and tap Send reset link. Open the email (check Spam too) and choose a new password with at least 8 characters, using letters and numbers.", c:["try","team"] },
+  { p:"FinTrak Pro", k:["approval","approve","approved","pending","waiting","naghihintay"],
+    a:"New FinTrak Pro accounts are approved by the administrator before first use. The waiting page checks automatically, so you can close it and come back. If it's taking long, message FinTrak Pro or Nexora Systems on Facebook with the email you signed up with.", c:["team","fb"] },
+  { p:"FinTrak Pro", k:["privacy","private","safe","secure","security","admin see","data","makikita"],
+    a:"Your FinTrak Pro records are private. They're saved to your own account, and other users, even the administrator, can't read them. You can also download a backup any time from the Account tab." },
+  { p:"FinTrak Pro", k:["app","install","download","home screen","android","iphone","play store","phone"],
+    a:"There's nothing to download. FinTrak Pro runs in your browser at fintrakpro.github.io. For an app-like icon, open your phone browser's menu and tap Add to Home screen.", c:["try"] },
+  { p:"FinTrak Pro", k:["tutorial","tutorials","video","videos","guide","how to use","paano gamitin","learn"],
+    a:"There's a 9-part video tutorial covering everything from creating your account to reading your monthly report. Find it on the FinTrak Pro Facebook page, or ask me about any step.", c:["fb","try"] },
+  { p:"FinTrak Pro", k:["expense","expenses","income","transfer","record","daily log","transaction","transactions","gastos","loan","loans","utang","soa","bill","bills","due","credit card","savings","goal","goals","fund","funds"],
+    a:"In FinTrak Pro you record everything in the Daily Log: Expenses, Income, Transfers between your own accounts, Credit/Loan, SOA bills with due dates, and a Monthly Update of what you still owe. Your funds and savings goals update automatically, and the dashboard lists upcoming due dates.", c:["try","features"] },
+  { p:"FinTrak Pro", k:["report","reports","dashboard","pdf","health rating","savings rate","monthly report","summary"],
+    a:"The dashboard shows your month at a glance: income, expenses, savings rate, funds vs goals and debts. The monthly report adds a comparison with last month, a financial health rating and recommended actions, and you can download it as a PDF or get it by email on the 1st." },
+  { p:"FinTrak Pro", k:["facebook","fb","page","contact","support","help"],
+    a:"For FinTrak Pro help, message the FinTrak Pro or Nexora Systems Facebook page, or email " + NX_EMAIL + ". I can also send your message to the team now.", c:["fb","team"] },
+];
+
+function nxEsc(w){ return w.replace(/[.*+?^${}()|[\]\\]/g, "\\$&"); }
+function nxHas(s, w){ return new RegExp("(^|[^a-z0-9])" + nxEsc(w) + "(s|es)?(?=[^a-z0-9]|$)").test(s); }
+function nxWeight(w){ return w.indexOf(" ") > -1 ? w.split(" ").length * 3 : (w.length > 3 ? 2 : 1); }
+function nxProdIn(s){
+  for (const p of PRODUCTS){ if (p.keys.some(k => nxHas(s, k))) return p.name; }
+  return null;
 }
+function nxChipSet(ids, prod){
+  const out = [];
+  ids.forEach(id => {
+    if (id === "products") PRODUCTS.forEach(p => out.push({ label:p.name, product:p.name }));
+    else if (id === "features") out.push(prod ? { label:"What can it do?", ask:"What can " + prod + " do?" } : { label:"Our products", ask:"What products do you offer?" });
+    else if (id === "price") out.push(prod ? { label:"How much is it?", ask:"How much is " + prod + "?" } : { label:"Prices", ask:"How much are your systems?" });
+    else if (id === "demo") out.push(prod === "FinTrak Pro" ? { label:"Try FinTrak Pro free", href:NX_FT } : { label: prod ? "Book a " + prod + " demo" : "Book a demo", act:"A demo" });
+    else if (id === "quote") out.push({ label:"Get a quotation", act:"Quotation" });
+    else if (id === "custom") out.push({ label:"Request a custom system", act:"A custom system", pick:"Custom system" });
+    else if (id === "buy") out.push({ label:"How buying works", ask:"How does buying work?" });
+    else if (id === "team") out.push({ label:"Talk to the team", ticket:true, alt:true });
+    else if (id === "try") out.push({ label:"Try FinTrak Pro free", href:NX_FT });
+    else if (id === "fb") out.push({ label:"Nexora on Facebook", href:NX_FB });
+    else if (id.indexOf("want:") === 0) out.push({ label:"I'm interested", act:"Something else", other:id.slice(5) });
+  });
+  return out;
+}
+function nxFollow(prod){
+  if (!prod) return nxChipSet(["products","buy","team"], null);
+  return nxChipSet(prod === "FinTrak Pro" ? ["try","features","price","team"] : ["features","price","demo","team"], prod);
+}
+function nxLocal(q){
+  const s = " " + q.toLowerCase().replace(/[’`]/g, "'") + " ";
+  const named = nxProdIn(s);
+  const prod = named || currentProduct;
+  let best = null, score = 0;
+  NX_QA.forEach(e => {
+    if (e.p && e.p !== prod) return;
+    if (e.ov) return;
+    let n = 0; e.k.forEach(w => { if (nxHas(s, w)) n += nxWeight(w); });
+    if (!n) return;
+    if (e.p) n += 2;
+    if (n > score){ score = n; best = e; }
+  });
+  if (!best && prod){
+    const ov = NX_QA.find(e => e.p === prod && e.ov);
+    if (ov && (named || s.trim().length < 4)) return { text: ov.a, chips: ov.c ? nxChipSet(ov.c, prod) : nxFollow(prod) };
+  }
+  if (!best){
+    return { text: "I'm not sure about that one yet. I can tell you about our products, prices, demos and custom systems" + (prod ? ", or more about " + prod : "") + ". Or I can pass your question to the Nexora team, and they'll reply by email.",
+             chips: prod ? nxChipSet(["features","price","team"], prod) : nxChipSet(["products","team"], null) };
+  }
+  return { text: best.a, chips: best.c ? nxChipSet(best.c, prod) : nxFollow(prod) };
+}
+/* Fill the Get a quote form for the visitor and take them to it */
+function nxGoForm(kind, pick, other){
+  const t = document.getElementById("qt"); if (t && kind) t.value = kind;
+  const want = pick || (other ? "Other" : currentProduct);
+  if (want) document.querySelectorAll(".pick input").forEach(i => { if (i.value === want && !i.checked){ i.checked = true; i.dispatchEvent(new Event("change")); } });
+  if (other){ const o = document.getElementById("qo"); if (o) o.value = o.value && o.value.indexOf(other) < 0 ? o.value + ", " + other : (o.value || other); }
+  nxOpen(false);
+  const c = document.getElementById("contact");
+  if (c) c.scrollIntoView({ behavior: matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth", block:"start" });
+  setTimeout(() => { const n = document.getElementById("qn"); if (n) n.focus({ preventScroll:true }); }, 600);
+}
+
 async function nxAsk(text){
   text = (text || "").trim(); if (!text || nxBusy) return;
   nxBusy = true; nxSend.disabled = true;
   const named = PRODUCTS.find(p => p.keys.some(k => text.toLowerCase().includes(k))); if (named) nxSetProduct(named.name);
   nxRow("me", text); nxTurns.push({ role:"user", content:text });
   const bubble = nxRow("nex", ""); bubble.innerHTML = '<span class="nxtyping" aria-label="Nex is typing"><i></i><i></i><i></i></span>';
-  let reply = "", ticket = false;
+  let reply = "", ticket = false, nxNext = null;
   const sample = nxAiOff ? null : await nxSamplePromise;
   if (sample){
     try{
@@ -1116,11 +1350,12 @@ async function nxAsk(text){
       reply = res.text; ticket = reply.includes("[[TICKET]]"); reply = nxClean(reply.replace("[[TICKET]]",""));
     }catch(e){
       if (e && ["not_granted","sampling_disabled","not_declared","capability_disabled","capability_removed"].includes(e.code)) nxAiOff = true;
-      const l = nxLocal(text); reply = l.text; ticket = l.ticket;
+      const l = nxLocal(text); reply = l.text; nxNext = l.chips;
     }
-  } else { await new Promise(r => setTimeout(r, 400)); const l = nxLocal(text); reply = l.text; ticket = l.ticket; }
+  } else { await new Promise(r => setTimeout(r, 400)); const l = nxLocal(text); reply = l.text; nxNext = l.chips; }
   bubble.textContent = reply; nxTurns.push({ role:"assistant", content:reply });
   if (ticket) nxChips([{ label:"Email the team", ticket:true, alt:true }, { label:"Ask something else", ask:"I have another question." }]);
+  else if (nxNext && nxNext.length) nxChips(nxNext);
   nxBusy = false; nxSend.disabled = false; nxScroll();
 }
 let nxTc = 0;
