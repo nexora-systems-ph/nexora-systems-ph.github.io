@@ -7,7 +7,7 @@ Owners (full access, Administrator page): `rogadogerick@gmail.com`, `nexorasyste
 ## How it works
 - `source/fems-claude.html` is the FEMS Company Edition page from Claude, unchanged.
 - `build.py` adds `public/fems-firebase.js`, which gives the page the same database, sign-in and download functions it had inside Claude, backed by Firebase Auth and Cloud Firestore. Output: `public/index.html`.
-- Every push to `main` builds and deploys (GitHub Actions, keyless sign-in to Google Cloud, no secrets).
+- Every push to the `fems` branch builds and deploys (GitHub Actions, keyless sign-in to Google Cloud, no secrets).
 
 ## Access
 1. People open the web address and sign in with Google or email.
@@ -18,4 +18,4 @@ Owners (full access, Administrator page): `rogadogerick@gmail.com`, `nexorasyste
 In the Claude version open **Administrator page › Export all data**. In this site click **Access › Choose export file…** and pick the file.
 
 ## Updating FEMS
-Save the new Claude `index.html` over `source/fems-claude.html`, commit and push to `main`.
+Save the new Claude `index.html` over `source/fems-claude.html`, commit and push to the `fems` branch.

@@ -1,7 +1,7 @@
 name: Deploy FEMS
 on:
   push:
-    branches: [main]
+    branches: [fems]
   workflow_dispatch:
 permissions:
   contents: read
