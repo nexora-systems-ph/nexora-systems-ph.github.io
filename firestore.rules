@@ -1,0 +1,31 @@
+rules_version = '2';
+// Who can do what in FEMS. Owners are fixed here; everyone else is given access in FEMS (Access button).
+service cloud.firestore {
+  match /databases/{database}/documents {
+    function signedIn() { return request.auth != null; }
+    function isOwner() {
+      return signedIn() && request.auth.token.email_verified == true &&
+        request.auth.token.email.lower() in ['rogadogerick@gmail.com', 'nexorasystems725@gmail.com'];
+    }
+    function memberDoc() { return /databases/$(database)/documents/members/$(request.auth.uid); }
+    function isMember() { return signedIn() && exists(memberDoc()); }
+    function hasCode(code) { let m = get(memberDoc()).data; return ('*' in m.codes) || (code in m.codes); }
+    function canRead(code) { return isOwner() || (isMember() && hasCode(code)); }
+    function canWrite(code) { return isOwner() || (isMember() && hasCode(code) && get(memberDoc()).data.level == 'edit'); }
+
+    // companies and administrator settings
+    match /co/{id} { allow read: if signedIn(); allow write: if isOwner(); }
+    match /cfg/{id} { allow read: if isOwner() || (id == 'billing' && signedIn()); allow write: if isOwner(); }
+    // sign-up requests, support messages, error reports
+    match /req/{code} { allow read, create, update: if signedIn(); allow delete: if isOwner(); }
+    match /sup/{id} { allow create: if signedIn(); allow read, update, delete: if isOwner(); }
+    match /diag/{id} { allow create: if signedIn(); allow read, delete: if isOwner(); }
+    // each company's records
+    match /t/{code}/{rest=**} { allow read: if canRead(code); allow write: if canWrite(code); }
+    // each person's own preferences
+    match /data/users/{uid}/{rest=**} { allow read, write: if signedIn() && request.auth.uid == uid; }
+    // people and access
+    match /profiles/{uid} { allow read: if isOwner() || isMember() || (signedIn() && request.auth.uid == uid); allow write: if signedIn() && request.auth.uid == uid; }
+    match /members/{uid} { allow read: if isOwner() || (signedIn() && request.auth.uid == uid); allow write: if isOwner(); }
+  }
+}

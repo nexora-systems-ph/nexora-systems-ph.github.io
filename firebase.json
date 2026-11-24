@@ -1,0 +1,13 @@
+{
+  "hosting": {
+    "public": "public",
+    "ignore": ["firebase.json", "**/.*"],
+    "headers": [
+      { "source": "**/*.@(html|js|css|webmanifest)", "headers": [{ "key": "Cache-Control", "value": "no-cache" }] },
+      { "source": "/icons/**", "headers": [{ "key": "Cache-Control", "value": "public, max-age=86400" }] }
+    ],
+    "rewrites": [{ "source": "**", "destination": "/index.html" }]
+  },
+  "firestore": { "rules": "firestore.rules", "indexes": "firestore.indexes.json" },
+  "emulators": { "auth": { "port": 9099, "host": "0.0.0.0" }, "firestore": { "port": 8080, "host": "0.0.0.0" }, "hosting": { "port": 5000, "host": "0.0.0.0" }, "ui": { "enabled": false }, "singleProjectMode": true }
+}

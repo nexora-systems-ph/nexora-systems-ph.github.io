@@ -1,0 +1,17 @@
+#fbGate{position:fixed;inset:0;z-index:2147483000;display:flex;align-items:center;justify-content:center;padding:20px;overflow:auto;background:linear-gradient(135deg,#0f3b37,#14524b);font:15px/1.45 Barlow,-apple-system,"Segoe UI",sans-serif;color:#15302c}
+#fbGate[hidden],#fbAccess[hidden]{display:none!important}
+.fbcard{background:#fff;border-radius:16px;padding:26px 28px;width:min(400px,100%);box-shadow:0 20px 60px rgba(0,0,0,.25);display:flex;flex-direction:column;gap:12px}
+.fbcard.fbwide{width:min(900px,100%)}
+.fbbrand b{display:block;font:800 30px/1 Montserrat,sans-serif;letter-spacing:.1em;color:#0f3b37}.fbbrand span{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#6c8580}
+.fbcard h2{margin:6px 0 0;font:700 20px Montserrat,sans-serif;color:#0f3b37}.fbcard h3{margin:14px 0 0;font:700 15px Montserrat,sans-serif;color:#0f3b37}.fbcard p{margin:0;color:#3e5b56}
+.fbcard form{display:flex;flex-direction:column;gap:10px}.fbcard label{display:flex;flex-direction:column;gap:5px;font-size:13px;font-weight:600;color:#3e5b56}
+.fbcard input,.fbcard select{font:inherit;font-size:16px;padding:10px 12px;border:1px solid #c9d8d4;border-radius:10px;background:#f6faf9;color:#15302c;width:100%;box-sizing:border-box}
+.fbbtn{display:inline-flex;align-items:center;justify-content:center;gap:10px;font:600 15px/1 inherit;padding:12px 16px;border-radius:10px;border:1px solid #c9d8d4;background:#fff;color:#15302c;cursor:pointer}
+.fbbtn:hover{background:#f1f6f5}.fbbtn.fbp{background:#0f766e;border-color:#0f766e;color:#fff}.fbbtn.fbp:hover{background:#0d655e}.fbbtn.small{padding:8px 12px;font-size:13px}.fbbtn:disabled{opacity:.6}
+.fbor{display:flex;align-items:center;gap:10px;color:#6c8580;font-size:12px}.fbor:before,.fbor:after{content:"";flex:1;height:1px;background:#d3e0dc}
+.fbmsg{background:#fdecec;color:#991b1b!important;border-radius:8px;padding:8px 10px;font-size:13.5px}.fbok{background:#dcf3e4;color:#14532d!important;border-radius:8px;padding:8px 10px}
+.fblinks{font-size:13.5px;text-align:center}.fbcard a{color:#0f766e;font-weight:600}
+#fbAccBtn{position:fixed;left:12px;bottom:12px;z-index:2147482000;background:#0f3b37;color:#e9f3f2;border:0;border-radius:999px;padding:8px 14px;font:600 12.5px/1 inherit;cursor:pointer;box-shadow:0 4px 14px rgba(0,0,0,.2);opacity:.85}#fbAccBtn:hover{opacity:1}
+#fbAccess{position:fixed;inset:0;z-index:2147482500;background:rgba(10,30,28,.55);display:flex;align-items:flex-start;justify-content:center;padding:30px 14px;overflow:auto;font:14px/1.45 Barlow,-apple-system,"Segoe UI",sans-serif}
+.fbhead{display:flex;justify-content:space-between;align-items:center;gap:10px}.fbtable{overflow-x:auto}.fbtable table{width:100%;border-collapse:collapse}.fbtable th,.fbtable td{text-align:left;padding:8px 6px;border-bottom:1px solid #e4ecea;vertical-align:middle}.fbtable small{color:#6c8580}
+.fbfile{position:relative}

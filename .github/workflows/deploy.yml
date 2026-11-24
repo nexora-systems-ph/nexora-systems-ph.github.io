@@ -1,0 +1,28 @@
+name: Deploy FEMS
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+permissions:
+  contents: read
+  id-token: write
+concurrency: deploy
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: 20 }
+      - id: auth
+        uses: google-github-actions/auth@v2
+        with:
+          # keyless sign-in to Google Cloud (Workload Identity Federation): no secret needed
+          workload_identity_provider: projects/247075667056/locations/global/workloadIdentityPools/github/providers/fems-app
+          service_account: github-deploy@fems-nexora.iam.gserviceaccount.com
+          create_credentials_file: true
+      - name: Build the page
+        run: python3 build.py
+      - name: Deploy to Firebase
+        run: npx --yes firebase-tools@13 deploy --only hosting,firestore:rules --project fems-nexora --non-interactive
+      - run: echo "Live at https://fems-nexora.web.app"
